@@ -1,0 +1,85 @@
+set_location_assignment PIN_K21 -to blue_out
+set_location_assignment PIN_F1 -to bt2
+set_location_assignment PIN_G3 -to bt1
+set_location_assignment PIN_H2 -to bt0
+set_location_assignment PIN_G21 -to clk
+set_location_assignment PIN_J17 -to green_out
+set_location_assignment PIN_L21 -to horiz_sync_out
+set_location_assignment PIN_P22 -to mouse_clk
+set_location_assignment PIN_P21 -to mouse_data
+set_location_assignment PIN_H17 -to red_out
+set_location_assignment PIN_D13 -to seg0_dec
+set_location_assignment PIN_B15 -to seg1_dec
+set_location_assignment PIN_L22 -to vert_sync_out
+set_location_assignment PIN_A13 -to seg1[0]
+set_location_assignment PIN_B13 -to seg1[1]
+set_location_assignment PIN_C13 -to seg1[2]
+set_location_assignment PIN_A14 -to seg1[3]
+set_location_assignment PIN_B14 -to seg1[4]
+set_location_assignment PIN_E14 -to seg1[5]
+set_location_assignment PIN_A15 -to seg1[6]
+set_location_assignment PIN_E11 -to seg0[0]
+set_location_assignment PIN_F11 -to seg0[1]
+set_location_assignment PIN_H12 -to seg0[2]
+set_location_assignment PIN_H13 -to seg0[3]
+set_location_assignment PIN_G12 -to seg0[4]
+set_location_assignment PIN_F12 -to seg0[5]
+set_location_assignment PIN_F13 -to seg0[6]
+set_location_assignment PIN_J1 -to ledg[0]
+set_location_assignment PIN_J2 -to ledg[1]
+set_location_assignment PIN_J3 -to ledg[2]
+set_location_assignment PIN_H1 -to ledg[3]
+set_location_assignment PIN_F2 -to ledg[4]
+set_location_assignment PIN_E1 -to ledg[5]
+set_location_assignment PIN_C1 -to ledg[6]
+set_location_assignment PIN_C2 -to ledg[7]
+set_location_assignment PIN_B2 -to ledg[8]
+set_location_assignment PIN_B1 -to ledg[9]
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
+set_location_assignment PIN_J6 -to sw[0]
+set_location_assignment PIN_H5 -to sw[1]
+set_location_assignment PIN_H6 -to sw[2]
+set_location_assignment PIN_G4 -to sw[3]
+set_location_assignment PIN_G5 -to sw[4]
+set_location_assignment PIN_J7 -to sw[5]
+set_location_assignment PIN_H7 -to sw[6]
+set_location_assignment PIN_E3 -to sw[7]
+set_location_assignment PIN_E4 -to sw[8]
+set_location_assignment PIN_D2 -to sw[9]
+set_global_assignment -name FAMILY "Cyclone III"
+set_global_assignment -name DEVICE EP3C16F484C6
+set_global_assignment -name TOP_LEVEL_ENTITY flabbybird
+set_global_assignment -name ORIGINAL_QUARTUS_VERSION 13.0
+set_global_assignment -name PROJECT_CREATION_TIME_DATE "14:42:34  MAY 11, 2019"
+set_global_assignment -name LAST_QUARTUS_VERSION 13.0
+set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
+set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
+set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
+set_global_assignment -name ERROR_CHECK_FREQUENCY_DIVISOR 1
+set_global_assignment -name NOMINAL_CORE_SUPPLY_VOLTAGE 1.2V
+set_global_assignment -name EDA_SIMULATION_TOOL "ModelSim-Altera (VHDL)"
+set_global_assignment -name EDA_OUTPUT_DATA_FORMAT VHDL -section_id eda_simulation
+set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
+set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_global_assignment -name VHDL_FILE debounce.vhd
+set_global_assignment -name SOURCE_FILE PLL.cmp
+set_global_assignment -name VHDL_FILE sevenseg.vhd
+set_global_assignment -name VHDL_FILE vga_sync.vhd
+set_global_assignment -name VHDL_FILE mouse.VHD
+set_global_assignment -name VHDL_FILE char_rom.vhd
+set_global_assignment -name VHDL_FILE ball.vhd
+set_global_assignment -name BDF_FILE flabbybird.bdf
+set_global_assignment -name QIP_FILE PLL.qip
+set_global_assignment -name IP_TOOL_NAME ALTPLL -qip PLL.qip
+set_global_assignment -name IP_TOOL_VERSION 13.0 -qip PLL.qip
+set_global_assignment -name VHDL_FILE PLL.vhd -qip PLL.qip
+set_global_assignment -name MISC_FILE PLL.bsf -qip PLL.qip
+set_global_assignment -name MISC_FILE PLL.cmp -qip PLL.qip
+set_global_assignment -name MISC_FILE PLL.ppf -qip PLL.qip
+set_global_assignment -name CDF_FILE output_files/Chain1.cdf
+set_global_assignment -name CDF_FILE Chain2.cdf
+set_global_assignment -name VHDL_FILE lfsr.vhd
+set_global_assignment -name STRATIX_DEVICE_IO_STANDARD "2.5 V"

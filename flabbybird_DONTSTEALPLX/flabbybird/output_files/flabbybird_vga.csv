@@ -1,0 +1,84 @@
+# Copyright (C) 1991-2013 Altera Corporation
+# Your use of Altera Corporation's design tools, logic functions 
+# and other software and tools, and its AMPP partner logic 
+# functions, and any output files from any of the foregoing 
+# (including device programming or simulation files), and any 
+# associated documentation or information are expressly subject 
+# to the terms and conditions of the Altera Program License 
+# Subscription Agreement, Altera MegaCore Function License 
+# Agreement, or other applicable license agreement, including, 
+# without limitation, that your use is for the sole purpose of 
+# programming logic devices manufactured by Altera and sold by 
+# Altera or its authorized distributors.  Please refer to the 
+# applicable agreement for further details.
+
+# Quartus II 64-Bit Version 13.0.0 Build 156 04/24/2013 SJ Full Version
+# File: C:\Users\sshe325\FlappyBirdVHDL\flabbybird_DONTSTEALPLX\flabbybird\output_files\flabbybird_vga.csv
+# Generated on: Fri May 24 15:49:23 2019
+
+# Note: The column header names should not be changed if you wish to import this .csv file into the Quartus II software.
+
+To,Direction,Location,I/O Bank,VREF Group,Fitter Location,I/O Standard,Reserved,Current Strength,Slew Rate,Differential Pair
+blue_out,Output,PIN_K21,6,B6_N1,PIN_K21,,,,,
+blue_out[1],Output,PIN_K21,6,B6_N1,,,,,,
+bt0,Input,PIN_H2,1,B1_N1,PIN_H2,,,,,
+bt1,Input,PIN_G3,1,B1_N0,PIN_G3,,,,,
+bt2,Input,PIN_F1,1,B1_N0,PIN_F1,,,,,
+clk,Input,PIN_G21,6,B6_N1,PIN_G21,,,,,
+green_out,Output,PIN_J17,6,B6_N0,PIN_J17,,,,,
+green_out[1],Output,PIN_J17,6,B6_N0,,,,,,
+horiz_sync_out,Output,PIN_L21,6,B6_N1,PIN_L21,,,,,
+mouse_clk,Bidir,PIN_P22,5,B5_N0,PIN_P22,,,,,
+mouse_data,Bidir,PIN_P21,5,B5_N0,PIN_P21,,,,,
+red_out,Output,PIN_H17,6,B6_N0,PIN_H17,,,,,
+red_out[1],Output,PIN_H17,6,B6_N0,,,,,,
+seg0[6],Output,PIN_F13,7,B7_N1,PIN_F13,,,,,
+seg0[5],Output,PIN_F12,7,B7_N1,PIN_F12,,,,,
+seg0[4],Output,PIN_G12,7,B7_N1,PIN_G12,,,,,
+seg0[3],Output,PIN_H13,7,B7_N1,PIN_H13,,,,,
+seg0[2],Output,PIN_H12,7,B7_N1,PIN_H12,,,,,
+seg0[1],Output,PIN_F11,7,B7_N1,PIN_F11,,,,,
+seg0[0],Output,PIN_E11,7,B7_N1,PIN_E11,,,,,
+seg0_dec,Output,PIN_D13,7,B7_N1,PIN_D13,,,,,
+seg1[6],Output,PIN_A15,7,B7_N1,PIN_A15,,,,,
+seg1[5],Output,PIN_E14,7,B7_N1,PIN_E14,,,,,
+seg1[4],Output,PIN_B14,7,B7_N1,PIN_B14,,,,,
+seg1[3],Output,PIN_A14,7,B7_N1,PIN_A14,,,,,
+seg1[2],Output,PIN_C13,7,B7_N1,PIN_C13,,,,,
+seg1[1],Output,PIN_B13,7,B7_N1,PIN_B13,,,,,
+seg1[0],Output,PIN_A13,7,B7_N1,PIN_A13,,,,,
+seg1_dec,Output,PIN_B15,7,B7_N1,PIN_B15,,,,,
+sw[0],Input,PIN_J6,1,B1_N0,PIN_J6,,,,,
+vert_sync_out,Output,PIN_L22,6,B6_N1,PIN_L22,,,,,
+ledg[0],Unknown,PIN_J1,1,B1_N1,,,,,,
+ledg[1],Unknown,PIN_J2,1,B1_N1,,,,,,
+ledg[2],Unknown,PIN_J3,1,B1_N1,,,,,,
+ledg[3],Unknown,PIN_H1,1,B1_N1,,,,,,
+ledg[4],Unknown,PIN_F2,1,B1_N0,,,,,,
+ledg[5],Unknown,PIN_E1,1,B1_N0,,,,,,
+ledg[6],Unknown,PIN_C1,1,B1_N0,,,,,,
+ledg[7],Unknown,PIN_C2,1,B1_N0,,,,,,
+ledg[8],Unknown,PIN_B2,1,B1_N0,,,,,,
+ledg[9],Unknown,PIN_B1,1,B1_N0,,,,,,
+sw[1],Unknown,PIN_H5,1,B1_N0,,,,,,
+sw[2],Unknown,PIN_H6,1,B1_N0,,,,,,
+sw[3],Unknown,PIN_G4,1,B1_N0,,,,,,
+sw[4],Unknown,PIN_G5,1,B1_N0,,,,,,
+sw[5],Unknown,PIN_J7,1,B1_N1,,,,,,
+sw[6],Unknown,PIN_H7,1,B1_N0,,,,,,
+sw[7],Unknown,PIN_E3,1,B1_N0,,,,,,
+sw[8],Unknown,PIN_E4,1,B1_N0,,,,,,
+sw[9],Unknown,PIN_D2,1,B1_N0,,,,,,
+~ALTERA_ASDO_DATA1~,Input,PIN_D1,1,B1_N0,PIN_D1,,,,,
+~ALTERA_FLASH_nCE_nCSO~,Input,PIN_E2,1,B1_N0,PIN_E2,,,,,
+~ALTERA_DCLK~,Output,PIN_K2,1,B1_N1,PIN_K2,,,,,
+~ALTERA_DATA0~,Input,PIN_K1,1,B1_N1,PIN_K1,,,,,
+blue_out[0],Unknown,PIN_K22,6,B6_N1,,,,,,
+blue_out[2],Unknown,PIN_J22,6,B6_N1,,,,,,
+blue_out[3],Unknown,PIN_K18,6,B6_N1,,,,,,
+red_out[0],Unknown,PIN_H19,6,B6_N0,,,,,,
+red_out[2],Unknown,PIN_H20,6,B6_N0,,,,,,
+red_out[3],Unknown,PIN_H21,6,B6_N1,,,,,,
+green_out[0],Unknown,PIN_H22,6,B6_N1,,,,,,
+green_out[2],Unknown,PIN_K17,6,B6_N1,,,,,,
+green_out[3],Unknown,PIN_J21,6,B6_N1,,,,,,

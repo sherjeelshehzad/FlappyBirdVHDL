@@ -1,0 +1,20 @@
+state_register: process(clock,state_reset)
+begin
+	if (reset = '1') then
+		state <= s_menu;
+	else
+		state <= next_state;
+	end if;
+end process;
+
+next_state_fn: process(state,clock)
+begin
+	case state is
+		when s_menu =>
+			if (PB1 = '1') then
+				next_state <= s_regular;
+			else
+				next_state <= s_training;
+			end if;
+	end case;
+end process;

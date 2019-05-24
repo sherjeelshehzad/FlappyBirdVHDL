@@ -46,7 +46,6 @@ set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
 set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
 set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
 set_global_assignment -name ERROR_CHECK_FREQUENCY_DIVISOR 1
-set_global_assignment -name NOMINAL_CORE_SUPPLY_VOLTAGE 1.2V
 set_global_assignment -name EDA_SIMULATION_TOOL "ModelSim-Altera (VHDL)"
 set_global_assignment -name EDA_OUTPUT_DATA_FORMAT VHDL -section_id eda_simulation
 set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
@@ -91,6 +90,25 @@ set_location_assignment PIN_C1 -to ledg[6]
 set_location_assignment PIN_C2 -to ledg[7]
 set_location_assignment PIN_B2 -to ledg[8]
 set_location_assignment PIN_B1 -to ledg[9]
+set_global_assignment -name STRATIX_DEVICE_IO_STANDARD "2.5 V"
+set_location_assignment PIN_J6 -to sw[0]
+set_location_assignment PIN_H5 -to sw[1]
+set_location_assignment PIN_H6 -to sw[2]
+set_location_assignment PIN_G4 -to sw[3]
+set_location_assignment PIN_G5 -to sw[4]
+set_location_assignment PIN_J7 -to sw[5]
+set_location_assignment PIN_H7 -to sw[6]
+set_location_assignment PIN_E3 -to sw[7]
+set_location_assignment PIN_E4 -to sw[8]
+set_location_assignment PIN_D2 -to sw[9]
+set_location_assignment PIN_D1 -to ~ALTERA_ASDO_DATA1~
+set_location_assignment PIN_E2 -to ~ALTERA_FLASH_nCE_nCSO~
+set_location_assignment PIN_K2 -to ~ALTERA_DCLK~
+set_location_assignment PIN_K1 -to ~ALTERA_DATA0~
+set_global_assignment -name VHDL_FILE ball_training.vhd
+set_global_assignment -name VHDL_FILE ball_over.vhd
+set_global_assignment -name VHDL_FILE ball_menu.vhd
+set_global_assignment -name VHDL_FILE fsm_game.vhd
 set_global_assignment -name VHDL_FILE debounce.vhd
 set_global_assignment -name SOURCE_FILE PLL.cmp
 set_global_assignment -name VHDL_FILE sevenseg.vhd
@@ -102,4 +120,25 @@ set_global_assignment -name BDF_FILE flabbybird.bdf
 set_global_assignment -name QIP_FILE PLL.qip
 set_global_assignment -name CDF_FILE output_files/Chain1.cdf
 set_global_assignment -name CDF_FILE Chain2.cdf
+set_global_assignment -name VHDL_FILE lfsr.vhd
+set_global_assignment -name VHDL_FILE displaysel.vhd
+set_location_assignment PIN_H22 -to green_out[0]
+set_location_assignment PIN_K22 -to blue_out[0]
+set_location_assignment PIN_K21 -to blue_out[1]
+set_location_assignment PIN_J17 -to green_out[1]
+set_location_assignment PIN_H17 -to red_out[1]
+set_global_assignment -name USE_CONFIGURATION_DEVICE OFF
+set_global_assignment -name CRC_ERROR_OPEN_DRAIN OFF
+set_global_assignment -name CYCLONEII_RESERVE_NCEO_AFTER_CONFIGURATION "USE AS REGULAR IO"
+set_global_assignment -name OUTPUT_IO_TIMING_NEAR_END_VMEAS "HALF VCCIO" -rise
+set_global_assignment -name OUTPUT_IO_TIMING_NEAR_END_VMEAS "HALF VCCIO" -fall
+set_global_assignment -name OUTPUT_IO_TIMING_FAR_END_VMEAS "HALF SIGNAL SWING" -rise
+set_global_assignment -name OUTPUT_IO_TIMING_FAR_END_VMEAS "HALF SIGNAL SWING" -fall
+set_location_assignment PIN_J22 -to blue_out[2]
+set_location_assignment PIN_K18 -to blue_out[3]
+set_location_assignment PIN_H19 -to red_out[0]
+set_location_assignment PIN_H20 -to red_out[2]
+set_location_assignment PIN_H21 -to red_out[3]
+set_location_assignment PIN_K17 -to green_out[2]
+set_location_assignment PIN_J21 -to green_out[3]
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
