@@ -18,6 +18,8 @@ architecture behaviour of lfsr is
 		begin
 			if (reset = '1') then --async reset
 				cout := "01010101011"; --reset to initial seed
+			elsif (cout = "00000000000") then
+				cout := "01010101011"; --reset to initial if lfsr is stuck
 			else
 				if (rising_edge(clk)) then
 					cout(0) := cout(10);

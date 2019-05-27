@@ -1,5 +1,5 @@
 Assembler report for flabbybird
-Fri May 24 16:15:51 2019
+Mon May 27 22:13:53 2019
 Quartus II 64-Bit Version 13.0.0 Build 156 04/24/2013 SJ Full Version
 
 
@@ -37,7 +37,7 @@ applicable agreement for further details.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Fri May 24 16:15:51 2019 ;
+; Assembler Status      ; Successful - Mon May 27 22:13:53 2019 ;
 ; Revision Name         ; flabbybird                            ;
 ; Top-level Entity Name ; flabbybird                            ;
 ; Family                ; Cyclone III                           ;
@@ -92,8 +92,8 @@ applicable agreement for further details.
 ; Option         ; Setting                                                                                                 ;
 +----------------+---------------------------------------------------------------------------------------------------------+
 ; Device         ; EP3C16F484C6                                                                                            ;
-; JTAG usercode  ; 0x0013D767                                                                                              ;
-; Checksum       ; 0x0013D767                                                                                              ;
+; JTAG usercode  ; 0x0014CFE0                                                                                              ;
+; Checksum       ; 0x0014CFE0                                                                                              ;
 +----------------+---------------------------------------------------------------------------------------------------------+
 
 
@@ -103,14 +103,14 @@ applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Assembler
     Info: Version 13.0.0 Build 156 04/24/2013 SJ Full Version
-    Info: Processing started: Fri May 24 16:15:49 2019
+    Info: Processing started: Mon May 27 22:13:52 2019
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off flabbybird -c flabbybird
 Info (115031): Writing out detailed assembly data for power analysis
 Info (115030): Assembler is generating device programming files
 Info: Quartus II 64-Bit Assembler was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 484 megabytes
-    Info: Processing ended: Fri May 24 16:15:51 2019
-    Info: Elapsed time: 00:00:02
-    Info: Total CPU time (on all processors): 00:00:02
+    Info: Peak virtual memory: 485 megabytes
+    Info: Processing ended: Mon May 27 22:13:53 2019
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:01
 
 
