@@ -33,7 +33,6 @@ architecture selector of display_sel is
 begin
 	process(clk,output_sel)
 	begin
-		if (rising_edge(clk)) then
 			case output_sel is
 				when "00" => --menu display
 					red <= red0;
@@ -66,6 +65,5 @@ begin
 					horiz <= horiz0;
 					vert <= vert0;
 			end case;
-		end if;
 	end process;
 end architecture;

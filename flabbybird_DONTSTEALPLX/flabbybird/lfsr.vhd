@@ -13,7 +13,7 @@ end entity;
 
 architecture behaviour of lfsr is
 	begin
-		process(clk)
+		process(clk,reset)
 		variable cout : std_logic_vector(10 downto 0) := "01010101011"; --random initial seed
 		begin
 			if (reset = '1') then --async reset
@@ -22,17 +22,7 @@ architecture behaviour of lfsr is
 				cout := "01010101011"; --reset to initial if lfsr is stuck
 			else
 				if (rising_edge(clk)) then
-					cout(0) := cout(10);
-					cout(1) := cout(0) xor cout(10);
-					cout(2) := cout(1);
-					cout(3) := cout(2);
-					cout(4) := cout(3);
-					cout(5) := cout(4);
-					cout(6) := cout(5);
-					cout(7) := cout(6);
-					cout(8) := cout(7);
-					cout(9) := cout(8);
-					cout(10) := cout(9) xor cout(10);
+					cout := cout(0) & (cout(10) xor cout(9)) & cout(9) & cout(8) &  cout(7) & cout(6) & cout(5) & cout(4) & cout(3) & cout(2) & (cout(1) xor cout(10));
 				end if;
 			end if;
 			output <= cout;

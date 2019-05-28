@@ -8,7 +8,8 @@ entity fsm_game is
 	port(
 		clk, reset, PB1, SW0: in std_logic;
 		hit : in std_logic;
-		output_select: out std_logic_vector(1 downto 0)	
+		output_select: out std_logic_vector(1 downto 0);
+		debug_fsm: out std_logic_vector(3 downto 0)
 		);
 end entity;
 
@@ -69,12 +70,16 @@ begin
 		case state is
 			when s_menu =>
 				output_select <= "00";
+				debug_fsm <= "0001";
 			when s_regular =>
 				output_select <= "01";
+				debug_fsm <= "0010";
 			when s_training =>
 				output_select <= "10";
+				debug_fsm <= "0100";
 			when s_over =>
 				output_select <= "11";
+				debug_fsm <= "1000";
 		end case;
 	end process;
 end architecture;

@@ -13,7 +13,7 @@ PACKAGE de0core IS
 				red, green, blue	: IN	STD_LOGIC_vector(3 downto 0);
          	red_out, green_out, blue_out	: OUT 	STD_LOGIC_vector(3 downto 0);
 			horiz_sync_out, vert_sync_out	: OUT 	STD_LOGIC;
-			pixel_row, pixel_column			: OUT STD_LOGIC_VECTOR(9 DOWNTO 0));
+			pixel_row, pixel_column			: OUT STD_LOGIC_VECTOR(10 DOWNTO 0));
 	END COMPONENT;
 END de0core;
 
@@ -29,11 +29,11 @@ ENTITY ball IS
 Generic(ADDR_WIDTH: integer := 12; DATA_WIDTH: integer := 1);
 
    PORT(SIGNAL mouse, PB0, PB1, Clock 			: IN std_logic;
-			SIGNAL pipe_x1, pipe_gap1 : IN std_logic_vector(9 DOWNTO 0);
+			SIGNAL pipe_x1, pipe_gap1 : IN std_logic_vector(10 DOWNTO 0);
 			SIGNAL pipe_display1 : IN std_logic;
-			SIGNAL pipe_x2, pipe_gap2 : IN std_logic_vector(9 DOWNTO 0);
+			SIGNAL pipe_x2, pipe_gap2 : IN std_logic_vector(10 DOWNTO 0);
 			SIGNAL pipe_display2 : IN std_logic;
-			SIGNAL pipe_x3, pipe_gap3 : IN std_logic_vector(9 DOWNTO 0);
+			SIGNAL pipe_x3, pipe_gap3 : IN std_logic_vector(10 DOWNTO 0);
 			SIGNAL pipe_display3 : IN std_logic;
         SIGNAL Red,Green,Blue 			: OUT std_logic_vector(3 downto 0);
         SIGNAL Horiz_sync,Vert_sync		: OUT std_logic;
@@ -52,7 +52,7 @@ SIGNAL Red_Data, Green_Data, Blue_Data : std_logic_vector(3 DOWNTO 0);
 SIGNAL Size, Pipe_Size, Gap_Size 		: std_logic_vector(9 DOWNTO 0);  
 SIGNAL Ball_Y_motion 						: std_logic_vector(9 DOWNTO 0);
 SIGNAL Ball_Y_pos, Ball_X_pos				: std_logic_vector(9 DOWNTO 0);
-SIGNAL pixel_row, pixel_column			: std_logic_vector(9 DOWNTO 0); 
+SIGNAL pixel_row, pixel_column			: std_logic_vector(10 DOWNTO 0); 
 
 --Character select/display signals
 
@@ -87,7 +87,7 @@ BEGIN
 			
 Size <= CONV_STD_LOGIC_VECTOR(8,10);
 Pipe_Size <= CONV_STD_LOGIC_VECTOR(16,10);
-Gap_Size <= CONV_STD_LOGIC_VECTOR(16,10);
+Gap_Size <= CONV_STD_LOGIC_VECTOR(96,10);
 Ball_X_pos <= CONV_STD_LOGIC_VECTOR(320,10);
 
 		-- need internal copy of vert_sync and pipe_size to read
@@ -96,22 +96,43 @@ pipe_sz <= Pipe_size;
 
 --Pipe/Ball/Character display mux
 --needs redoing for proper structure/overlap handling/colour management for different objects
-Red_Data <= "1111";
-Green_Data <= (NOT (Ball_on OR char_out OR ((pipe_display1 AND pipe_on) OR (pipe_display2 AND pipe_on) OR (pipe_display3 AND pipe_on)))) & "000";
-Blue_Data <= (NOT (Ball_on OR char_out OR ((pipe_display2 AND pipe_on) OR (pipe_display2 AND pipe_on) OR (pipe_display3 AND pipe_on)))) & "000";
+--Red_Data <= "1111";
+--Green_Data <= (NOT (Ball_on OR char_out OR (pipe_display1 AND pipe_on) OR (pipe_display2 AND pipe_on) OR (pipe_display3 AND pipe_on))) & "011";
+--Blue_Data <= (NOT (Ball_on OR char_out OR (pipe_display1 AND pipe_on) OR (pipe_display2 AND pipe_on) OR (pipe_display3 AND pipe_on))) & "000";
+
+Display_Mux: Process(Ball_on, char_out, pipe_display1, pipe_display2, pipe_display3, pipe_on)
+begin
+	if (ball_on = '1') then
+		Red_Data <= "1111";
+		Green_Data <= "0111";
+		Blue_Data <= "1010";
+	elsif (char_out = '1') then
+		Red_Data <= "0000";
+		Green_Data <= "0111";
+		Blue_Data <= "1010";
+	elsif (pipe_display1 = '1' AND pipe_on = '1') OR (pipe_display2 = '1' AND pipe_on = '1') OR (pipe_display3 = '1' AND pipe_on = '1') then
+		Red_Data <= "0000";
+		Green_Data <= "1111";
+		Blue_Data <= "0000";
+	end if;
+end process Display_Mux;
 
 --RGB display logic
-RGB_Display: Process (Ball_X_pos, Ball_Y_pos, pixel_column, pixel_row, Size)
+RGB_Display: Process (Ball_X_pos, Ball_Y_pos, pipe_x1, pipe_x2, pipe_x3, pixel_column, pixel_row, Size)
 BEGIN
 			-- Set Ball_on ='1' to display ball
  IF ('0' & Ball_X_pos <= pixel_column + Size) AND
  			-- compare positive numbers only
- 	(Ball_X_pos + Size >= '0' & pixel_column) AND
+ 	(Ball_X_pos + Size >= pixel_column) AND
  	('0' & Ball_Y_pos <= pixel_row + Size) AND
- 	(Ball_Y_pos + Size >= '0' & pixel_row ) THEN
+ 	(Ball_Y_pos + Size >= pixel_row ) THEN
  		Ball_on <= '1';
 	--turn pipe display on if current (row,column) location is within bounds of any pipe (except gaps)
-	ELSIF ((pixel_column >= pipe_x1) AND ('0' & pixel_column <= pipe_x1 + Pipe_Size) AND ((pixel_row < pipe_gap1) OR ('0' & pixel_row >= pipe_gap1 + gap_size))) THEN
+	ELSIF ((pixel_column + pipe_size >= pipe_x1) AND ((pixel_column) <= pipe_x1 + Pipe_Size) AND ((pixel_row < pipe_gap1) OR ((pixel_row) >= pipe_gap1 + gap_size))) THEN
+		Pipe_on <= '1';
+	ELSIF ((pixel_column + pipe_size >= pipe_x2) AND ((pixel_column) <= pipe_x2 + Pipe_Size) AND ((pixel_row < pipe_gap2) OR ((pixel_row) >= pipe_gap2 + gap_size))) THEN
+		Pipe_on <= '1';
+	ELSIF ((pixel_column + pipe_size >= pipe_x3) AND ((pixel_column) <= pipe_x3 + Pipe_Size) AND ((pixel_row < pipe_gap3) OR ((pixel_row) >= pipe_gap3 + gap_size))) THEN
 		Pipe_on <= '1';
 	--turn SCORE text display on is within bounds of characters
 	--we select 3 downto 1 to increase size of the characters displayed
@@ -153,7 +174,6 @@ BEGIN
 		if ((Ball_X_pos - Size = pipe_x1 + pipe_size) OR (Ball_X_pos - Size = pipe_x2 + pipe_size) OR (Ball_X_pos - Size = pipe_x3 + pipe_size)) then
 			score <= score + CONV_STD_LOGIC_VECTOR(1,10); --increment score
 		end if;
-		
 		if (pipe_on = '1' AND ball_on = '1') then
 			hit <= '1';
 		end if;
@@ -165,30 +185,29 @@ Pipe_Control: process(vert_sync_int)
 BEGIN
 	IF (vert_sync_int'event and vert_sync_int = '1') THEN
 		--pipe 1
-		if (pipe_x1 > CONV_STD_LOGIC_VECTOR(640,10)) then
+		if (pipe_x1 + pipe_size <= CONV_STD_LOGIC_VECTOR(0,11)) then
 			pipe_reset1 <= '1';
 			pipe_en1 <= '0';
-		elsif (pipe_x1 <= CONV_STD_LOGIC_VECTOR(640,10)) then
+		elsif (pipe_x1 <= CONV_STD_LOGIC_VECTOR(640,11)) then
 			pipe_reset1 <= '0';
 			pipe_en1 <= '1';
 		end if;
 		--pipe 2, starts after pipe 1 is a third of the way across
-		if (pipe_x2 > CONV_STD_LOGIC_VECTOR(640,10)) then
+		if (pipe_x2 + pipe_size <= CONV_STD_LOGIC_VECTOR(0,11)) then
 			pipe_reset2 <= '1';
 			pipe_en2 <= '0';
-		elsif (pipe_x2 <= CONV_STD_LOGIC_VECTOR(640,10) AND pipe_x1 <= CONV_STD_LOGIC_VECTOR(432,10)) then
+		elsif pipe_x2 <= CONV_STD_LOGIC_VECTOR(640,11) AND pipe_x1 <= CONV_STD_LOGIC_VECTOR(432,11) then
 			pipe_reset2 <= '0';
 			pipe_en2 <= '1';
 		end if;
 		--pipe 3, starts after pipe 1 is two thirds of the way across
-		if (pipe_x3 > CONV_STD_LOGIC_VECTOR(640,10)) then
+		if (pipe_x3 + pipe_size <= CONV_STD_LOGIC_VECTOR(0,11)) then
 			pipe_reset3 <= '1';
 			pipe_en3 <= '0';
-		elsif (pipe_x3 <= CONV_STD_LOGIC_VECTOR(640,10) AND pipe_x1 <= CONV_STD_LOGIC_VECTOR(224,10)) then
+		elsif pipe_x3 <= CONV_STD_LOGIC_VECTOR(640,11) AND pipe_x1 <= CONV_STD_LOGIC_VECTOR(224,11) then
 			pipe_reset3 <= '0';
 			pipe_en3 <= '1';
 		end if;
-		
 	END IF;
 END process Pipe_Control;
 

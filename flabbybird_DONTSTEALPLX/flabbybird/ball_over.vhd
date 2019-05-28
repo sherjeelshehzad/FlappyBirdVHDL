@@ -13,7 +13,7 @@ PACKAGE de0core2 IS
 				red, green, blue	: IN	STD_LOGIC_vector(3 downto 0);
          	red_out, green_out, blue_out	: OUT 	STD_LOGIC_vector(3 downto 0);
 			horiz_sync_out, vert_sync_out	: OUT 	STD_LOGIC;
-			pixel_row, pixel_column			: OUT STD_LOGIC_VECTOR(9 DOWNTO 0));
+			pixel_row, pixel_column			: OUT STD_LOGIC_VECTOR(10 DOWNTO 0));
 	END COMPONENT;
 END de0core2;
 
@@ -42,7 +42,7 @@ SIGNAL Red_Data, Green_Data, Blue_Data : std_logic_vector(3 DOWNTO 0);
 SIGNAL Size 								: std_logic_vector(9 DOWNTO 0);  
 SIGNAL Ball_Y_motion 						: std_logic_vector(9 DOWNTO 0);
 SIGNAL Ball_Y_pos, Ball_X_pos				: std_logic_vector(9 DOWNTO 0);
-SIGNAL pixel_row, pixel_column				: std_logic_vector(9 DOWNTO 0); 
+SIGNAL pixel_row, pixel_column				: std_logic_vector(10 DOWNTO 0); 
 
 --Character select/display signals
 
