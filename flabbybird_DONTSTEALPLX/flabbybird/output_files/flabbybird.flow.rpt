@@ -1,6 +1,6 @@
 Flow report for flabbybird
-Wed May 29 23:05:12 2019
-Quartus II 64-Bit Version 13.0.0 Build 156 04/24/2013 SJ Full Version
+Thu May 30 07:51:27 2019
+Quartus II 64-Bit Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
 
 
 ---------------------
@@ -37,26 +37,26 @@ applicable agreement for further details.
 
 
 
-+----------------------------------------------------------------------------------+
-; Flow Summary                                                                     ;
-+------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Wed May 29 23:05:12 2019       ;
-; Quartus II 64-Bit Version          ; 13.0.0 Build 156 04/24/2013 SJ Full Version ;
-; Revision Name                      ; flabbybird                                  ;
-; Top-level Entity Name              ; flabbybird                                  ;
-; Family                             ; Cyclone III                                 ;
-; Device                             ; EP3C16F484C6                                ;
-; Timing Models                      ; Final                                       ;
-; Total logic elements               ; 1,086 / 15,408 ( 7 % )                      ;
-;     Total combinational functions  ; 1,025 / 15,408 ( 7 % )                      ;
-;     Dedicated logic registers      ; 494 / 15,408 ( 3 % )                        ;
-; Total registers                    ; 494                                         ;
-; Total pins                         ; 47 / 347 ( 14 % )                           ;
-; Total virtual pins                 ; 0                                           ;
-; Total memory bits                  ; 240,640 / 516,096 ( 47 % )                  ;
-; Embedded Multiplier 9-bit elements ; 0 / 112 ( 0 % )                             ;
-; Total PLLs                         ; 1 / 4 ( 25 % )                              ;
-+------------------------------------+---------------------------------------------+
++---------------------------------------------------------------------------------+
+; Flow Summary                                                                    ;
++------------------------------------+--------------------------------------------+
+; Flow Status                        ; Successful - Thu May 30 07:51:27 2019      ;
+; Quartus II 64-Bit Version          ; 13.0.0 Build 156 04/24/2013 SJ Web Edition ;
+; Revision Name                      ; flabbybird                                 ;
+; Top-level Entity Name              ; flabbybird                                 ;
+; Family                             ; Cyclone III                                ;
+; Device                             ; EP3C16F484C6                               ;
+; Timing Models                      ; Final                                      ;
+; Total logic elements               ; 2,174 / 15,408 ( 14 % )                    ;
+;     Total combinational functions  ; 2,093 / 15,408 ( 14 % )                    ;
+;     Dedicated logic registers      ; 677 / 15,408 ( 4 % )                       ;
+; Total registers                    ; 677                                        ;
+; Total pins                         ; 47 / 347 ( 14 % )                          ;
+; Total virtual pins                 ; 0                                          ;
+; Total memory bits                  ; 246,784 / 516,096 ( 48 % )                 ;
+; Embedded Multiplier 9-bit elements ; 0 / 112 ( 0 % )                            ;
+; Total PLLs                         ; 1 / 4 ( 25 % )                             ;
++------------------------------------+--------------------------------------------+
 
 
 +-----------------------------------------+
@@ -64,7 +64,7 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 05/29/2019 23:04:51 ;
+; Start date & time ; 05/30/2019 07:50:46 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; flabbybird          ;
 +-------------------+---------------------+
@@ -75,7 +75,7 @@ applicable agreement for further details.
 +-------------------------------------+---------------------------------------+---------------+-------------+----------------+
 ; Assignment Name                     ; Value                                 ; Default Value ; Entity Name ; Section Id     ;
 +-------------------------------------+---------------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID               ; 93181003005274.155912789110760        ; --            ; --          ; --             ;
+; COMPILER_SIGNATURE_ID               ; 247163800739858.155915944511488       ; --            ; --          ; --             ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; On                                    ; --            ; --          ; eda_simulation ;
 ; EDA_OUTPUT_DATA_FORMAT              ; Verilog Hdl                           ; --            ; --          ; eda_simulation ;
 ; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (Verilog)             ; <None>        ; --          ; --             ;
@@ -109,12 +109,12 @@ applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:04     ; 1.0                     ; 614 MB              ; 00:00:03                           ;
-; Fitter                    ; 00:00:09     ; 1.9                     ; 1441 MB             ; 00:00:11                           ;
-; Assembler                 ; 00:00:01     ; 1.0                     ; 482 MB              ; 00:00:01                           ;
-; TimeQuest Timing Analyzer ; 00:00:03     ; 1.0                     ; 588 MB              ; 00:00:03                           ;
-; EDA Netlist Writer        ; 00:00:01     ; 1.0                     ; 450 MB              ; 00:00:01                           ;
-; Total                     ; 00:00:18     ; --                      ; --                  ; 00:00:19                           ;
+; Analysis & Synthesis      ; 00:00:07     ; 1.0                     ; 4686 MB             ; 00:00:07                           ;
+; Fitter                    ; 00:00:22     ; 1.0                     ; 4953 MB             ; 00:00:22                           ;
+; Assembler                 ; 00:00:02     ; 1.0                     ; 4574 MB             ; 00:00:01                           ;
+; TimeQuest Timing Analyzer ; 00:00:07     ; 1.0                     ; 4672 MB             ; 00:00:06                           ;
+; EDA Netlist Writer        ; 00:00:01     ; 1.0                     ; 4546 MB             ; 00:00:01                           ;
+; Total                     ; 00:00:39     ; --                      ; --                  ; 00:00:37                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -123,11 +123,11 @@ applicable agreement for further details.
 +---------------------------+------------------+-----------+------------+----------------+
 ; Module Name               ; Machine Hostname ; OS Name   ; OS Version ; Processor type ;
 +---------------------------+------------------+-----------+------------+----------------+
-; Analysis & Synthesis      ; EN-402094        ; Windows 7 ; 6.2        ; x86_64         ;
-; Fitter                    ; EN-402094        ; Windows 7 ; 6.2        ; x86_64         ;
-; Assembler                 ; EN-402094        ; Windows 7 ; 6.2        ; x86_64         ;
-; TimeQuest Timing Analyzer ; EN-402094        ; Windows 7 ; 6.2        ; x86_64         ;
-; EDA Netlist Writer        ; EN-402094        ; Windows 7 ; 6.2        ; x86_64         ;
+; Analysis & Synthesis      ; Sherjeel-PC      ; Windows 7 ; 6.2        ; x86_64         ;
+; Fitter                    ; Sherjeel-PC      ; Windows 7 ; 6.2        ; x86_64         ;
+; Assembler                 ; Sherjeel-PC      ; Windows 7 ; 6.2        ; x86_64         ;
+; TimeQuest Timing Analyzer ; Sherjeel-PC      ; Windows 7 ; 6.2        ; x86_64         ;
+; EDA Netlist Writer        ; Sherjeel-PC      ; Windows 7 ; 6.2        ; x86_64         ;
 +---------------------------+------------------+-----------+------------+----------------+
 
 

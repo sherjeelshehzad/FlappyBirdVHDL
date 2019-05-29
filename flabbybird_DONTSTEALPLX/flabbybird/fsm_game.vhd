@@ -10,7 +10,9 @@ entity fsm_game is
 		hit : in std_logic;
 		PB0 : in std_logic;
 		output_select: out std_logic_vector(1 downto 0);
-		debug_fsm: out std_logic_vector(3 downto 0)
+		debug_fsm: out std_logic_vector(3 downto 0);
+		pause_game : out std_logic;
+		reset_game : out std_logic
 		);
 end entity;
 
@@ -29,7 +31,7 @@ begin
 		end if;
 	end process;
 
-	next_state_fn: process(state,hit,PB1,SW0) --asynchronously decide next state based only on current state and inputs
+	next_state_fn: process(state,hit,PB1,SW0,PB0) --asynchronously decide next state based only on current state and inputs
 	begin
 		case state is
 			when s_menu =>
@@ -66,21 +68,29 @@ begin
 		end case;
 	end process;
 	
-	select_signal: process(state) --asynchronously decide output select signal based on current state
+	output_signals: process(state) --asynchronously decide output signals based on current state
 	begin
 		case state is
 			when s_menu =>
 				output_select <= "00";
 				debug_fsm <= "0001";
+				reset_game <= '1';
+				pause_game <= '0';
 			when s_regular =>
 				output_select <= "01";
 				debug_fsm <= "0010";
+				reset_game <= '0';
+				pause_game <= '0';
 			when s_training =>
 				output_select <= "10";
 				debug_fsm <= "0100";
+				reset_game <= '0';
+				pause_game <= '0';
 			when s_over =>
 				output_select <= "11";
 				debug_fsm <= "1000";
+				reset_game <= '0';
+				pause_game <= '1';
 		end case;
 	end process;
 end architecture;

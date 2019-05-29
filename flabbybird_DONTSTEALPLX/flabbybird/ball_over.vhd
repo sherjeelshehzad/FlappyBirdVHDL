@@ -30,6 +30,9 @@ Generic(ADDR_WIDTH: integer := 12; DATA_WIDTH: integer := 1);
 
    PORT(SIGNAL mouse, PB0, PB1, Clock 			: IN std_logic;
 			SIGNAL bg_input : IN std_logic_vector(11 DOWNTO 0);
+			SIGNAL score2n,score1n,score0n: IN std_logic_vector(5 DOWNTO 0);
+			SIGNAL score2t,score1t,score0t: IN std_logic_vector(5 DOWNTO 0);
+			SIGNAL gamemode : in std_logic;
         SIGNAL Red,Green,Blue 			: OUT std_logic_vector(3 downto 0);
         SIGNAL Horiz_sync,Vert_sync		: OUT std_logic;
 		  SIGNAL pix_row, pix_column			: out std_logic_vector(10 DOWNTO 0));
@@ -88,21 +91,25 @@ pix_row <= pixel_row;
 pix_column <= pixel_column;
 
 --we select 3 downto 1 to increase size of the characters displayed
-RGB_Display: Process (pixel_column, pixel_row)
+Text_Display: Process (pixel_column, pixel_row)
 BEGIN
-			-- Set Ball_on ='1' to display ball
- IF ((pixel_column >= CONV_STD_LOGIC_VECTOR(128,11)) AND (pixel_column <= CONV_STD_LOGIC_VECTOR(191,11)) AND (pixel_row >= CONV_STD_LOGIC_VECTOR(128,11)) AND (pixel_row <= CONV_STD_LOGIC_VECTOR(191,11))) THEN
-			char_sel <= "001000"; --H
+ IF ((pixel_column >= CONV_STD_LOGIC_VECTOR(64,11)) AND (pixel_column <= CONV_STD_LOGIC_VECTOR(127,11)) AND (pixel_row >= CONV_STD_LOGIC_VECTOR(128,11)) AND (pixel_row <= CONV_STD_LOGIC_VECTOR(191,11))) THEN
+			char_sel <= "000111"; --G
 			row_sel <= pixel_row(5 downto 3);
 			col_sel <= pixel_column(5 downto 3);
 			char_disp <= '1';
-	ELSIF ((pixel_column >= CONV_STD_LOGIC_VECTOR(192,10)) AND (pixel_column <= CONV_STD_LOGIC_VECTOR(255,10)) AND (pixel_row >= CONV_STD_LOGIC_VECTOR(128,10)) AND (pixel_row <= CONV_STD_LOGIC_VECTOR(191,10))) THEN
-			char_sel <= "000101"; --E
+	ELSIF ((pixel_column >= CONV_STD_LOGIC_VECTOR(128,10)) AND (pixel_column <= CONV_STD_LOGIC_VECTOR(191,10)) AND (pixel_row >= CONV_STD_LOGIC_VECTOR(128,10)) AND (pixel_row <= CONV_STD_LOGIC_VECTOR(191,10))) THEN
+			char_sel <= "000001"; --A
+			row_sel <= pixel_row(5 downto 3);
+			col_sel <= pixel_column(5 downto 3);
+			char_disp <= '1';
+	ELSIF ((pixel_column >= CONV_STD_LOGIC_VECTOR(192,11)) AND (pixel_column <= CONV_STD_LOGIC_VECTOR(255,11)) AND (pixel_row >= CONV_STD_LOGIC_VECTOR(128,11)) AND (pixel_row <= CONV_STD_LOGIC_VECTOR(191,11))) THEN
+			char_sel <= "001101"; --M
 			row_sel <= pixel_row(5 downto 3);
 			col_sel <= pixel_column(5 downto 3);
 			char_disp <= '1';
 	ELSIF ((pixel_column >= CONV_STD_LOGIC_VECTOR(256,11)) AND (pixel_column <= CONV_STD_LOGIC_VECTOR(319,11)) AND (pixel_row >= CONV_STD_LOGIC_VECTOR(128,11)) AND (pixel_row <= CONV_STD_LOGIC_VECTOR(191,11))) THEN
-			char_sel <= "010010"; --R
+			char_sel <= "000101"; --E
 			row_sel <= pixel_row(5 downto 3);
 			col_sel <= pixel_column(5 downto 3);
 			char_disp <= '1';
@@ -112,50 +119,72 @@ BEGIN
 			col_sel <= pixel_column(5 downto 3);
 			char_disp <= '1';
 	ELSIF ((pixel_column >= CONV_STD_LOGIC_VECTOR(384,11)) AND (pixel_column <= CONV_STD_LOGIC_VECTOR(447,11)) AND (pixel_row >= CONV_STD_LOGIC_VECTOR(128,11)) AND (pixel_row <= CONV_STD_LOGIC_VECTOR(191,11))) THEN
-			char_sel <= "100000"; --space
+			char_sel <= "010110"; --V
 			row_sel <= pixel_row(5 downto 3);
 			col_sel <= pixel_column(5 downto 3);
 			char_disp <= '1';
 	ELSIF ((pixel_column >= CONV_STD_LOGIC_VECTOR(448,11)) AND (pixel_column <= CONV_STD_LOGIC_VECTOR(511,11)) AND (pixel_row >= CONV_STD_LOGIC_VECTOR(128,11)) AND (pixel_row <= CONV_STD_LOGIC_VECTOR(191,11))) THEN
-			char_sel <= "001111"; --O
+			char_sel <= "000101"; --E
 			row_sel <= pixel_row(5 downto 3);
 			col_sel <= pixel_column(5 downto 3);
 			char_disp <= '1';
 	ELSIF ((pixel_column >= CONV_STD_LOGIC_VECTOR(512,11)) AND (pixel_column <= CONV_STD_LOGIC_VECTOR(575,11)) AND (pixel_row >= CONV_STD_LOGIC_VECTOR(128,11)) AND (pixel_row <= CONV_STD_LOGIC_VECTOR(191,11))) THEN
-			char_sel <= "000110"; --F
+			char_sel <= "010010"; --R
 			row_sel <= pixel_row(5 downto 3);
 			col_sel <= pixel_column(5 downto 3);
 			char_disp <= '1';
-	ELSIF ((pixel_column >= CONV_STD_LOGIC_VECTOR(192,11)) AND (pixel_column <= CONV_STD_LOGIC_VECTOR(191,11)) AND (pixel_row >= CONV_STD_LOGIC_VECTOR(192,11)) AND (pixel_row <= CONV_STD_LOGIC_VECTOR(255,11))) THEN
-			char_sel <= "001011"; --K
-			row_sel <= pixel_row(5 downto 3);
-			col_sel <= pixel_column(5 downto 3);
-			char_disp <= '1';
-	ELSIF ((pixel_column >= CONV_STD_LOGIC_VECTOR(256,11)) AND (pixel_column <= CONV_STD_LOGIC_VECTOR(255,11)) AND (pixel_row >= CONV_STD_LOGIC_VECTOR(192,11)) AND (pixel_row <= CONV_STD_LOGIC_VECTOR(255,11))) THEN
+	 ELSIF ((pixel_column >= CONV_STD_LOGIC_VECTOR(192,11)) AND (pixel_column <= CONV_STD_LOGIC_VECTOR(223,11)) AND (pixel_row >= CONV_STD_LOGIC_VECTOR(224,11)) AND (pixel_row <= CONV_STD_LOGIC_VECTOR(255,11))) THEN
+			char_sel <= "010011"; --S
+			row_sel <= pixel_row(4 downto 2);
+			col_sel <= pixel_column(4 downto 2);
+			Char_disp <= '1';
+	ELSIF ((pixel_column >= CONV_STD_LOGIC_VECTOR(224,11)) AND (pixel_column <= CONV_STD_LOGIC_VECTOR(255,11)) AND (pixel_row >= CONV_STD_LOGIC_VECTOR(224,11)) AND (pixel_row <= CONV_STD_LOGIC_VECTOR(255,11))) THEN
+			char_sel <= "000011" ; --C
+			row_sel <= pixel_row(4 downto 2);
+			col_sel <= pixel_column(4 downto 2);
+			Char_disp <= '1';
+	ELSIF ((pixel_column >= CONV_STD_LOGIC_VECTOR(256,11)) AND (pixel_column <= CONV_STD_LOGIC_VECTOR(287,11)) AND (pixel_row >= CONV_STD_LOGIC_VECTOR(224,11)) AND (pixel_row <= CONV_STD_LOGIC_VECTOR(255,11))) THEN
 			char_sel <= "001111"; --O
-			row_sel <= pixel_row(5 downto 3);
-			col_sel <= pixel_column(5 downto 3);
-			char_disp <= '1';
-	ELSIF ((pixel_column >= CONV_STD_LOGIC_VECTOR(320,11)) AND (pixel_column <= CONV_STD_LOGIC_VECTOR(319,11)) AND (pixel_row >= CONV_STD_LOGIC_VECTOR(192,11)) AND (pixel_row <= CONV_STD_LOGIC_VECTOR(255,11))) THEN
-			char_sel <= "001110"; --N
-			row_sel <= pixel_row(5 downto 3);
-			col_sel <= pixel_column(5 downto 3);
-			char_disp <= '1';
-	ELSIF ((pixel_column >= CONV_STD_LOGIC_VECTOR(384,11)) AND (pixel_column <= CONV_STD_LOGIC_VECTOR(383,11)) AND (pixel_row >= CONV_STD_LOGIC_VECTOR(192,11)) AND (pixel_row <= CONV_STD_LOGIC_VECTOR(255,11))) THEN
-			char_sel <= "001111"; --O
-			row_sel <= pixel_row(5 downto 3);
-			col_sel <= pixel_column(5 downto 3);
-			char_disp <= '1';
-	ELSIF ((pixel_column >= CONV_STD_LOGIC_VECTOR(448,11)) AND (pixel_column <= CONV_STD_LOGIC_VECTOR(447,11)) AND (pixel_row >= CONV_STD_LOGIC_VECTOR(192,11)) AND (pixel_row <= CONV_STD_LOGIC_VECTOR(255,11))) THEN
-			char_sel <= "001000"; --H
-			row_sel <= pixel_row(5 downto 3);
-			col_sel <= pixel_column(5 downto 3);
-			char_disp <= '1';
-	--ELSIF ((pixel_column >= CONV_STD_LOGIC_VECTOR(512,11)) AND (pixel_column <= CONV_STD_LOGIC_VECTOR(575,11)) AND (pixel_row >= CONV_STD_LOGIC_VECTOR(192,11)) AND (pixel_row <= CONV_STD_LOGIC_VECTOR(255,11))) THEN
-		--	char_sel <= "000001"; --A
-		--	row_sel <= pixel_row(5 downto 3);
-		--	col_sel <= pixel_column(5 downto 3);
-		--	char_disp <= '1';
+			row_sel <= pixel_row(4 downto 2);
+			col_sel <= pixel_column(4 downto 2);
+			Char_disp <= '1';
+	ELSIF ((pixel_column >= CONV_STD_LOGIC_VECTOR(288,11)) AND (pixel_column <= CONV_STD_LOGIC_VECTOR(319,11)) AND (pixel_row >= CONV_STD_LOGIC_VECTOR(224,11)) AND (pixel_row <= CONV_STD_LOGIC_VECTOR(255,11))) THEN
+			char_sel <= "010010"; --R
+			row_sel <= pixel_row(4 downto 2);
+			col_sel <= pixel_column(4 downto 2);
+			Char_disp <= '1';
+	ELSIF ((pixel_column >= CONV_STD_LOGIC_VECTOR(320,11)) AND (pixel_column <= CONV_STD_LOGIC_VECTOR(351,11)) AND (pixel_row >= CONV_STD_LOGIC_VECTOR(224,11)) AND (pixel_row <= CONV_STD_LOGIC_VECTOR(255,11))) THEN
+			char_sel <= "000101"; --E
+			row_sel <= pixel_row(4 downto 2);
+			col_sel <= pixel_column(4 downto 2);
+			Char_disp <= '1';
+	ELSIF ((pixel_column >= CONV_STD_LOGIC_VECTOR(352,11)) AND (pixel_column <= CONV_STD_LOGIC_VECTOR(383,11)) AND (pixel_row >= CONV_STD_LOGIC_VECTOR(224,11)) AND (pixel_row <= CONV_STD_LOGIC_VECTOR(255,11))) THEN
+			case gamemode is
+				when '0' => char_sel <= score2t; --digit 2
+				when '1' => char_sel <= score2n; --digit 2
+				when others => char_sel <= score2n; --digit 2
+			end case;
+			row_sel <= pixel_row(4 downto 2);
+			col_sel <= pixel_column(4 downto 2);
+			Char_disp <= '1';
+	ELSIF ((pixel_column >= CONV_STD_LOGIC_VECTOR(384,11)) AND (pixel_column <= CONV_STD_LOGIC_VECTOR(415,11)) AND (pixel_row >= CONV_STD_LOGIC_VECTOR(224,11)) AND (pixel_row <= CONV_STD_LOGIC_VECTOR(255,11))) THEN
+			case gamemode is
+				when '0' => char_sel <= score1t; --digit 1
+				when '1' => char_sel <= score1n; 
+				when others => char_sel <= score1n; 
+			end case;
+			row_sel <= pixel_row(4 downto 2);
+			col_sel <= pixel_column(4 downto 2);
+			Char_disp <= '1';
+	ELSIF ((pixel_column >= CONV_STD_LOGIC_VECTOR(416,11)) AND (pixel_column <= CONV_STD_LOGIC_VECTOR(447,11)) AND (pixel_row >= CONV_STD_LOGIC_VECTOR(224,11)) AND (pixel_row <= CONV_STD_LOGIC_VECTOR(255,11))) THEN
+			case gamemode is
+				when '0' => char_sel <= score0t; --digit 0
+				when '1' => char_sel <= score0n; 
+				when others => char_sel <= score0n; 
+			end case;
+			row_sel <= pixel_row(4 downto 2);
+			col_sel <= pixel_column(4 downto 2);
+			Char_disp <= '1';
 	ELSE
 		--reset the char rom mux
 		row_sel <= "000";
@@ -163,6 +192,6 @@ BEGIN
 		char_sel <= "000000";
 		char_disp <= '0';
 	END IF;
-END process RGB_Display;
+END process Text_Display;
 END behavior;
 

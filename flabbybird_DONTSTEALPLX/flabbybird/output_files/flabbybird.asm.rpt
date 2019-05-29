@@ -1,6 +1,6 @@
 Assembler report for flabbybird
-Wed May 29 23:05:06 2019
-Quartus II 64-Bit Version 13.0.0 Build 156 04/24/2013 SJ Full Version
+Thu May 30 07:51:18 2019
+Quartus II 64-Bit Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
 
 
 ---------------------
@@ -10,7 +10,7 @@ Quartus II 64-Bit Version 13.0.0 Build 156 04/24/2013 SJ Full Version
   2. Assembler Summary
   3. Assembler Settings
   4. Assembler Generated Files
-  5. Assembler Device Options: C:/Users/sshe325/FlappyBirdVHDL/flabbybird_DONTSTEALPLX/flabbybird/output_files/flabbybird.sof
+  5. Assembler Device Options: C:/Users/Sherjeel/FlappyBirdVHDL/flabbybird_DONTSTEALPLX/flabbybird/output_files/flabbybird.sof
   6. Assembler Messages
 
 
@@ -37,7 +37,7 @@ applicable agreement for further details.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Wed May 29 23:05:06 2019 ;
+; Assembler Status      ; Successful - Thu May 30 07:51:18 2019 ;
 ; Revision Name         ; flabbybird                            ;
 ; Top-level Entity Name ; flabbybird                            ;
 ; Family                ; Cyclone III                           ;
@@ -77,24 +77,24 @@ applicable agreement for further details.
 +-----------------------------------------------------------------------------+----------+---------------+
 
 
-+------------------------------------------------------------------------------------------------+
-; Assembler Generated Files                                                                      ;
-+------------------------------------------------------------------------------------------------+
-; File Name                                                                                      ;
-+------------------------------------------------------------------------------------------------+
-; C:/Users/sshe325/FlappyBirdVHDL/flabbybird_DONTSTEALPLX/flabbybird/output_files/flabbybird.sof ;
-+------------------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------+
+; Assembler Generated Files                                                                       ;
++-------------------------------------------------------------------------------------------------+
+; File Name                                                                                       ;
++-------------------------------------------------------------------------------------------------+
+; C:/Users/Sherjeel/FlappyBirdVHDL/flabbybird_DONTSTEALPLX/flabbybird/output_files/flabbybird.sof ;
++-------------------------------------------------------------------------------------------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------+
-; Assembler Device Options: C:/Users/sshe325/FlappyBirdVHDL/flabbybird_DONTSTEALPLX/flabbybird/output_files/flabbybird.sof ;
-+----------------+---------------------------------------------------------------------------------------------------------+
-; Option         ; Setting                                                                                                 ;
-+----------------+---------------------------------------------------------------------------------------------------------+
-; Device         ; EP3C16F484C6                                                                                            ;
-; JTAG usercode  ; 0x005A2BA3                                                                                              ;
-; Checksum       ; 0x005A2BA3                                                                                              ;
-+----------------+---------------------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------------+
+; Assembler Device Options: C:/Users/Sherjeel/FlappyBirdVHDL/flabbybird_DONTSTEALPLX/flabbybird/output_files/flabbybird.sof ;
++----------------+----------------------------------------------------------------------------------------------------------+
+; Option         ; Setting                                                                                                  ;
++----------------+----------------------------------------------------------------------------------------------------------+
+; Device         ; EP3C16F484C6                                                                                             ;
+; JTAG usercode  ; 0x00662030                                                                                               ;
+; Checksum       ; 0x00662030                                                                                               ;
++----------------+----------------------------------------------------------------------------------------------------------+
 
 
 +--------------------+
@@ -102,15 +102,15 @@ applicable agreement for further details.
 +--------------------+
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Assembler
-    Info: Version 13.0.0 Build 156 04/24/2013 SJ Full Version
-    Info: Processing started: Wed May 29 23:05:05 2019
+    Info: Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
+    Info: Processing started: Thu May 30 07:51:16 2019
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off flabbybird -c flabbybird
 Info (115031): Writing out detailed assembly data for power analysis
 Info (115030): Assembler is generating device programming files
 Info: Quartus II 64-Bit Assembler was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 482 megabytes
-    Info: Processing ended: Wed May 29 23:05:06 2019
-    Info: Elapsed time: 00:00:01
-    Info: Total CPU time (on all processors): 00:00:01
+    Info: Peak virtual memory: 4574 megabytes
+    Info: Processing ended: Thu May 30 07:51:18 2019
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:02
 
 

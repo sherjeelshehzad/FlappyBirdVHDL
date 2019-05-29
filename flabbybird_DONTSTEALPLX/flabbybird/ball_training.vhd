@@ -29,20 +29,36 @@ ENTITY ball_training IS
 Generic(ADDR_WIDTH: integer := 12; DATA_WIDTH: integer := 1);
 
    PORT(SIGNAL mouse, PB0, PB1, Clock 			: IN std_logic;
+			SIGNAL pipe_x1, pipe_gap1 : IN std_logic_vector(10 DOWNTO 0);
+			SIGNAL pipe_display1 : IN std_logic;
+			SIGNAL pipe_x2, pipe_gap2 : IN std_logic_vector(10 DOWNTO 0);
+			SIGNAL pipe_display2 : IN std_logic;
+			SIGNAL pipe_x3, pipe_gap3 : IN std_logic_vector(10 DOWNTO 0);
+			SIGNAL pipe_display3 : IN std_logic;
+			SIGNAL bg_input : IN std_logic_vector(11 DOWNTO 0);
+			SIGNAL pause : IN std_logic;
+			SIGNAL resetsignal : IN std_logic;
         SIGNAL Red,Green,Blue 			: OUT std_logic_vector(3 downto 0);
-        SIGNAL Horiz_sync,Vert_sync		: OUT std_logic);
+        SIGNAL Horiz_sync,Vert_sync		: OUT std_logic;
+		  SIGNAL pipe_en1, pipe_en2, pipe_en3 : out std_logic;
+		  SIGNAL pipe_reset1, pipe_reset2, pipe_reset3, hit : out std_logic;
+		  SIGNAL pipe_sz : out std_logic_vector(10 DOWNTO 0);
+		  SIGNAL pix_row, pix_column			: out std_logic_vector(10 DOWNTO 0);
+		  SIGNAL sc0,sc1,sc2: out std_logic_vector(5 downto 0) --score digits
+		  );
 END ball_training;
 
 architecture behavior of ball_training is
 
 			-- Video Display Signals   
 SIGNAL vert_sync_int,
-		reset, Ball_on, Text_on			: std_logic;
+		reset, Ball_on, Text_on, Pipe_on, Chakra_on	: std_logic;
 SIGNAL Red_Data, Green_Data, Blue_Data : std_logic_vector(3 DOWNTO 0);
-SIGNAL Size 								: std_logic_vector(9 DOWNTO 0);  
-SIGNAL Ball_Y_motion 						: std_logic_vector(9 DOWNTO 0);
-SIGNAL Ball_Y_pos, Ball_X_pos				: std_logic_vector(9 DOWNTO 0);
-SIGNAL pixel_row, pixel_column				: std_logic_vector(10 DOWNTO 0); 
+SIGNAL Size, Pipe_Size, Gap_Size 		: std_logic_vector(10 DOWNTO 0);  
+SIGNAL Ball_Y_motion 						: std_logic_vector(10 DOWNTO 0);
+SIGNAL Ball_Y_pos								: std_logic_vector(10 DOWNTO 0) := CONV_STD_LOGIC_VECTOR(240,11);
+SIGNAL Ball_X_pos								: std_logic_vector(10 DOWNTO 0);
+SIGNAL pixel_row, pixel_column			: std_logic_vector(10 DOWNTO 0); 
 
 --Character select/display signals
 
@@ -50,6 +66,12 @@ SIGNAL row_sel : std_logic_vector(2 downto 0);
 SIGNAL col_sel : std_logic_vector(2 downto 0);
 SIGNAL char_sel : std_logic_vector(5 downto 0) := "000000";
 SIGNAL char_out : std_logic;
+SIGNAL char_disp : std_logic;
+
+--Game logic signals
+SIGNAL score0: std_logic_vector(5 downto 0); --score digit 0 
+SIGNAL score1: std_logic_vector(5 downto 0); --score digit 1 
+SIGNAL score2: std_logic_vector(5 downto 0); --score digit 2
 
 COMPONENT char_rom
 		PORT(character_address	:	IN STD_LOGIC_VECTOR (5 DOWNTO 0);
@@ -72,90 +94,270 @@ BEGIN
 			font_col => col_sel,
 			rom_mux_output => char_out);
 			
-Size <= CONV_STD_LOGIC_VECTOR(8,10);
-Ball_X_pos <= CONV_STD_LOGIC_VECTOR(320,10);
+Size <= CONV_STD_LOGIC_VECTOR(8,11);
+Pipe_Size <= CONV_STD_LOGIC_VECTOR(16,11);
+Gap_Size <= CONV_STD_LOGIC_VECTOR(96,11);
+Ball_X_pos <= CONV_STD_LOGIC_VECTOR(320,11);
 
-
-		-- need internal copy of vert_sync to read
+		-- need external copy of some signals
 vert_sync <= vert_sync_int;
+pipe_sz <= Pipe_size;
+pix_row <= pixel_row;
+pix_column <= pixel_column;
+sc0 <= score0;
+sc1 <= score1;
+sc2 <= score2;
 
-		-- Colors for pixel data on video signal
-Red_Data <= "1111";
-		-- Turn off Green and Blue when displaying ball
-Green_Data <= NOT (Ball_on OR char_out) & "000";
-Blue_Data <= NOT (Ball_on OR char_out) & "000";
+--Pipe/Ball/Character display mux
+--needs redoing for proper structure/overlap handling/colour management for different objects
+--Red_Data <= "1111";
+--Green_Data <= (NOT (Ball_on OR char_out OR (pipe_display1 AND pipe_on) OR (pipe_display2 AND pipe_on) OR (pipe_display3 AND pipe_on))) & "011";
+--Blue_Data <= (NOT (Ball_on OR char_out OR (pipe_display1 AND pipe_on) OR (pipe_display2 AND pipe_on) OR (pipe_display3 AND pipe_on))) & "000";
 
+--Ball = "111100000000" -red
+--Char = "000000000000" -black
+--Pipe = "101001010000" -brown
+--everything else - bg_input
+
+Red_Data <= "1111" when (ball_on = '1') AND (Char_disp = '1') AND (char_out = '1')
+		else "0000" when (char_out = '1') AND (Char_disp = '1')
+		else "1010" when (pipe_display1 = '1' AND pipe_on = '1') OR (pipe_display2 = '1' AND pipe_on = '1') OR (pipe_display3 = '1' AND pipe_on = '1')
+		else bg_input(11 downto 8);
+		
+Green_Data <= "0000" when (ball_on = '1') AND (Char_disp = '1') AND (char_out = '1')
+		else "0000" when (char_out = '1') AND (Char_disp = '1')
+		else "0101" when (pipe_display1 = '1' AND pipe_on = '1') OR (pipe_display2 = '1' AND pipe_on = '1') OR (pipe_display3 = '1' AND pipe_on = '1')
+		else bg_input(7 downto 4);
+		
+Blue_Data <= "0000" when (ball_on = '1') AND (Char_disp = '1') AND (char_out = '1')
+		else "0000" when (char_out = '1') AND (Char_disp = '1')
+		else "0000" when (pipe_display1 = '1' AND pipe_on = '1') OR (pipe_display2 = '1' AND pipe_on = '1') OR (pipe_display3 = '1' AND pipe_on = '1')
+		else bg_input(3 downto 0);
+
+Pipe_Display: process(pipe_x1, pipe_x2, pipe_x3, pixel_column, pixel_row)
+begin
+	--turn pipe display on if current (row,column) location is within bounds of any pipe (except gaps)
+	IF ((pixel_column + pipe_size >= pipe_x1) AND ((pixel_column) <= pipe_x1 + Pipe_Size) AND ((pixel_row < pipe_gap1) OR ((pixel_row) >= pipe_gap1 + gap_size))) THEN
+		Pipe_on <= '1';
+	ELSIF ((pixel_column + pipe_size >= pipe_x2) AND ((pixel_column) <= pipe_x2 + Pipe_Size) AND ((pixel_row < pipe_gap2) OR ((pixel_row) >= pipe_gap2 + gap_size))) THEN
+		Pipe_on <= '1';
+	ELSIF ((pixel_column + pipe_size >= pipe_x3) AND ((pixel_column) <= pipe_x3 + Pipe_Size) AND ((pixel_row < pipe_gap3) OR ((pixel_row) >= pipe_gap3 + gap_size))) THEN
+		Pipe_on <= '1';
+	ELSE
+		--(default background display)
+		Pipe_on <= '0';
+	END IF;
+END process Pipe_Display;
+
+--turn display on if within bounds of characters/ball
 --we select 3 downto 1 to increase size of the characters displayed
-RGB_Display: Process (Ball_X_pos, Ball_Y_pos, pixel_column, pixel_row, Size)
-BEGIN
-			-- Set Ball_on ='1' to display ball
- IF ('0' & Ball_X_pos <= pixel_column + Size) AND
+Text_Display : process(Ball_X_pos, Ball_Y_pos, pixel_column, pixel_row)
+variable ballrow, ballcol : std_logic_vector(10 DOWNTO 0);
+begin
+	 IF ('0' & Ball_X_pos <= pixel_column + Size) AND
  			-- compare positive numbers only
- 	(Ball_X_pos + Size >= '0' & pixel_column) AND
+ 	(Ball_X_pos + Size >= pixel_column) AND
  	('0' & Ball_Y_pos <= pixel_row + Size) AND
- 	(Ball_Y_pos + Size >= '0' & pixel_row ) THEN
+ 	(Ball_Y_pos + Size >= pixel_row ) THEN
+		char_sel <= "111111"; --kunai
+		--calculate position of row and column relative to ball coordinates
+		ballrow := pixel_row - (Ball_Y_pos - Size);
+		ballcol := pixel_column - (Ball_X_pos - Size);
+		row_sel <= ballrow(3 downto 1);
+		col_sel <= ballcol(3 downto 1);
+		Char_disp <= '1';
  		Ball_on <= '1';
- 	ELSIF ((pixel_column >= CONV_STD_LOGIC_VECTOR(0,10)) AND (pixel_column <= CONV_STD_LOGIC_VECTOR(14,10)) AND (pixel_row >= CONV_STD_LOGIC_VECTOR(0,10)) AND (pixel_row <= CONV_STD_LOGIC_VECTOR(14,10))) THEN
+ 	ELSIF ((pixel_column >= CONV_STD_LOGIC_VECTOR(0,11)) AND (pixel_column <= CONV_STD_LOGIC_VECTOR(14,11)) AND (pixel_row >= CONV_STD_LOGIC_VECTOR(0,11)) AND (pixel_row <= CONV_STD_LOGIC_VECTOR(15,11))) THEN
 			char_sel <= "010011"; --S
 			row_sel <= pixel_row(3 downto 1);
 			col_sel <= pixel_column(3 downto 1);
-	ELSIF ((pixel_column >= CONV_STD_LOGIC_VECTOR(15,10)) AND (pixel_column <= CONV_STD_LOGIC_VECTOR(30,10)) AND (pixel_row >= CONV_STD_LOGIC_VECTOR(0,10)) AND (pixel_row <= CONV_STD_LOGIC_VECTOR(14,10))) THEN
+			Char_disp <= '1';
+	ELSIF ((pixel_column >= CONV_STD_LOGIC_VECTOR(15,11)) AND (pixel_column <= CONV_STD_LOGIC_VECTOR(30,11)) AND (pixel_row >= CONV_STD_LOGIC_VECTOR(0,11)) AND (pixel_row <= CONV_STD_LOGIC_VECTOR(15,11))) THEN
 			char_sel <= "000011" ; --C
 			row_sel <= pixel_row(3 downto 1);
 			col_sel <= pixel_column(3 downto 1);
-	ELSIF ((pixel_column >= CONV_STD_LOGIC_VECTOR(31,10)) AND (pixel_column <= CONV_STD_LOGIC_VECTOR(46,10)) AND (pixel_row >= CONV_STD_LOGIC_VECTOR(0,10)) AND (pixel_row <= CONV_STD_LOGIC_VECTOR(14,10))) THEN
+			Char_disp <= '1';
+	ELSIF ((pixel_column >= CONV_STD_LOGIC_VECTOR(31,11)) AND (pixel_column <= CONV_STD_LOGIC_VECTOR(46,11)) AND (pixel_row >= CONV_STD_LOGIC_VECTOR(0,11)) AND (pixel_row <= CONV_STD_LOGIC_VECTOR(15,11))) THEN
 			char_sel <= "001111"; --O
 			row_sel <= pixel_row(3 downto 1);
 			col_sel <= pixel_column(3 downto 1);
-	ELSIF ((pixel_column >= CONV_STD_LOGIC_VECTOR(47,10)) AND (pixel_column <= CONV_STD_LOGIC_VECTOR(62,10)) AND (pixel_row >= CONV_STD_LOGIC_VECTOR(0,10)) AND (pixel_row <= CONV_STD_LOGIC_VECTOR(14,10))) THEN
+			Char_disp <= '1';
+	ELSIF ((pixel_column >= CONV_STD_LOGIC_VECTOR(47,11)) AND (pixel_column <= CONV_STD_LOGIC_VECTOR(62,11)) AND (pixel_row >= CONV_STD_LOGIC_VECTOR(0,11)) AND (pixel_row <= CONV_STD_LOGIC_VECTOR(15,11))) THEN
 			char_sel <= "010010"; --R
 			row_sel <= pixel_row(3 downto 1);
 			col_sel <= pixel_column(3 downto 1);
-	ELSIF ((pixel_column >= CONV_STD_LOGIC_VECTOR(63,10)) AND (pixel_column <= CONV_STD_LOGIC_VECTOR(78,10)) AND (pixel_row >= CONV_STD_LOGIC_VECTOR(0,10)) AND (pixel_row <= CONV_STD_LOGIC_VECTOR(14,10))) THEN
+			Char_disp <= '1';
+	ELSIF ((pixel_column >= CONV_STD_LOGIC_VECTOR(63,11)) AND (pixel_column <= CONV_STD_LOGIC_VECTOR(78,11)) AND (pixel_row >= CONV_STD_LOGIC_VECTOR(0,11)) AND (pixel_row <= CONV_STD_LOGIC_VECTOR(15,11))) THEN
 			char_sel <= "000101"; --E
 			row_sel <= pixel_row(3 downto 1);
 			col_sel <= pixel_column(3 downto 1);
+			Char_disp <= '1';
+	ELSIF ((pixel_column >= CONV_STD_LOGIC_VECTOR(79,11)) AND (pixel_column <= CONV_STD_LOGIC_VECTOR(94,11)) AND (pixel_row >= CONV_STD_LOGIC_VECTOR(0,11)) AND (pixel_row <= CONV_STD_LOGIC_VECTOR(15,11))) THEN
+			char_sel <= score2; --digit 2
+			row_sel <= pixel_row(3 downto 1);
+			col_sel <= pixel_column(3 downto 1);
+			Char_disp <= '1';
+	ELSIF ((pixel_column >= CONV_STD_LOGIC_VECTOR(95,11)) AND (pixel_column <= CONV_STD_LOGIC_VECTOR(110,11)) AND (pixel_row >= CONV_STD_LOGIC_VECTOR(0,11)) AND (pixel_row <= CONV_STD_LOGIC_VECTOR(15,11))) THEN
+			char_sel <= score1; --digit 1
+			row_sel <= pixel_row(3 downto 1);
+			col_sel <= pixel_column(3 downto 1);
+			Char_disp <= '1';
+	ELSIF ((pixel_column >= CONV_STD_LOGIC_VECTOR(111,11)) AND (pixel_column <= CONV_STD_LOGIC_VECTOR(126,11)) AND (pixel_row >= CONV_STD_LOGIC_VECTOR(0,11)) AND (pixel_row <= CONV_STD_LOGIC_VECTOR(15,11))) THEN
+			char_sel <= score0; --digit 0
+			row_sel <= pixel_row(3 downto 1);
+			col_sel <= pixel_column(3 downto 1);
+			Char_disp <= '1';
 	ELSE
-		--reset the char rom mux
-		row_sel <= "000";
-		col_sel <= "000";
-		char_sel <= "000000";
- 		Ball_on <= '0';
+			Ball_on <= '0';
+			row_sel <= "000";
+			col_sel <= "000";
+			char_sel <= "000000";
+			Char_disp <= '0'; --(default background display)
 	END IF;
-END process RGB_Display;
+end process Text_Display;
 
+--detect score so far
+Scoring: process(vert_sync_int, pipe_on, ball_on, Ball_X_pos, pipe_x1, pipe_x2, pipe_x3)
+VARIABLE sc0: unsigned(3 downto 0); --score digit 0 
+VARIABLE sc1: unsigned(3 downto 0); --score digit 1
+VARIABLE sc2: unsigned(3 downto 0); --score digit 2
+BEGIN
+	if (pause = '0') and (resetsignal = '0') then
+	IF (vert_sync_int'event and vert_sync_int = '1') THEN
+		--if ball's left edge has passed pipe's right edge
+		if (Ball_X_pos = (pipe_x1 + pipe_size)) OR (Ball_X_pos = (pipe_x2 + pipe_size)) OR (Ball_X_pos = (pipe_x3 + pipe_size)) then
+			sc0 := sc0 + '1'; --increment score
+			if sc0 = 10 then
+				sc0 := "0000";
+				sc1 := sc1 + '1';
+				if sc1 = 10 then
+					sc1 := "0000";
+					sc2 := sc2 + '1';
+					if sc2 = 10 then
+						sc0 := "0000";
+						sc1 := "0000";
+						sc2 := "0000";
+					end if;
+				end if;
+			end if;
+		end if;
+	END IF;
+	elsif (resetsignal = '1') then
+		sc0 := "0000";
+		sc1 := "0000";
+		sc2 := "0000";
+	end if;
+	score0 <= "11" & std_logic_vector(sc0);
+	score1 <= "11" & std_logic_vector(sc1);
+	score2 <= "11" & std_logic_vector(sc2);
+END process Scoring;
+
+--detect if collision has happened 
+Collision: process(pause,ball_on,pipe_on)
+BEGIN
+	if (pause = '0') then
+		if ((pipe_display1 = '1' AND pipe_on = '1') OR (pipe_display2 = '1' AND pipe_on = '1') OR (pipe_display3 = '1' AND pipe_on = '1')) AND ((ball_on = '1') AND (Char_disp = '1') AND (char_out = '1')) then
+			hit <= '1';
+		else
+			hit <= '0';
+		end if;
+	end if;
+end process Collision;
+
+--pipe control and display process 
+Pipe_Control: process(resetsignal,pause,vert_sync_int)
+--save pipe previous states
+variable pipe1_en_prev : std_logic;
+variable pipe2_en_prev : std_logic;
+variable pipe3_en_prev : std_logic;
+BEGIN
+	if (resetsignal = '1') then
+		pipe_reset1 <= '1';
+		pipe_reset2 <= '1';
+		pipe_reset3 <= '1';
+	else
+	IF (vert_sync_int'event and vert_sync_int = '1') THEN
+	if (pause = '0') then
+		pipe_en1 <= pipe1_en_prev;
+		pipe_en2 <= pipe2_en_prev;
+		pipe_en3 <= pipe3_en_prev;
+		--pipe 1
+		if (pipe_x1 + pipe_size <= CONV_STD_LOGIC_VECTOR(0,11)) then
+			pipe_reset1 <= '1';
+			pipe_en1 <= '0';
+			pipe1_en_prev := '0';
+		elsif (pipe_x1 <= CONV_STD_LOGIC_VECTOR(640,11)) then
+			pipe_reset1 <= '0';
+			pipe_en1 <= '1';
+			pipe1_en_prev := '1';
+		end if;
+		--pipe 2, starts after pipe 1 is a third of the way across
+		if (pipe_x2 + pipe_size <= CONV_STD_LOGIC_VECTOR(0,11)) then
+			pipe_reset2 <= '1';
+			pipe_en2 <= '0';
+			pipe2_en_prev := '0';
+		elsif pipe_x2 <= CONV_STD_LOGIC_VECTOR(640,11) AND pipe_x1 <= CONV_STD_LOGIC_VECTOR(432,11) then
+			pipe_reset2 <= '0';
+			pipe_en2 <= '1';
+			pipe2_en_prev := '1';
+		end if;
+		--pipe 3, starts after pipe 1 is two thirds of the way across
+		if (pipe_x3 + pipe_size <= CONV_STD_LOGIC_VECTOR(0,11)) then
+			pipe_reset3 <= '1';
+			pipe_en3 <= '0';
+			pipe3_en_prev := '0';
+		elsif pipe_x3 <= CONV_STD_LOGIC_VECTOR(640,11) AND pipe_x1 <= CONV_STD_LOGIC_VECTOR(224,11) then
+			pipe_reset3 <= '0';
+			pipe_en3 <= '1';
+			pipe3_en_prev := '1';
+		end if;
+	else
+		pipe_en1 <= '0';
+		pipe_en2 <= '0';
+		pipe_en3 <= '0';
+	end if;
+	END IF;
+	end if;
+	
+END process Pipe_Control;
 
 --ball vertical movement logic
-Move_Ball: process(vert_sync_int)
-VARIABLE PRESSED : STD_LOGIC;
+Move_Ball: process(pause,resetsignal,vert_sync_int)
 BEGIN
+	if (pause = '0') and (resetsignal = '0') then
 				IF (vert_sync_int'event and vert_sync_int = '1') THEN
 				-- Move ball once every vertical sync
 				-- Bounce off top or bottom of screen
-					IF (('0' & Ball_Y_pos) >= CONV_STD_LOGIC_VECTOR(480,10) - Size) THEN
-						--not game over when it hits the bottom for testing purposes
+					IF (Ball_Y_pos >= CONV_STD_LOGIC_VECTOR(480,11) - Size) THEN
+						--not game over when it hits the bottom
 						IF (mouse = '1') THEN
-							Ball_Y_motion <= - CONV_STD_LOGIC_VECTOR(3,10);
+							Ball_Y_motion <= - CONV_STD_LOGIC_VECTOR(3,11);
 						ELSE
-							Ball_Y_motion <= CONV_STD_LOGIC_VECTOR(0,10);
+							Ball_Y_motion <= CONV_STD_LOGIC_VECTOR(0,11);
 						END IF;
-					ELSIF (('0' & Ball_Y_pos) < CONV_STD_LOGIC_VECTOR(480,10) - Size) AND (Ball_Y_pos > Size) THEN 
+					ELSIF (Ball_Y_pos < (CONV_STD_LOGIC_VECTOR(480,11) - Size)) AND (Ball_Y_pos > Size) THEN 
 						IF (mouse = '1') THEN
-							Ball_Y_motion <= - CONV_STD_LOGIC_VECTOR(3,10);
+							Ball_Y_motion <= - CONV_STD_LOGIC_VECTOR(4,11);
 						ELSE
-							Ball_Y_motion <= CONV_STD_LOGIC_VECTOR(4,10);
+							--add acceleration of 1 pixel per interval squared
+							Ball_Y_motion <= Ball_Y_motion + CONV_STD_LOGIC_VECTOR(1,11);
+							--cap downwards velocity at 7 pixels per interval
+							if Ball_Y_motion >= CONV_STD_LOGIC_VECTOR(6,11) then
+								Ball_Y_motion <= CONV_STD_LOGIC_VECTOR(6,11);
+							end if;
 						END IF;
 					ELSIF Ball_Y_pos <= Size THEN
-						Ball_Y_motion <= CONV_STD_LOGIC_VECTOR(2,10);
+						Ball_Y_motion <= CONV_STD_LOGIC_VECTOR(2,11);
 					END IF;
 					-- Compute next ball Y position
 					Ball_Y_pos <= Ball_Y_pos + Ball_Y_motion;
-					--reset to middle
-					IF (PB0 = '1') THEN
-						Ball_Y_pos <= CONV_STD_LOGIC_VECTOR(240,10);
-						Ball_Y_motion <= CONV_STD_LOGIC_VECTOR(0,10);
-					END IF;
 				END IF;
+	elsif (pause = '1') and (resetsignal = '0') then --only pause movement
+		Ball_Y_motion <= CONV_STD_LOGIC_VECTOR(0,11);
+	elsif (resetsignal = '1') then --reset and pause movement
+		Ball_Y_motion <= CONV_STD_LOGIC_VECTOR(0,11);
+		Ball_Y_pos <= CONV_STD_LOGIC_VECTOR(240,11);
+	end if;
 END process Move_Ball;
 
 END behavior;

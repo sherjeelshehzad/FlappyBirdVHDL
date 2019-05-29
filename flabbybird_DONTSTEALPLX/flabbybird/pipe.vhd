@@ -9,6 +9,7 @@ entity pipe is
 		reset: in std_logic;
 		pipe_size: in std_logic_vector(10 DOWNTO 0);
 		lfsr_in: in std_logic_vector(10 downto 0);
+		level : in std_logic_vector(1 downto 0);
 		pipe_x: out std_logic_vector(10 DOWNTO 0);
 		pipe_gap: out std_logic_vector(10 DOWNTO 0);
 		pipe_display : out std_logic --turn the pipe display on or off
@@ -30,7 +31,13 @@ Move_Pipe: process(reset,vert_sync)
 			pipe_on <= '0';
 		elsif (vert_sync'event and vert_sync = '1') then
 			if (move_en = '1') then
-				pipe_x_motion <= -CONV_STD_LOGIC_VECTOR(3,11);
+				case level is
+					when "00" => pipe_x_motion <= -CONV_STD_LOGIC_VECTOR(3,11);
+					when "01" => pipe_x_motion <= -CONV_STD_LOGIC_VECTOR(4,11);
+					when "10" => pipe_x_motion <= -CONV_STD_LOGIC_VECTOR(6,11);
+					when "11" => pipe_x_motion <= -CONV_STD_LOGIC_VECTOR(6,11);
+					when others => pipe_x_motion <= -CONV_STD_LOGIC_VECTOR(3,11);
+				end case;
 				pipe_on <= '1';
 			else
 				pipe_x_motion <= CONV_STD_LOGIC_VECTOR(0,11);
@@ -52,8 +59,8 @@ Pipe_Gapper: process(reset,vert_sync)
 			rng(8) := '0';
 			pipe_gap_pos <= rng;
 		end if;
-		
-		if (reset = '1') then
+		--falling edge of reset signal
+		if (reset'event and reset = '0') then
 			pipe_gap <= pipe_gap_pos;
 		end if;
 end process Pipe_Gapper;

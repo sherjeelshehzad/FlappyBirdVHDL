@@ -20,9 +20,9 @@ applicable agreement for further details.
 */
 (header "symbol" (version "1.1"))
 (symbol
-	(rect 16 16 248 320)
+	(rect 16 16 248 384)
 	(text "ball" (rect 5 0 16 12)(font "Arial" ))
-	(text "inst" (rect 8 288 20 300)(font "Arial" ))
+	(text "inst" (rect 8 352 20 364)(font "Arial" ))
 	(port
 		(pt 0 32)
 		(input)
@@ -240,6 +240,34 @@ applicable agreement for further details.
 		(text "pix_column[10..0]" (rect 143 251 211 263)(font "Arial" ))
 		(line (pt 232 256)(pt 216 256)(line_width 3))
 	)
+	(port
+		(pt 232 272)
+		(output)
+		(text "level[1..0]" (rect 0 0 36 12)(font "Arial" ))
+		(text "level[1..0]" (rect 175 267 211 279)(font "Arial" ))
+		(line (pt 232 272)(pt 216 272)(line_width 3))
+	)
+	(port
+		(pt 232 288)
+		(output)
+		(text "sc0[5..0]" (rect 0 0 34 12)(font "Arial" ))
+		(text "sc0[5..0]" (rect 177 283 211 295)(font "Arial" ))
+		(line (pt 232 288)(pt 216 288)(line_width 3))
+	)
+	(port
+		(pt 232 304)
+		(output)
+		(text "sc1[5..0]" (rect 0 0 33 12)(font "Arial" ))
+		(text "sc1[5..0]" (rect 178 299 211 311)(font "Arial" ))
+		(line (pt 232 304)(pt 216 304)(line_width 3))
+	)
+	(port
+		(pt 232 320)
+		(output)
+		(text "sc2[5..0]" (rect 0 0 34 12)(font "Arial" ))
+		(text "sc2[5..0]" (rect 177 315 211 327)(font "Arial" ))
+		(line (pt 232 320)(pt 216 320)(line_width 3))
+	)
 	(parameter
 		"ADDR_WIDTH"
 		"12"
@@ -251,7 +279,7 @@ applicable agreement for further details.
 		""
 		(type "PARAMETER_SIGNED_DEC")	)
 	(drawing
-		(rectangle (rect 16 16 216 288)(line_width 1))
+		(rectangle (rect 16 16 216 352)(line_width 1))
 	)
 	(annotation_block (parameter)(rect 248 -64 348 16))
 )

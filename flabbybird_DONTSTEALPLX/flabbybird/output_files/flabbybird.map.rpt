@@ -1,6 +1,6 @@
 Analysis & Synthesis report for flabbybird
-Wed May 29 23:04:54 2019
-Quartus II 64-Bit Version 13.0.0 Build 156 04/24/2013 SJ Full Version
+Thu May 30 07:50:52 2019
+Quartus II 64-Bit Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
 
 
 ---------------------
@@ -40,10 +40,8 @@ Quartus II 64-Bit Version 13.0.0 Build 156 04/24/2013 SJ Full Version
  32. Parameter Settings for User Entity Instance: ball_over:inst19|char_rom:CHAR|altsyncram:altsyncram_component
  33. altpll Parameter Settings by Entity Instance
  34. altsyncram Parameter Settings by Entity Instance
- 35. Port Connectivity Checks: "ball_training:inst18|char_rom:CHAR"
- 36. Port Connectivity Checks: "ball_training:inst18|VGA_SYNC:SYNC"
- 37. Elapsed Time Per Partition
- 38. Analysis & Synthesis Messages
+ 35. Elapsed Time Per Partition
+ 36. Analysis & Synthesis Messages
 
 
 
@@ -66,24 +64,24 @@ applicable agreement for further details.
 
 
 
-+----------------------------------------------------------------------------------+
-; Analysis & Synthesis Summary                                                     ;
-+------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Wed May 29 23:04:54 2019       ;
-; Quartus II 64-Bit Version          ; 13.0.0 Build 156 04/24/2013 SJ Full Version ;
-; Revision Name                      ; flabbybird                                  ;
-; Top-level Entity Name              ; flabbybird                                  ;
-; Family                             ; Cyclone III                                 ;
-; Total logic elements               ; 1,100                                       ;
-;     Total combinational functions  ; 1,024                                       ;
-;     Dedicated logic registers      ; 494                                         ;
-; Total registers                    ; 494                                         ;
-; Total pins                         ; 47                                          ;
-; Total virtual pins                 ; 0                                           ;
-; Total memory bits                  ; 240,640                                     ;
-; Embedded Multiplier 9-bit elements ; 0                                           ;
-; Total PLLs                         ; 1                                           ;
-+------------------------------------+---------------------------------------------+
++---------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                    ;
++------------------------------------+--------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Thu May 30 07:50:52 2019      ;
+; Quartus II 64-Bit Version          ; 13.0.0 Build 156 04/24/2013 SJ Web Edition ;
+; Revision Name                      ; flabbybird                                 ;
+; Top-level Entity Name              ; flabbybird                                 ;
+; Family                             ; Cyclone III                                ;
+; Total logic elements               ; 2,235                                      ;
+;     Total combinational functions  ; 2,092                                      ;
+;     Dedicated logic registers      ; 677                                        ;
+; Total registers                    ; 677                                        ;
+; Total pins                         ; 47                                         ;
+; Total virtual pins                 ; 0                                          ;
+; Total memory bits                  ; 246,784                                    ;
+; Embedded Multiplier 9-bit elements ; 0                                          ;
+; Total PLLs                         ; 1                                          ;
++------------------------------------+--------------------------------------------+
 
 
 +----------------------------------------------------------------------------------------------------------------------+
@@ -173,66 +171,60 @@ applicable agreement for further details.
 +----------------------------------------------------------------------------+--------------------+--------------------+
 
 
-+------------------------------------------+
-; Parallel Compilation                     ;
-+----------------------------+-------------+
-; Processors                 ; Number      ;
-+----------------------------+-------------+
-; Number detected on machine ; 6           ;
-; Maximum allowed            ; 6           ;
-;                            ;             ;
-; Average used               ; 1.00        ;
-; Maximum used               ; 6           ;
-;                            ;             ;
-; Usage by Processor         ; % Time Used ;
-;     Processor 1            ; 100.0%      ;
-;     Processors 2-6         ; < 0.1%      ;
-+----------------------------+-------------+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 8      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                            ;
-+----------------------------------+-----------------+----------------------------------------+-------------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                              ; File Name with Absolute Path                                                              ; Library ;
-+----------------------------------+-----------------+----------------------------------------+-------------------------------------------------------------------------------------------+---------+
-; ball_training.vhd                ; yes             ; User VHDL File                         ; C:/Users/sshe325/FlappyBirdVHDL/flabbybird_DONTSTEALPLX/flabbybird/ball_training.vhd      ;         ;
-; ball_over.vhd                    ; yes             ; User VHDL File                         ; C:/Users/sshe325/FlappyBirdVHDL/flabbybird_DONTSTEALPLX/flabbybird/ball_over.vhd          ;         ;
-; ball_menu.vhd                    ; yes             ; User VHDL File                         ; C:/Users/sshe325/FlappyBirdVHDL/flabbybird_DONTSTEALPLX/flabbybird/ball_menu.vhd          ;         ;
-; fsm_game.vhd                     ; yes             ; User VHDL File                         ; C:/Users/sshe325/FlappyBirdVHDL/flabbybird_DONTSTEALPLX/flabbybird/fsm_game.vhd           ;         ;
-; debounce.vhd                     ; yes             ; User VHDL File                         ; C:/Users/sshe325/FlappyBirdVHDL/flabbybird_DONTSTEALPLX/flabbybird/debounce.vhd           ;         ;
-; sevenseg.vhd                     ; yes             ; User VHDL File                         ; C:/Users/sshe325/FlappyBirdVHDL/flabbybird_DONTSTEALPLX/flabbybird/sevenseg.vhd           ;         ;
-; vga_sync.vhd                     ; yes             ; User VHDL File                         ; C:/Users/sshe325/FlappyBirdVHDL/flabbybird_DONTSTEALPLX/flabbybird/vga_sync.vhd           ;         ;
-; mouse.VHD                        ; yes             ; User VHDL File                         ; C:/Users/sshe325/FlappyBirdVHDL/flabbybird_DONTSTEALPLX/flabbybird/mouse.VHD              ;         ;
-; char_rom.vhd                     ; yes             ; User VHDL File                         ; C:/Users/sshe325/FlappyBirdVHDL/flabbybird_DONTSTEALPLX/flabbybird/char_rom.vhd           ;         ;
-; ball.vhd                         ; yes             ; User VHDL File                         ; C:/Users/sshe325/FlappyBirdVHDL/flabbybird_DONTSTEALPLX/flabbybird/ball.vhd               ;         ;
-; flabbybird.bdf                   ; yes             ; User Block Diagram/Schematic File      ; C:/Users/sshe325/FlappyBirdVHDL/flabbybird_DONTSTEALPLX/flabbybird/flabbybird.bdf         ;         ;
-; PLL.vhd                          ; yes             ; User Wizard-Generated File             ; C:/Users/sshe325/FlappyBirdVHDL/flabbybird_DONTSTEALPLX/flabbybird/PLL.vhd                ;         ;
-; lfsr.vhd                         ; yes             ; User VHDL File                         ; C:/Users/sshe325/FlappyBirdVHDL/flabbybird_DONTSTEALPLX/flabbybird/lfsr.vhd               ;         ;
-; displaysel.vhd                   ; yes             ; User VHDL File                         ; C:/Users/sshe325/FlappyBirdVHDL/flabbybird_DONTSTEALPLX/flabbybird/displaysel.vhd         ;         ;
-; pipe.vhd                         ; yes             ; User VHDL File                         ; C:/Users/sshe325/FlappyBirdVHDL/flabbybird_DONTSTEALPLX/flabbybird/pipe.vhd               ;         ;
-; background.vhd                   ; yes             ; User Wizard-Generated File             ; C:/Users/sshe325/FlappyBirdVHDL/flabbybird_DONTSTEALPLX/flabbybird/background.vhd         ;         ;
-; background_rom.vhd               ; yes             ; User VHDL File                         ; C:/Users/sshe325/FlappyBirdVHDL/flabbybird_DONTSTEALPLX/flabbybird/background_rom.vhd     ;         ;
-; altpll.tdf                       ; yes             ; Megafunction                           ; c:/altera/13.0/quartus/libraries/megafunctions/altpll.tdf                                 ;         ;
-; aglobal130.inc                   ; yes             ; Megafunction                           ; c:/altera/13.0/quartus/libraries/megafunctions/aglobal130.inc                             ;         ;
-; stratix_pll.inc                  ; yes             ; Megafunction                           ; c:/altera/13.0/quartus/libraries/megafunctions/stratix_pll.inc                            ;         ;
-; stratixii_pll.inc                ; yes             ; Megafunction                           ; c:/altera/13.0/quartus/libraries/megafunctions/stratixii_pll.inc                          ;         ;
-; cycloneii_pll.inc                ; yes             ; Megafunction                           ; c:/altera/13.0/quartus/libraries/megafunctions/cycloneii_pll.inc                          ;         ;
-; db/pll_altpll.v                  ; yes             ; Auto-Generated Megafunction            ; C:/Users/sshe325/FlappyBirdVHDL/flabbybird_DONTSTEALPLX/flabbybird/db/pll_altpll.v        ;         ;
-; altsyncram.tdf                   ; yes             ; Megafunction                           ; c:/altera/13.0/quartus/libraries/megafunctions/altsyncram.tdf                             ;         ;
-; stratix_ram_block.inc            ; yes             ; Megafunction                           ; c:/altera/13.0/quartus/libraries/megafunctions/stratix_ram_block.inc                      ;         ;
-; lpm_mux.inc                      ; yes             ; Megafunction                           ; c:/altera/13.0/quartus/libraries/megafunctions/lpm_mux.inc                                ;         ;
-; lpm_decode.inc                   ; yes             ; Megafunction                           ; c:/altera/13.0/quartus/libraries/megafunctions/lpm_decode.inc                             ;         ;
-; a_rdenreg.inc                    ; yes             ; Megafunction                           ; c:/altera/13.0/quartus/libraries/megafunctions/a_rdenreg.inc                              ;         ;
-; altrom.inc                       ; yes             ; Megafunction                           ; c:/altera/13.0/quartus/libraries/megafunctions/altrom.inc                                 ;         ;
-; altram.inc                       ; yes             ; Megafunction                           ; c:/altera/13.0/quartus/libraries/megafunctions/altram.inc                                 ;         ;
-; altdpram.inc                     ; yes             ; Megafunction                           ; c:/altera/13.0/quartus/libraries/megafunctions/altdpram.inc                               ;         ;
-; db/altsyncram_kt91.tdf           ; yes             ; Auto-Generated Megafunction            ; C:/Users/sshe325/FlappyBirdVHDL/flabbybird_DONTSTEALPLX/flabbybird/db/altsyncram_kt91.tdf ;         ;
-; tcgrom.mif                       ; yes             ; Auto-Found Memory Initialization File  ; C:/Users/sshe325/FlappyBirdVHDL/flabbybird_DONTSTEALPLX/flabbybird/tcgrom.mif             ;         ;
-; db/altsyncram_22b1.tdf           ; yes             ; Auto-Generated Megafunction            ; C:/Users/sshe325/FlappyBirdVHDL/flabbybird_DONTSTEALPLX/flabbybird/db/altsyncram_22b1.tdf ;         ;
-; matt.mif                         ; yes             ; Auto-Found Memory Initialization File  ; C:/Users/sshe325/FlappyBirdVHDL/flabbybird_DONTSTEALPLX/flabbybird/matt.mif               ;         ;
-; db/decode_57a.tdf                ; yes             ; Auto-Generated Megafunction            ; C:/Users/sshe325/FlappyBirdVHDL/flabbybird_DONTSTEALPLX/flabbybird/db/decode_57a.tdf      ;         ;
-; db/mux_7nb.tdf                   ; yes             ; Auto-Generated Megafunction            ; C:/Users/sshe325/FlappyBirdVHDL/flabbybird_DONTSTEALPLX/flabbybird/db/mux_7nb.tdf         ;         ;
-+----------------------------------+-----------------+----------------------------------------+-------------------------------------------------------------------------------------------+---------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                             ;
++----------------------------------+-----------------+----------------------------------------+--------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                              ; File Name with Absolute Path                                                               ; Library ;
++----------------------------------+-----------------+----------------------------------------+--------------------------------------------------------------------------------------------+---------+
+; ball_training.vhd                ; yes             ; User VHDL File                         ; C:/Users/Sherjeel/FlappyBirdVHDL/flabbybird_DONTSTEALPLX/flabbybird/ball_training.vhd      ;         ;
+; ball_over.vhd                    ; yes             ; User VHDL File                         ; C:/Users/Sherjeel/FlappyBirdVHDL/flabbybird_DONTSTEALPLX/flabbybird/ball_over.vhd          ;         ;
+; ball_menu.vhd                    ; yes             ; User VHDL File                         ; C:/Users/Sherjeel/FlappyBirdVHDL/flabbybird_DONTSTEALPLX/flabbybird/ball_menu.vhd          ;         ;
+; fsm_game.vhd                     ; yes             ; User VHDL File                         ; C:/Users/Sherjeel/FlappyBirdVHDL/flabbybird_DONTSTEALPLX/flabbybird/fsm_game.vhd           ;         ;
+; debounce.vhd                     ; yes             ; User VHDL File                         ; C:/Users/Sherjeel/FlappyBirdVHDL/flabbybird_DONTSTEALPLX/flabbybird/debounce.vhd           ;         ;
+; sevenseg.vhd                     ; yes             ; User VHDL File                         ; C:/Users/Sherjeel/FlappyBirdVHDL/flabbybird_DONTSTEALPLX/flabbybird/sevenseg.vhd           ;         ;
+; vga_sync.vhd                     ; yes             ; User VHDL File                         ; C:/Users/Sherjeel/FlappyBirdVHDL/flabbybird_DONTSTEALPLX/flabbybird/vga_sync.vhd           ;         ;
+; mouse.VHD                        ; yes             ; User VHDL File                         ; C:/Users/Sherjeel/FlappyBirdVHDL/flabbybird_DONTSTEALPLX/flabbybird/mouse.VHD              ;         ;
+; char_rom.vhd                     ; yes             ; User VHDL File                         ; C:/Users/Sherjeel/FlappyBirdVHDL/flabbybird_DONTSTEALPLX/flabbybird/char_rom.vhd           ;         ;
+; ball.vhd                         ; yes             ; User VHDL File                         ; C:/Users/Sherjeel/FlappyBirdVHDL/flabbybird_DONTSTEALPLX/flabbybird/ball.vhd               ;         ;
+; flabbybird.bdf                   ; yes             ; User Block Diagram/Schematic File      ; C:/Users/Sherjeel/FlappyBirdVHDL/flabbybird_DONTSTEALPLX/flabbybird/flabbybird.bdf         ;         ;
+; PLL.vhd                          ; yes             ; User Wizard-Generated File             ; C:/Users/Sherjeel/FlappyBirdVHDL/flabbybird_DONTSTEALPLX/flabbybird/PLL.vhd                ;         ;
+; lfsr.vhd                         ; yes             ; User VHDL File                         ; C:/Users/Sherjeel/FlappyBirdVHDL/flabbybird_DONTSTEALPLX/flabbybird/lfsr.vhd               ;         ;
+; displaysel.vhd                   ; yes             ; User VHDL File                         ; C:/Users/Sherjeel/FlappyBirdVHDL/flabbybird_DONTSTEALPLX/flabbybird/displaysel.vhd         ;         ;
+; pipe.vhd                         ; yes             ; User VHDL File                         ; C:/Users/Sherjeel/FlappyBirdVHDL/flabbybird_DONTSTEALPLX/flabbybird/pipe.vhd               ;         ;
+; background.vhd                   ; yes             ; User Wizard-Generated File             ; C:/Users/Sherjeel/FlappyBirdVHDL/flabbybird_DONTSTEALPLX/flabbybird/background.vhd         ;         ;
+; background_rom.vhd               ; yes             ; User VHDL File                         ; C:/Users/Sherjeel/FlappyBirdVHDL/flabbybird_DONTSTEALPLX/flabbybird/background_rom.vhd     ;         ;
+; altpll.tdf                       ; yes             ; Megafunction                           ; c:/altera/13.0/quartus/libraries/megafunctions/altpll.tdf                                  ;         ;
+; aglobal130.inc                   ; yes             ; Megafunction                           ; c:/altera/13.0/quartus/libraries/megafunctions/aglobal130.inc                              ;         ;
+; stratix_pll.inc                  ; yes             ; Megafunction                           ; c:/altera/13.0/quartus/libraries/megafunctions/stratix_pll.inc                             ;         ;
+; stratixii_pll.inc                ; yes             ; Megafunction                           ; c:/altera/13.0/quartus/libraries/megafunctions/stratixii_pll.inc                           ;         ;
+; cycloneii_pll.inc                ; yes             ; Megafunction                           ; c:/altera/13.0/quartus/libraries/megafunctions/cycloneii_pll.inc                           ;         ;
+; db/pll_altpll.v                  ; yes             ; Auto-Generated Megafunction            ; C:/Users/Sherjeel/FlappyBirdVHDL/flabbybird_DONTSTEALPLX/flabbybird/db/pll_altpll.v        ;         ;
+; altsyncram.tdf                   ; yes             ; Megafunction                           ; c:/altera/13.0/quartus/libraries/megafunctions/altsyncram.tdf                              ;         ;
+; stratix_ram_block.inc            ; yes             ; Megafunction                           ; c:/altera/13.0/quartus/libraries/megafunctions/stratix_ram_block.inc                       ;         ;
+; lpm_mux.inc                      ; yes             ; Megafunction                           ; c:/altera/13.0/quartus/libraries/megafunctions/lpm_mux.inc                                 ;         ;
+; lpm_decode.inc                   ; yes             ; Megafunction                           ; c:/altera/13.0/quartus/libraries/megafunctions/lpm_decode.inc                              ;         ;
+; a_rdenreg.inc                    ; yes             ; Megafunction                           ; c:/altera/13.0/quartus/libraries/megafunctions/a_rdenreg.inc                               ;         ;
+; altrom.inc                       ; yes             ; Megafunction                           ; c:/altera/13.0/quartus/libraries/megafunctions/altrom.inc                                  ;         ;
+; altram.inc                       ; yes             ; Megafunction                           ; c:/altera/13.0/quartus/libraries/megafunctions/altram.inc                                  ;         ;
+; altdpram.inc                     ; yes             ; Megafunction                           ; c:/altera/13.0/quartus/libraries/megafunctions/altdpram.inc                                ;         ;
+; db/altsyncram_kt91.tdf           ; yes             ; Auto-Generated Megafunction            ; C:/Users/Sherjeel/FlappyBirdVHDL/flabbybird_DONTSTEALPLX/flabbybird/db/altsyncram_kt91.tdf ;         ;
+; tcgrom.mif                       ; yes             ; Auto-Found Memory Initialization File  ; C:/Users/Sherjeel/FlappyBirdVHDL/flabbybird_DONTSTEALPLX/flabbybird/tcgrom.mif             ;         ;
+; db/altsyncram_22b1.tdf           ; yes             ; Auto-Generated Megafunction            ; C:/Users/Sherjeel/FlappyBirdVHDL/flabbybird_DONTSTEALPLX/flabbybird/db/altsyncram_22b1.tdf ;         ;
+; matt.mif                         ; yes             ; Auto-Found Memory Initialization File  ; C:/Users/Sherjeel/FlappyBirdVHDL/flabbybird_DONTSTEALPLX/flabbybird/matt.mif               ;         ;
+; db/decode_57a.tdf                ; yes             ; Auto-Generated Megafunction            ; C:/Users/Sherjeel/FlappyBirdVHDL/flabbybird_DONTSTEALPLX/flabbybird/db/decode_57a.tdf      ;         ;
+; db/mux_7nb.tdf                   ; yes             ; Auto-Generated Megafunction            ; C:/Users/Sherjeel/FlappyBirdVHDL/flabbybird_DONTSTEALPLX/flabbybird/db/mux_7nb.tdf         ;         ;
++----------------------------------+-----------------+----------------------------------------+--------------------------------------------------------------------------------------------+---------+
 
 
 +----------------------------------------------------------------------------------------------------------------------------+
@@ -240,32 +232,32 @@ applicable agreement for further details.
 +---------------------------------------------+------------------------------------------------------------------------------+
 ; Resource                                    ; Usage                                                                        ;
 +---------------------------------------------+------------------------------------------------------------------------------+
-; Estimated Total logic elements              ; 1,100                                                                        ;
+; Estimated Total logic elements              ; 2,235                                                                        ;
 ;                                             ;                                                                              ;
-; Total combinational functions               ; 1024                                                                         ;
+; Total combinational functions               ; 2092                                                                         ;
 ; Logic element usage by number of LUT inputs ;                                                                              ;
-;     -- 4 input functions                    ; 312                                                                          ;
-;     -- 3 input functions                    ; 380                                                                          ;
-;     -- <=2 input functions                  ; 332                                                                          ;
+;     -- 4 input functions                    ; 845                                                                          ;
+;     -- 3 input functions                    ; 636                                                                          ;
+;     -- <=2 input functions                  ; 611                                                                          ;
 ;                                             ;                                                                              ;
 ; Logic elements by mode                      ;                                                                              ;
-;     -- normal mode                          ; 605                                                                          ;
-;     -- arithmetic mode                      ; 419                                                                          ;
+;     -- normal mode                          ; 1373                                                                         ;
+;     -- arithmetic mode                      ; 719                                                                          ;
 ;                                             ;                                                                              ;
-; Total registers                             ; 494                                                                          ;
-;     -- Dedicated logic registers            ; 494                                                                          ;
+; Total registers                             ; 677                                                                          ;
+;     -- Dedicated logic registers            ; 677                                                                          ;
 ;     -- I/O registers                        ; 0                                                                            ;
 ;                                             ;                                                                              ;
 ; I/O pins                                    ; 47                                                                           ;
-; Total memory bits                           ; 240640                                                                       ;
+; Total memory bits                           ; 246784                                                                       ;
 ; Embedded Multiplier 9-bit elements          ; 0                                                                            ;
 ; Total PLLs                                  ; 1                                                                            ;
 ;     -- PLLs                                 ; 1                                                                            ;
 ;                                             ;                                                                              ;
 ; Maximum fan-out node                        ; PLL:inst4|altpll:altpll_component|PLL_altpll:auto_generated|wire_pll1_clk[0] ;
-; Maximum fan-out                             ; 225                                                                          ;
-; Total fan-out                               ; 5310                                                                         ;
-; Average fan-out                             ; 3.17                                                                         ;
+; Maximum fan-out                             ; 256                                                                          ;
+; Total fan-out                               ; 9384                                                                         ;
+; Average fan-out                             ; 3.20                                                                         ;
 +---------------------------------------------+------------------------------------------------------------------------------+
 
 
@@ -274,43 +266,51 @@ applicable agreement for further details.
 +----------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                   ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                   ; Library Name ;
 +----------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------+--------------+
-; |flabbybird                                  ; 1024 (1)          ; 494 (0)      ; 240640      ; 0            ; 0       ; 0         ; 47   ; 0            ; |flabbybird                                                                                                                           ;              ;
+; |flabbybird                                  ; 2092 (2)          ; 677 (1)      ; 246784      ; 0            ; 0       ; 0         ; 47   ; 0            ; |flabbybird                                                                                                                           ;              ;
 ;    |MOUSE:inst1|                             ; 108 (108)         ; 119 (119)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |flabbybird|MOUSE:inst1                                                                                                               ;              ;
 ;    |PLL:inst4|                               ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |flabbybird|PLL:inst4                                                                                                                 ;              ;
 ;       |altpll:altpll_component|              ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |flabbybird|PLL:inst4|altpll:altpll_component                                                                                         ;              ;
 ;          |PLL_altpll:auto_generated|         ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |flabbybird|PLL:inst4|altpll:altpll_component|PLL_altpll:auto_generated                                                               ;              ;
-;    |background_rom:inst24|                   ; 39 (18)           ; 4 (0)        ; 230400      ; 0            ; 0       ; 0         ; 0    ; 0            ; |flabbybird|background_rom:inst24                                                                                                     ;              ;
-;       |background:BG|                        ; 21 (0)            ; 4 (0)        ; 230400      ; 0            ; 0       ; 0         ; 0    ; 0            ; |flabbybird|background_rom:inst24|background:BG                                                                                       ;              ;
-;          |altsyncram:altsyncram_component|   ; 21 (0)            ; 4 (0)        ; 230400      ; 0            ; 0       ; 0         ; 0    ; 0            ; |flabbybird|background_rom:inst24|background:BG|altsyncram:altsyncram_component                                                       ;              ;
-;             |altsyncram_22b1:auto_generated| ; 21 (0)            ; 4 (4)        ; 230400      ; 0            ; 0       ; 0         ; 0    ; 0            ; |flabbybird|background_rom:inst24|background:BG|altsyncram:altsyncram_component|altsyncram_22b1:auto_generated                        ;              ;
+;    |background_rom:inst24|                   ; 45 (18)           ; 4 (0)        ; 230400      ; 0            ; 0       ; 0         ; 0    ; 0            ; |flabbybird|background_rom:inst24                                                                                                     ;              ;
+;       |background:BG|                        ; 27 (0)            ; 4 (0)        ; 230400      ; 0            ; 0       ; 0         ; 0    ; 0            ; |flabbybird|background_rom:inst24|background:BG                                                                                       ;              ;
+;          |altsyncram:altsyncram_component|   ; 27 (0)            ; 4 (0)        ; 230400      ; 0            ; 0       ; 0         ; 0    ; 0            ; |flabbybird|background_rom:inst24|background:BG|altsyncram:altsyncram_component                                                       ;              ;
+;             |altsyncram_22b1:auto_generated| ; 27 (0)            ; 4 (4)        ; 230400      ; 0            ; 0       ; 0         ; 0    ; 0            ; |flabbybird|background_rom:inst24|background:BG|altsyncram:altsyncram_component|altsyncram_22b1:auto_generated                        ;              ;
 ;                |decode_57a:rden_decode|      ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |flabbybird|background_rom:inst24|background:BG|altsyncram:altsyncram_component|altsyncram_22b1:auto_generated|decode_57a:rden_decode ;              ;
-;                |mux_7nb:mux2|                ; 18 (18)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |flabbybird|background_rom:inst24|background:BG|altsyncram:altsyncram_component|altsyncram_22b1:auto_generated|mux_7nb:mux2           ;              ;
-;    |ball:inst2|                              ; 435 (357)         ; 102 (43)     ; 4096        ; 0            ; 0       ; 0         ; 0    ; 0            ; |flabbybird|ball:inst2                                                                                                                ;              ;
-;       |VGA_SYNC:SYNC|                        ; 74 (74)           ; 59 (59)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |flabbybird|ball:inst2|VGA_SYNC:SYNC                                                                                                  ;              ;
+;                |mux_7nb:mux2|                ; 24 (24)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |flabbybird|background_rom:inst24|background:BG|altsyncram:altsyncram_component|altsyncram_22b1:auto_generated|mux_7nb:mux2           ;              ;
+;    |ball:inst2|                              ; 889 (814)         ; 136 (77)     ; 4096        ; 0            ; 0       ; 0         ; 0    ; 0            ; |flabbybird|ball:inst2                                                                                                                ;              ;
+;       |VGA_SYNC:SYNC|                        ; 71 (71)           ; 59 (59)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |flabbybird|ball:inst2|VGA_SYNC:SYNC                                                                                                  ;              ;
 ;       |char_rom:CHAR|                        ; 4 (4)             ; 0 (0)        ; 4096        ; 0            ; 0       ; 0         ; 0    ; 0            ; |flabbybird|ball:inst2|char_rom:CHAR                                                                                                  ;              ;
 ;          |altsyncram:altsyncram_component|   ; 0 (0)             ; 0 (0)        ; 4096        ; 0            ; 0       ; 0         ; 0    ; 0            ; |flabbybird|ball:inst2|char_rom:CHAR|altsyncram:altsyncram_component                                                                  ;              ;
 ;             |altsyncram_kt91:auto_generated| ; 0 (0)             ; 0 (0)        ; 4096        ; 0            ; 0       ; 0         ; 0    ; 0            ; |flabbybird|ball:inst2|char_rom:CHAR|altsyncram:altsyncram_component|altsyncram_kt91:auto_generated                                   ;              ;
-;    |ball_menu:inst17|                        ; 38 (21)           ; 13 (0)       ; 4096        ; 0            ; 0       ; 0         ; 0    ; 0            ; |flabbybird|ball_menu:inst17                                                                                                          ;              ;
+;    |ball_menu:inst17|                        ; 106 (88)          ; 13 (0)       ; 4096        ; 0            ; 0       ; 0         ; 0    ; 0            ; |flabbybird|ball_menu:inst17                                                                                                          ;              ;
 ;       |VGA_SYNC:SYNC|                        ; 13 (13)           ; 13 (13)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |flabbybird|ball_menu:inst17|VGA_SYNC:SYNC                                                                                            ;              ;
-;       |char_rom:CHAR|                        ; 4 (4)             ; 0 (0)        ; 4096        ; 0            ; 0       ; 0         ; 0    ; 0            ; |flabbybird|ball_menu:inst17|char_rom:CHAR                                                                                            ;              ;
+;       |char_rom:CHAR|                        ; 5 (5)             ; 0 (0)        ; 4096        ; 0            ; 0       ; 0         ; 0    ; 0            ; |flabbybird|ball_menu:inst17|char_rom:CHAR                                                                                            ;              ;
 ;          |altsyncram:altsyncram_component|   ; 0 (0)             ; 0 (0)        ; 4096        ; 0            ; 0       ; 0         ; 0    ; 0            ; |flabbybird|ball_menu:inst17|char_rom:CHAR|altsyncram:altsyncram_component                                                            ;              ;
 ;             |altsyncram_kt91:auto_generated| ; 0 (0)             ; 0 (0)        ; 4096        ; 0            ; 0       ; 0         ; 0    ; 0            ; |flabbybird|ball_menu:inst17|char_rom:CHAR|altsyncram:altsyncram_component|altsyncram_kt91:auto_generated                             ;              ;
-;    |ball_training:inst18|                    ; 87 (79)           ; 16 (13)      ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |flabbybird|ball_training:inst18                                                                                                      ;              ;
-;       |VGA_SYNC:SYNC|                        ; 8 (8)             ; 3 (3)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |flabbybird|ball_training:inst18|VGA_SYNC:SYNC                                                                                        ;              ;
-;       |char_rom:CHAR|                        ; 0 (0)             ; 0 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |flabbybird|ball_training:inst18|char_rom:CHAR                                                                                        ;              ;
-;          |altsyncram:altsyncram_component|   ; 0 (0)             ; 0 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |flabbybird|ball_training:inst18|char_rom:CHAR|altsyncram:altsyncram_component                                                        ;              ;
-;             |altsyncram_kt91:auto_generated| ; 0 (0)             ; 0 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |flabbybird|ball_training:inst18|char_rom:CHAR|altsyncram:altsyncram_component|altsyncram_kt91:auto_generated                         ;              ;
+;    |ball_over:inst19|                        ; 86 (68)           ; 12 (0)       ; 4096        ; 0            ; 0       ; 0         ; 0    ; 0            ; |flabbybird|ball_over:inst19                                                                                                          ;              ;
+;       |VGA_SYNC:SYNC|                        ; 14 (14)           ; 12 (12)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |flabbybird|ball_over:inst19|VGA_SYNC:SYNC                                                                                            ;              ;
+;       |char_rom:CHAR|                        ; 4 (4)             ; 0 (0)        ; 4096        ; 0            ; 0       ; 0         ; 0    ; 0            ; |flabbybird|ball_over:inst19|char_rom:CHAR                                                                                            ;              ;
+;          |altsyncram:altsyncram_component|   ; 0 (0)             ; 0 (0)        ; 4096        ; 0            ; 0       ; 0         ; 0    ; 0            ; |flabbybird|ball_over:inst19|char_rom:CHAR|altsyncram:altsyncram_component                                                            ;              ;
+;             |altsyncram_kt91:auto_generated| ; 0 (0)             ; 0 (0)        ; 4096        ; 0            ; 0       ; 0         ; 0    ; 0            ; |flabbybird|ball_over:inst19|char_rom:CHAR|altsyncram:altsyncram_component|altsyncram_kt91:auto_generated                             ;              ;
+;    |ball_training:inst18|                    ; 521 (502)         ; 56 (43)      ; 4096        ; 0            ; 0       ; 0         ; 0    ; 0            ; |flabbybird|ball_training:inst18                                                                                                      ;              ;
+;       |VGA_SYNC:SYNC|                        ; 15 (15)           ; 13 (13)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |flabbybird|ball_training:inst18|VGA_SYNC:SYNC                                                                                        ;              ;
+;       |char_rom:CHAR|                        ; 4 (4)             ; 0 (0)        ; 4096        ; 0            ; 0       ; 0         ; 0    ; 0            ; |flabbybird|ball_training:inst18|char_rom:CHAR                                                                                        ;              ;
+;          |altsyncram:altsyncram_component|   ; 0 (0)             ; 0 (0)        ; 4096        ; 0            ; 0       ; 0         ; 0    ; 0            ; |flabbybird|ball_training:inst18|char_rom:CHAR|altsyncram:altsyncram_component                                                        ;              ;
+;             |altsyncram_kt91:auto_generated| ; 0 (0)             ; 0 (0)        ; 4096        ; 0            ; 0       ; 0         ; 0    ; 0            ; |flabbybird|ball_training:inst18|char_rom:CHAR|altsyncram:altsyncram_component|altsyncram_kt91:auto_generated                         ;              ;
 ;    |debouncer:inst30|                        ; 37 (37)           ; 27 (27)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |flabbybird|debouncer:inst30                                                                                                          ;              ;
 ;    |debouncer:inst3|                         ; 37 (37)           ; 27 (27)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |flabbybird|debouncer:inst3                                                                                                           ;              ;
 ;    |debouncer:inst5|                         ; 37 (37)           ; 27 (27)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |flabbybird|debouncer:inst5                                                                                                           ;              ;
 ;    |debouncer:inst8|                         ; 37 (37)           ; 27 (27)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |flabbybird|debouncer:inst8                                                                                                           ;              ;
 ;    |debouncer:inst9|                         ; 37 (37)           ; 27 (27)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |flabbybird|debouncer:inst9                                                                                                           ;              ;
-;    |display_sel:inst21|                      ; 31 (31)           ; 29 (29)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |flabbybird|display_sel:inst21                                                                                                        ;              ;
-;    |fsm_game:inst22|                         ; 6 (6)             ; 4 (4)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |flabbybird|fsm_game:inst22                                                                                                           ;              ;
+;    |display_sel:inst21|                      ; 26 (26)           ; 29 (29)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |flabbybird|display_sel:inst21                                                                                                        ;              ;
+;    |fsm_game:inst22|                         ; 9 (9)             ; 4 (4)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |flabbybird|fsm_game:inst22                                                                                                           ;              ;
 ;    |lfsr:inst16|                             ; 15 (15)           ; 11 (11)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |flabbybird|lfsr:inst16                                                                                                               ;              ;
-;    |pipe:inst13|                             ; 25 (25)           ; 21 (21)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |flabbybird|pipe:inst13                                                                                                               ;              ;
-;    |pipe:inst14|                             ; 20 (20)           ; 13 (13)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |flabbybird|pipe:inst14                                                                                                               ;              ;
-;    |pipe:inst15|                             ; 20 (20)           ; 13 (13)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |flabbybird|pipe:inst15                                                                                                               ;              ;
+;    |pipe:inst13|                             ; 20 (20)           ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |flabbybird|pipe:inst13                                                                                                               ;              ;
+;    |pipe:inst14|                             ; 15 (15)           ; 24 (24)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |flabbybird|pipe:inst14                                                                                                               ;              ;
+;    |pipe:inst15|                             ; 15 (15)           ; 24 (24)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |flabbybird|pipe:inst15                                                                                                               ;              ;
+;    |pipe:inst29|                             ; 12 (12)           ; 21 (21)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |flabbybird|pipe:inst29                                                                                                               ;              ;
+;    |pipe:inst31|                             ; 12 (12)           ; 21 (21)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |flabbybird|pipe:inst31                                                                                                               ;              ;
+;    |pipe:inst35|                             ; 12 (12)           ; 21 (21)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |flabbybird|pipe:inst35                                                                                                               ;              ;
 ;    |seven_seg_decoder:inst6|                 ; 7 (7)             ; 7 (7)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |flabbybird|seven_seg_decoder:inst6                                                                                                   ;              ;
 ;    |seven_seg_decoder:inst7|                 ; 7 (7)             ; 7 (7)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |flabbybird|seven_seg_decoder:inst7                                                                                                   ;              ;
 +----------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------+--------------+
@@ -325,18 +325,19 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; background_rom:inst24|background:BG|altsyncram:altsyncram_component|altsyncram_22b1:auto_generated|ALTSYNCRAM ; M9K  ; ROM  ; 19200        ; 12           ; --           ; --           ; 230400 ; matt.mif   ;
 ; ball:inst2|char_rom:CHAR|altsyncram:altsyncram_component|altsyncram_kt91:auto_generated|ALTSYNCRAM            ; AUTO ; ROM  ; 512          ; 8            ; --           ; --           ; 4096   ; tcgrom.mif ;
 ; ball_menu:inst17|char_rom:CHAR|altsyncram:altsyncram_component|altsyncram_kt91:auto_generated|ALTSYNCRAM      ; AUTO ; ROM  ; 512          ; 8            ; --           ; --           ; 4096   ; tcgrom.mif ;
+; ball_over:inst19|char_rom:CHAR|altsyncram:altsyncram_component|altsyncram_kt91:auto_generated|ALTSYNCRAM      ; AUTO ; ROM  ; 512          ; 8            ; --           ; --           ; 4096   ; tcgrom.mif ;
 ; ball_training:inst18|char_rom:CHAR|altsyncram:altsyncram_component|altsyncram_kt91:auto_generated|ALTSYNCRAM  ; AUTO ; ROM  ; 512          ; 8            ; --           ; --           ; 4096   ; tcgrom.mif ;
 +---------------------------------------------------------------------------------------------------------------+------+------+--------------+--------------+--------------+--------------+--------+------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis IP Cores Summary                                                                                                                                                               ;
-+--------+--------------+---------+--------------+--------------+-------------------------------------------------+-----------------------------------------------------------------------------------+
-; Vendor ; IP Core Name ; Version ; Release Date ; License Type ; Entity Instance                                 ; IP Include File                                                                   ;
-+--------+--------------+---------+--------------+--------------+-------------------------------------------------+-----------------------------------------------------------------------------------+
-; Altera ; ALTPLL       ; 13.0    ; N/A          ; N/A          ; |flabbybird|PLL:inst4                           ; C:/Users/sshe325/FlappyBirdVHDL/flabbybird_DONTSTEALPLX/flabbybird/PLL.vhd        ;
-; Altera ; ROM: 1-PORT  ; 13.0    ; N/A          ; N/A          ; |flabbybird|background_rom:inst24|background:BG ; C:/Users/sshe325/FlappyBirdVHDL/flabbybird_DONTSTEALPLX/flabbybird/background.vhd ;
-+--------+--------------+---------+--------------+--------------+-------------------------------------------------+-----------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis IP Cores Summary                                                                                                                                                                ;
++--------+--------------+---------+--------------+--------------+-------------------------------------------------+------------------------------------------------------------------------------------+
+; Vendor ; IP Core Name ; Version ; Release Date ; License Type ; Entity Instance                                 ; IP Include File                                                                    ;
++--------+--------------+---------+--------------+--------------+-------------------------------------------------+------------------------------------------------------------------------------------+
+; Altera ; ALTPLL       ; 13.0    ; N/A          ; N/A          ; |flabbybird|PLL:inst4                           ; C:/Users/Sherjeel/FlappyBirdVHDL/flabbybird_DONTSTEALPLX/flabbybird/PLL.vhd        ;
+; Altera ; ROM: 1-PORT  ; 13.0    ; N/A          ; N/A          ; |flabbybird|background_rom:inst24|background:BG ; C:/Users/Sherjeel/FlappyBirdVHDL/flabbybird_DONTSTEALPLX/flabbybird/background.vhd ;
++--------+--------------+---------+--------------+--------------+-------------------------------------------------+------------------------------------------------------------------------------------+
 
 
 Encoding Type:  One-Hot
@@ -367,251 +368,303 @@ Encoding Type:  One-Hot
 +-------------------------------+---------------------------+--------------------------+-------------------------------+---------------------------+--------------------------+---------------------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------+
-; User-Specified and Inferred Latches                                                                             ;
-+-----------------------------------------------------+----------------------------------+------------------------+
-; Latch Name                                          ; Latch Enable Signal              ; Free of Timing Hazards ;
-+-----------------------------------------------------+----------------------------------+------------------------+
-; pipe:inst13|pipe_gap[7]                             ; ball:inst2|pipe_reset1           ; yes                    ;
-; pipe:inst13|pipe_gap[6]                             ; ball:inst2|pipe_reset1           ; yes                    ;
-; pipe:inst13|pipe_gap[5]                             ; ball:inst2|pipe_reset1           ; yes                    ;
-; pipe:inst13|pipe_gap[4]                             ; ball:inst2|pipe_reset1           ; yes                    ;
-; pipe:inst13|pipe_gap[3]                             ; ball:inst2|pipe_reset1           ; yes                    ;
-; pipe:inst13|pipe_gap[2]                             ; ball:inst2|pipe_reset1           ; yes                    ;
-; pipe:inst13|pipe_gap[1]                             ; ball:inst2|pipe_reset1           ; yes                    ;
-; pipe:inst13|pipe_gap[0]                             ; ball:inst2|pipe_reset1           ; yes                    ;
-; pipe:inst14|pipe_gap[7]                             ; ball:inst2|pipe_reset2           ; yes                    ;
-; pipe:inst14|pipe_gap[6]                             ; ball:inst2|pipe_reset2           ; yes                    ;
-; pipe:inst14|pipe_gap[5]                             ; ball:inst2|pipe_reset2           ; yes                    ;
-; pipe:inst14|pipe_gap[4]                             ; ball:inst2|pipe_reset2           ; yes                    ;
-; pipe:inst14|pipe_gap[3]                             ; ball:inst2|pipe_reset2           ; yes                    ;
-; pipe:inst14|pipe_gap[2]                             ; ball:inst2|pipe_reset2           ; yes                    ;
-; pipe:inst14|pipe_gap[1]                             ; ball:inst2|pipe_reset2           ; yes                    ;
-; pipe:inst14|pipe_gap[0]                             ; ball:inst2|pipe_reset2           ; yes                    ;
-; pipe:inst15|pipe_gap[7]                             ; ball:inst2|pipe_reset3           ; yes                    ;
-; pipe:inst15|pipe_gap[6]                             ; ball:inst2|pipe_reset3           ; yes                    ;
-; pipe:inst15|pipe_gap[5]                             ; ball:inst2|pipe_reset3           ; yes                    ;
-; pipe:inst15|pipe_gap[4]                             ; ball:inst2|pipe_reset3           ; yes                    ;
-; pipe:inst15|pipe_gap[3]                             ; ball:inst2|pipe_reset3           ; yes                    ;
-; pipe:inst15|pipe_gap[2]                             ; ball:inst2|pipe_reset3           ; yes                    ;
-; pipe:inst15|pipe_gap[1]                             ; ball:inst2|pipe_reset3           ; yes                    ;
-; pipe:inst15|pipe_gap[0]                             ; ball:inst2|pipe_reset3           ; yes                    ;
-; ball_training:inst18|Ball_on                        ; ball_training:inst18|Ball_on     ; yes                    ;
-; ball_training:inst18|col_sel[1]                     ; ball_training:inst18|RGB_Display ; yes                    ;
-; ball_training:inst18|col_sel[0]                     ; ball_training:inst18|RGB_Display ; yes                    ;
-; ball_training:inst18|col_sel[2]                     ; ball_training:inst18|RGB_Display ; yes                    ;
-; ball_training:inst18|row_sel[0]                     ; ball_training:inst18|RGB_Display ; yes                    ;
-; ball_training:inst18|row_sel[1]                     ; ball_training:inst18|RGB_Display ; yes                    ;
-; ball_training:inst18|row_sel[2]                     ; ball_training:inst18|RGB_Display ; yes                    ;
-; ball_training:inst18|char_sel[0]                    ; ball_training:inst18|RGB_Display ; yes                    ;
-; ball_training:inst18|char_sel[1]                    ; ball_training:inst18|RGB_Display ; yes                    ;
-; ball_training:inst18|char_sel[2]                    ; ball_training:inst18|RGB_Display ; yes                    ;
-; ball_training:inst18|char_sel[3]                    ; ball_training:inst18|RGB_Display ; yes                    ;
-; ball_training:inst18|char_sel[4]                    ; ball_training:inst18|RGB_Display ; yes                    ;
-; Number of user-specified and inferred latches = 36  ;                                  ;                        ;
-+-----------------------------------------------------+----------------------------------+------------------------+
++------------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                        ;
++----------------------------------------------------+------------------------------+------------------------+
+; Latch Name                                         ; Latch Enable Signal          ; Free of Timing Hazards ;
++----------------------------------------------------+------------------------------+------------------------+
+; ball:inst2|hit                                     ; inst25                       ; yes                    ;
+; ball_training:inst18|hit                           ; inst25                       ; yes                    ;
+; ball:inst2|Ball_on                                 ; ball:inst2|Ball_on           ; yes                    ;
+; ball_training:inst18|Ball_on                       ; ball_training:inst18|Ball_on ; yes                    ;
+; Number of user-specified and inferred latches = 4  ;                              ;                        ;
++----------------------------------------------------+------------------------------+------------------------+
 Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
 
-+------------------------------------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                                               ;
-+-----------------------------------------------------+------------------------------------------------------------+
-; Register name                                       ; Reason for Removal                                         ;
-+-----------------------------------------------------+------------------------------------------------------------+
-; ball_over:inst19|VGA_SYNC:SYNC|video_on_v           ; Lost fanout                                                ;
-; ball_over:inst19|VGA_SYNC:SYNC|video_on_h           ; Lost fanout                                                ;
-; pipe:inst15|Pipe_X_motion[1]                        ; Stuck at GND due to stuck port data_in                     ;
-; pipe:inst15|Pipe_gap_pos[8..10]                     ; Stuck at GND due to stuck port data_in                     ;
-; pipe:inst14|Pipe_X_motion[1]                        ; Stuck at GND due to stuck port data_in                     ;
-; pipe:inst14|Pipe_gap_pos[8..10]                     ; Stuck at GND due to stuck port data_in                     ;
-; pipe:inst13|Pipe_X_motion[1]                        ; Stuck at GND due to stuck port data_in                     ;
-; pipe:inst13|Pipe_gap_pos[8..10]                     ; Stuck at GND due to stuck port data_in                     ;
-; ball_over:inst19|VGA_SYNC:SYNC|red_out[0..3]        ; Stuck at GND due to stuck port data_in                     ;
-; ball_over:inst19|VGA_SYNC:SYNC|green_out[0..3]      ; Stuck at GND due to stuck port data_in                     ;
-; ball_over:inst19|VGA_SYNC:SYNC|blue_out[0..3]       ; Stuck at GND due to stuck port data_in                     ;
-; ball_training:inst18|VGA_SYNC:SYNC|green_out[0..2]  ; Stuck at GND due to stuck port data_in                     ;
-; ball_training:inst18|VGA_SYNC:SYNC|blue_out[0..2]   ; Stuck at GND due to stuck port data_in                     ;
-; ball_over:inst19|VGA_SYNC:SYNC|pixel_row[0..10]     ; Lost fanout                                                ;
-; ball_over:inst19|VGA_SYNC:SYNC|pixel_column[0..10]  ; Lost fanout                                                ;
-; MOUSE:inst1|CHAROUT[4..7]                           ; Stuck at VCC due to stuck port data_in                     ;
-; MOUSE:inst1|CHAROUT[3]                              ; Stuck at GND due to stuck port data_in                     ;
-; MOUSE:inst1|CHAROUT[2]                              ; Stuck at VCC due to stuck port data_in                     ;
-; MOUSE:inst1|CHAROUT[0,1]                            ; Stuck at GND due to stuck port data_in                     ;
-; MOUSE:inst1|SHIFTOUT[10]                            ; Stuck at VCC due to stuck port data_in                     ;
-; ball_training:inst18|VGA_SYNC:SYNC|red_out[0..2]    ; Merged with ball_training:inst18|VGA_SYNC:SYNC|red_out[3]  ;
-; ball_menu:inst17|VGA_SYNC:SYNC|horiz_sync_out       ; Merged with ball:inst2|VGA_SYNC:SYNC|horiz_sync_out        ;
-; ball_over:inst19|VGA_SYNC:SYNC|horiz_sync_out       ; Merged with ball:inst2|VGA_SYNC:SYNC|horiz_sync_out        ;
-; ball_training:inst18|VGA_SYNC:SYNC|horiz_sync_out   ; Merged with ball:inst2|VGA_SYNC:SYNC|horiz_sync_out        ;
-; ball_over:inst19|VGA_SYNC:SYNC|vert_sync_out        ; Merged with ball_menu:inst17|VGA_SYNC:SYNC|vert_sync_out   ;
-; ball_menu:inst17|VGA_SYNC:SYNC|vert_sync            ; Merged with ball:inst2|VGA_SYNC:SYNC|vert_sync             ;
-; ball_over:inst19|VGA_SYNC:SYNC|vert_sync            ; Merged with ball:inst2|VGA_SYNC:SYNC|vert_sync             ;
-; ball_training:inst18|VGA_SYNC:SYNC|vert_sync        ; Merged with ball:inst2|VGA_SYNC:SYNC|vert_sync             ;
-; ball_menu:inst17|VGA_SYNC:SYNC|v_count[0]           ; Merged with ball:inst2|VGA_SYNC:SYNC|v_count[0]            ;
-; ball_over:inst19|VGA_SYNC:SYNC|v_count[0]           ; Merged with ball:inst2|VGA_SYNC:SYNC|v_count[0]            ;
-; ball_training:inst18|VGA_SYNC:SYNC|v_count[0]       ; Merged with ball:inst2|VGA_SYNC:SYNC|v_count[0]            ;
-; ball_menu:inst17|VGA_SYNC:SYNC|v_count[1]           ; Merged with ball:inst2|VGA_SYNC:SYNC|v_count[1]            ;
-; ball_over:inst19|VGA_SYNC:SYNC|v_count[1]           ; Merged with ball:inst2|VGA_SYNC:SYNC|v_count[1]            ;
-; ball_training:inst18|VGA_SYNC:SYNC|v_count[1]       ; Merged with ball:inst2|VGA_SYNC:SYNC|v_count[1]            ;
-; ball_menu:inst17|VGA_SYNC:SYNC|v_count[2]           ; Merged with ball:inst2|VGA_SYNC:SYNC|v_count[2]            ;
-; ball_over:inst19|VGA_SYNC:SYNC|v_count[2]           ; Merged with ball:inst2|VGA_SYNC:SYNC|v_count[2]            ;
-; ball_training:inst18|VGA_SYNC:SYNC|v_count[2]       ; Merged with ball:inst2|VGA_SYNC:SYNC|v_count[2]            ;
-; ball_menu:inst17|VGA_SYNC:SYNC|v_count[3]           ; Merged with ball:inst2|VGA_SYNC:SYNC|v_count[3]            ;
-; ball_over:inst19|VGA_SYNC:SYNC|v_count[3]           ; Merged with ball:inst2|VGA_SYNC:SYNC|v_count[3]            ;
-; ball_training:inst18|VGA_SYNC:SYNC|v_count[3]       ; Merged with ball:inst2|VGA_SYNC:SYNC|v_count[3]            ;
-; ball_menu:inst17|VGA_SYNC:SYNC|v_count[4]           ; Merged with ball:inst2|VGA_SYNC:SYNC|v_count[4]            ;
-; ball_over:inst19|VGA_SYNC:SYNC|v_count[4]           ; Merged with ball:inst2|VGA_SYNC:SYNC|v_count[4]            ;
-; ball_training:inst18|VGA_SYNC:SYNC|v_count[4]       ; Merged with ball:inst2|VGA_SYNC:SYNC|v_count[4]            ;
-; ball_menu:inst17|VGA_SYNC:SYNC|v_count[5]           ; Merged with ball:inst2|VGA_SYNC:SYNC|v_count[5]            ;
-; ball_over:inst19|VGA_SYNC:SYNC|v_count[5]           ; Merged with ball:inst2|VGA_SYNC:SYNC|v_count[5]            ;
-; ball_training:inst18|VGA_SYNC:SYNC|v_count[5]       ; Merged with ball:inst2|VGA_SYNC:SYNC|v_count[5]            ;
-; ball_menu:inst17|VGA_SYNC:SYNC|v_count[6]           ; Merged with ball:inst2|VGA_SYNC:SYNC|v_count[6]            ;
-; ball_over:inst19|VGA_SYNC:SYNC|v_count[6]           ; Merged with ball:inst2|VGA_SYNC:SYNC|v_count[6]            ;
-; ball_training:inst18|VGA_SYNC:SYNC|v_count[6]       ; Merged with ball:inst2|VGA_SYNC:SYNC|v_count[6]            ;
-; ball_menu:inst17|VGA_SYNC:SYNC|v_count[7]           ; Merged with ball:inst2|VGA_SYNC:SYNC|v_count[7]            ;
-; ball_over:inst19|VGA_SYNC:SYNC|v_count[7]           ; Merged with ball:inst2|VGA_SYNC:SYNC|v_count[7]            ;
-; ball_training:inst18|VGA_SYNC:SYNC|v_count[7]       ; Merged with ball:inst2|VGA_SYNC:SYNC|v_count[7]            ;
-; ball_menu:inst17|VGA_SYNC:SYNC|v_count[8]           ; Merged with ball:inst2|VGA_SYNC:SYNC|v_count[8]            ;
-; ball_over:inst19|VGA_SYNC:SYNC|v_count[8]           ; Merged with ball:inst2|VGA_SYNC:SYNC|v_count[8]            ;
-; ball_training:inst18|VGA_SYNC:SYNC|v_count[8]       ; Merged with ball:inst2|VGA_SYNC:SYNC|v_count[8]            ;
-; ball_menu:inst17|VGA_SYNC:SYNC|v_count[9]           ; Merged with ball:inst2|VGA_SYNC:SYNC|v_count[9]            ;
-; ball_over:inst19|VGA_SYNC:SYNC|v_count[9]           ; Merged with ball:inst2|VGA_SYNC:SYNC|v_count[9]            ;
-; ball_training:inst18|VGA_SYNC:SYNC|v_count[9]       ; Merged with ball:inst2|VGA_SYNC:SYNC|v_count[9]            ;
-; ball_menu:inst17|VGA_SYNC:SYNC|v_count[10]          ; Merged with ball:inst2|VGA_SYNC:SYNC|v_count[10]           ;
-; ball_over:inst19|VGA_SYNC:SYNC|v_count[10]          ; Merged with ball:inst2|VGA_SYNC:SYNC|v_count[10]           ;
-; ball_training:inst18|VGA_SYNC:SYNC|v_count[10]      ; Merged with ball:inst2|VGA_SYNC:SYNC|v_count[10]           ;
-; ball_menu:inst17|VGA_SYNC:SYNC|horiz_sync           ; Merged with ball:inst2|VGA_SYNC:SYNC|horiz_sync            ;
-; ball_over:inst19|VGA_SYNC:SYNC|horiz_sync           ; Merged with ball:inst2|VGA_SYNC:SYNC|horiz_sync            ;
-; ball_training:inst18|VGA_SYNC:SYNC|horiz_sync       ; Merged with ball:inst2|VGA_SYNC:SYNC|horiz_sync            ;
-; ball_menu:inst17|VGA_SYNC:SYNC|h_count[0]           ; Merged with ball:inst2|VGA_SYNC:SYNC|h_count[0]            ;
-; ball_over:inst19|VGA_SYNC:SYNC|h_count[0]           ; Merged with ball:inst2|VGA_SYNC:SYNC|h_count[0]            ;
-; ball_training:inst18|VGA_SYNC:SYNC|h_count[0]       ; Merged with ball:inst2|VGA_SYNC:SYNC|h_count[0]            ;
-; ball_menu:inst17|VGA_SYNC:SYNC|h_count[1]           ; Merged with ball:inst2|VGA_SYNC:SYNC|h_count[1]            ;
-; ball_over:inst19|VGA_SYNC:SYNC|h_count[1]           ; Merged with ball:inst2|VGA_SYNC:SYNC|h_count[1]            ;
-; ball_training:inst18|VGA_SYNC:SYNC|h_count[1]       ; Merged with ball:inst2|VGA_SYNC:SYNC|h_count[1]            ;
-; ball_menu:inst17|VGA_SYNC:SYNC|h_count[2]           ; Merged with ball:inst2|VGA_SYNC:SYNC|h_count[2]            ;
-; ball_over:inst19|VGA_SYNC:SYNC|h_count[2]           ; Merged with ball:inst2|VGA_SYNC:SYNC|h_count[2]            ;
-; ball_training:inst18|VGA_SYNC:SYNC|h_count[2]       ; Merged with ball:inst2|VGA_SYNC:SYNC|h_count[2]            ;
-; ball_menu:inst17|VGA_SYNC:SYNC|h_count[3]           ; Merged with ball:inst2|VGA_SYNC:SYNC|h_count[3]            ;
-; ball_over:inst19|VGA_SYNC:SYNC|h_count[3]           ; Merged with ball:inst2|VGA_SYNC:SYNC|h_count[3]            ;
-; ball_training:inst18|VGA_SYNC:SYNC|h_count[3]       ; Merged with ball:inst2|VGA_SYNC:SYNC|h_count[3]            ;
-; ball_menu:inst17|VGA_SYNC:SYNC|h_count[4]           ; Merged with ball:inst2|VGA_SYNC:SYNC|h_count[4]            ;
-; ball_over:inst19|VGA_SYNC:SYNC|h_count[4]           ; Merged with ball:inst2|VGA_SYNC:SYNC|h_count[4]            ;
-; ball_training:inst18|VGA_SYNC:SYNC|h_count[4]       ; Merged with ball:inst2|VGA_SYNC:SYNC|h_count[4]            ;
-; ball_menu:inst17|VGA_SYNC:SYNC|h_count[5]           ; Merged with ball:inst2|VGA_SYNC:SYNC|h_count[5]            ;
-; ball_over:inst19|VGA_SYNC:SYNC|h_count[5]           ; Merged with ball:inst2|VGA_SYNC:SYNC|h_count[5]            ;
-; ball_training:inst18|VGA_SYNC:SYNC|h_count[5]       ; Merged with ball:inst2|VGA_SYNC:SYNC|h_count[5]            ;
-; ball_menu:inst17|VGA_SYNC:SYNC|h_count[6]           ; Merged with ball:inst2|VGA_SYNC:SYNC|h_count[6]            ;
-; ball_over:inst19|VGA_SYNC:SYNC|h_count[6]           ; Merged with ball:inst2|VGA_SYNC:SYNC|h_count[6]            ;
-; ball_training:inst18|VGA_SYNC:SYNC|h_count[6]       ; Merged with ball:inst2|VGA_SYNC:SYNC|h_count[6]            ;
-; ball_menu:inst17|VGA_SYNC:SYNC|h_count[7]           ; Merged with ball:inst2|VGA_SYNC:SYNC|h_count[7]            ;
-; ball_over:inst19|VGA_SYNC:SYNC|h_count[7]           ; Merged with ball:inst2|VGA_SYNC:SYNC|h_count[7]            ;
-; ball_training:inst18|VGA_SYNC:SYNC|h_count[7]       ; Merged with ball:inst2|VGA_SYNC:SYNC|h_count[7]            ;
-; ball_menu:inst17|VGA_SYNC:SYNC|h_count[8]           ; Merged with ball:inst2|VGA_SYNC:SYNC|h_count[8]            ;
-; ball_over:inst19|VGA_SYNC:SYNC|h_count[8]           ; Merged with ball:inst2|VGA_SYNC:SYNC|h_count[8]            ;
-; ball_training:inst18|VGA_SYNC:SYNC|h_count[8]       ; Merged with ball:inst2|VGA_SYNC:SYNC|h_count[8]            ;
-; ball_menu:inst17|VGA_SYNC:SYNC|h_count[9]           ; Merged with ball:inst2|VGA_SYNC:SYNC|h_count[9]            ;
-; ball_over:inst19|VGA_SYNC:SYNC|h_count[9]           ; Merged with ball:inst2|VGA_SYNC:SYNC|h_count[9]            ;
-; ball_training:inst18|VGA_SYNC:SYNC|h_count[9]       ; Merged with ball:inst2|VGA_SYNC:SYNC|h_count[9]            ;
-; ball_menu:inst17|VGA_SYNC:SYNC|h_count[10]          ; Merged with ball:inst2|VGA_SYNC:SYNC|h_count[10]           ;
-; ball_over:inst19|VGA_SYNC:SYNC|h_count[10]          ; Merged with ball:inst2|VGA_SYNC:SYNC|h_count[10]           ;
-; ball_training:inst18|VGA_SYNC:SYNC|h_count[10]      ; Merged with ball:inst2|VGA_SYNC:SYNC|h_count[10]           ;
-; ball_training:inst18|Ball_Y_motion[3..9]            ; Merged with ball_training:inst18|Ball_Y_motion[0]          ;
-; ball_training:inst18|VGA_SYNC:SYNC|green_out[3]     ; Merged with ball_training:inst18|VGA_SYNC:SYNC|blue_out[3] ;
-; ball_menu:inst17|VGA_SYNC:SYNC|pixel_row[0]         ; Merged with ball:inst2|VGA_SYNC:SYNC|pixel_row[0]          ;
-; ball_training:inst18|VGA_SYNC:SYNC|pixel_row[0]     ; Merged with ball:inst2|VGA_SYNC:SYNC|pixel_row[0]          ;
-; ball_menu:inst17|VGA_SYNC:SYNC|pixel_row[1]         ; Merged with ball:inst2|VGA_SYNC:SYNC|pixel_row[1]          ;
-; ball_training:inst18|VGA_SYNC:SYNC|pixel_row[1]     ; Merged with ball:inst2|VGA_SYNC:SYNC|pixel_row[1]          ;
-; ball_menu:inst17|VGA_SYNC:SYNC|pixel_row[2]         ; Merged with ball:inst2|VGA_SYNC:SYNC|pixel_row[2]          ;
-; ball_training:inst18|VGA_SYNC:SYNC|pixel_row[2]     ; Merged with ball:inst2|VGA_SYNC:SYNC|pixel_row[2]          ;
-; ball_menu:inst17|VGA_SYNC:SYNC|pixel_row[3]         ; Merged with ball:inst2|VGA_SYNC:SYNC|pixel_row[3]          ;
-; ball_training:inst18|VGA_SYNC:SYNC|pixel_row[3]     ; Merged with ball:inst2|VGA_SYNC:SYNC|pixel_row[3]          ;
-; ball_menu:inst17|VGA_SYNC:SYNC|pixel_row[4]         ; Merged with ball:inst2|VGA_SYNC:SYNC|pixel_row[4]          ;
-; ball_training:inst18|VGA_SYNC:SYNC|pixel_row[4]     ; Merged with ball:inst2|VGA_SYNC:SYNC|pixel_row[4]          ;
-; ball_menu:inst17|VGA_SYNC:SYNC|pixel_row[5]         ; Merged with ball:inst2|VGA_SYNC:SYNC|pixel_row[5]          ;
-; ball_training:inst18|VGA_SYNC:SYNC|pixel_row[5]     ; Merged with ball:inst2|VGA_SYNC:SYNC|pixel_row[5]          ;
-; ball_menu:inst17|VGA_SYNC:SYNC|pixel_row[6]         ; Merged with ball:inst2|VGA_SYNC:SYNC|pixel_row[6]          ;
-; ball_training:inst18|VGA_SYNC:SYNC|pixel_row[6]     ; Merged with ball:inst2|VGA_SYNC:SYNC|pixel_row[6]          ;
-; ball_menu:inst17|VGA_SYNC:SYNC|pixel_row[7]         ; Merged with ball:inst2|VGA_SYNC:SYNC|pixel_row[7]          ;
-; ball_training:inst18|VGA_SYNC:SYNC|pixel_row[7]     ; Merged with ball:inst2|VGA_SYNC:SYNC|pixel_row[7]          ;
-; ball_menu:inst17|VGA_SYNC:SYNC|pixel_row[8]         ; Merged with ball:inst2|VGA_SYNC:SYNC|pixel_row[8]          ;
-; ball_training:inst18|VGA_SYNC:SYNC|pixel_row[8]     ; Merged with ball:inst2|VGA_SYNC:SYNC|pixel_row[8]          ;
-; ball_menu:inst17|VGA_SYNC:SYNC|pixel_row[9]         ; Merged with ball:inst2|VGA_SYNC:SYNC|pixel_row[9]          ;
-; ball_training:inst18|VGA_SYNC:SYNC|pixel_row[9]     ; Merged with ball:inst2|VGA_SYNC:SYNC|pixel_row[9]          ;
-; ball_menu:inst17|VGA_SYNC:SYNC|pixel_row[10]        ; Merged with ball:inst2|VGA_SYNC:SYNC|pixel_row[10]         ;
-; ball_training:inst18|VGA_SYNC:SYNC|pixel_row[10]    ; Merged with ball:inst2|VGA_SYNC:SYNC|pixel_row[10]         ;
-; ball_menu:inst17|VGA_SYNC:SYNC|video_on_v           ; Merged with ball:inst2|VGA_SYNC:SYNC|video_on_v            ;
-; ball_training:inst18|VGA_SYNC:SYNC|video_on_v       ; Merged with ball:inst2|VGA_SYNC:SYNC|video_on_v            ;
-; ball_menu:inst17|VGA_SYNC:SYNC|pixel_column[0]      ; Merged with ball:inst2|VGA_SYNC:SYNC|pixel_column[0]       ;
-; ball_training:inst18|VGA_SYNC:SYNC|pixel_column[0]  ; Merged with ball:inst2|VGA_SYNC:SYNC|pixel_column[0]       ;
-; ball_menu:inst17|VGA_SYNC:SYNC|pixel_column[1]      ; Merged with ball:inst2|VGA_SYNC:SYNC|pixel_column[1]       ;
-; ball_training:inst18|VGA_SYNC:SYNC|pixel_column[1]  ; Merged with ball:inst2|VGA_SYNC:SYNC|pixel_column[1]       ;
-; ball_menu:inst17|VGA_SYNC:SYNC|pixel_column[2]      ; Merged with ball:inst2|VGA_SYNC:SYNC|pixel_column[2]       ;
-; ball_training:inst18|VGA_SYNC:SYNC|pixel_column[2]  ; Merged with ball:inst2|VGA_SYNC:SYNC|pixel_column[2]       ;
-; ball_menu:inst17|VGA_SYNC:SYNC|pixel_column[3]      ; Merged with ball:inst2|VGA_SYNC:SYNC|pixel_column[3]       ;
-; ball_training:inst18|VGA_SYNC:SYNC|pixel_column[3]  ; Merged with ball:inst2|VGA_SYNC:SYNC|pixel_column[3]       ;
-; ball_menu:inst17|VGA_SYNC:SYNC|pixel_column[4]      ; Merged with ball:inst2|VGA_SYNC:SYNC|pixel_column[4]       ;
-; ball_training:inst18|VGA_SYNC:SYNC|pixel_column[4]  ; Merged with ball:inst2|VGA_SYNC:SYNC|pixel_column[4]       ;
-; ball_menu:inst17|VGA_SYNC:SYNC|pixel_column[5]      ; Merged with ball:inst2|VGA_SYNC:SYNC|pixel_column[5]       ;
-; ball_training:inst18|VGA_SYNC:SYNC|pixel_column[5]  ; Merged with ball:inst2|VGA_SYNC:SYNC|pixel_column[5]       ;
-; ball_menu:inst17|VGA_SYNC:SYNC|pixel_column[6]      ; Merged with ball:inst2|VGA_SYNC:SYNC|pixel_column[6]       ;
-; ball_training:inst18|VGA_SYNC:SYNC|pixel_column[6]  ; Merged with ball:inst2|VGA_SYNC:SYNC|pixel_column[6]       ;
-; ball_menu:inst17|VGA_SYNC:SYNC|pixel_column[7]      ; Merged with ball:inst2|VGA_SYNC:SYNC|pixel_column[7]       ;
-; ball_training:inst18|VGA_SYNC:SYNC|pixel_column[7]  ; Merged with ball:inst2|VGA_SYNC:SYNC|pixel_column[7]       ;
-; ball_menu:inst17|VGA_SYNC:SYNC|pixel_column[8]      ; Merged with ball:inst2|VGA_SYNC:SYNC|pixel_column[8]       ;
-; ball_training:inst18|VGA_SYNC:SYNC|pixel_column[8]  ; Merged with ball:inst2|VGA_SYNC:SYNC|pixel_column[8]       ;
-; ball_menu:inst17|VGA_SYNC:SYNC|pixel_column[9]      ; Merged with ball:inst2|VGA_SYNC:SYNC|pixel_column[9]       ;
-; ball_training:inst18|VGA_SYNC:SYNC|pixel_column[9]  ; Merged with ball:inst2|VGA_SYNC:SYNC|pixel_column[9]       ;
-; ball_menu:inst17|VGA_SYNC:SYNC|pixel_column[10]     ; Merged with ball:inst2|VGA_SYNC:SYNC|pixel_column[10]      ;
-; ball_training:inst18|VGA_SYNC:SYNC|pixel_column[10] ; Merged with ball:inst2|VGA_SYNC:SYNC|pixel_column[10]      ;
-; ball_menu:inst17|VGA_SYNC:SYNC|video_on_h           ; Merged with ball:inst2|VGA_SYNC:SYNC|video_on_h            ;
-; ball_training:inst18|VGA_SYNC:SYNC|video_on_h       ; Merged with ball:inst2|VGA_SYNC:SYNC|video_on_h            ;
-; lfsr:inst20|cout[10]                                ; Merged with lfsr:inst16|cout[10]                           ;
-; lfsr:inst23|cout[10]                                ; Merged with lfsr:inst16|cout[10]                           ;
-; lfsr:inst20|cout[9]                                 ; Merged with lfsr:inst16|cout[9]                            ;
-; lfsr:inst23|cout[9]                                 ; Merged with lfsr:inst16|cout[9]                            ;
-; lfsr:inst20|cout[8]                                 ; Merged with lfsr:inst16|cout[8]                            ;
-; lfsr:inst23|cout[8]                                 ; Merged with lfsr:inst16|cout[8]                            ;
-; lfsr:inst20|cout[7]                                 ; Merged with lfsr:inst16|cout[7]                            ;
-; lfsr:inst23|cout[7]                                 ; Merged with lfsr:inst16|cout[7]                            ;
-; lfsr:inst20|cout[6]                                 ; Merged with lfsr:inst16|cout[6]                            ;
-; lfsr:inst23|cout[6]                                 ; Merged with lfsr:inst16|cout[6]                            ;
-; lfsr:inst20|cout[5]                                 ; Merged with lfsr:inst16|cout[5]                            ;
-; lfsr:inst23|cout[5]                                 ; Merged with lfsr:inst16|cout[5]                            ;
-; lfsr:inst20|cout[4]                                 ; Merged with lfsr:inst16|cout[4]                            ;
-; lfsr:inst23|cout[4]                                 ; Merged with lfsr:inst16|cout[4]                            ;
-; lfsr:inst20|cout[3]                                 ; Merged with lfsr:inst16|cout[3]                            ;
-; lfsr:inst23|cout[3]                                 ; Merged with lfsr:inst16|cout[3]                            ;
-; lfsr:inst20|cout[2]                                 ; Merged with lfsr:inst16|cout[2]                            ;
-; lfsr:inst23|cout[2]                                 ; Merged with lfsr:inst16|cout[2]                            ;
-; lfsr:inst20|cout[1]                                 ; Merged with lfsr:inst16|cout[1]                            ;
-; lfsr:inst23|cout[1]                                 ; Merged with lfsr:inst16|cout[1]                            ;
-; lfsr:inst20|cout[0]                                 ; Merged with lfsr:inst16|cout[0]                            ;
-; lfsr:inst23|cout[0]                                 ; Merged with lfsr:inst16|cout[0]                            ;
-; pipe:inst15|Pipe_X_motion[2..10]                    ; Merged with pipe:inst15|Pipe_X_motion[0]                   ;
-; pipe:inst14|Pipe_gap_pos[0]                         ; Merged with pipe:inst13|Pipe_gap_pos[0]                    ;
-; pipe:inst15|Pipe_gap_pos[0]                         ; Merged with pipe:inst13|Pipe_gap_pos[0]                    ;
-; pipe:inst14|Pipe_gap_pos[1]                         ; Merged with pipe:inst13|Pipe_gap_pos[1]                    ;
-; pipe:inst15|Pipe_gap_pos[1]                         ; Merged with pipe:inst13|Pipe_gap_pos[1]                    ;
-; pipe:inst14|Pipe_gap_pos[2]                         ; Merged with pipe:inst13|Pipe_gap_pos[2]                    ;
-; pipe:inst15|Pipe_gap_pos[2]                         ; Merged with pipe:inst13|Pipe_gap_pos[2]                    ;
-; pipe:inst14|Pipe_gap_pos[3]                         ; Merged with pipe:inst13|Pipe_gap_pos[3]                    ;
-; pipe:inst15|Pipe_gap_pos[3]                         ; Merged with pipe:inst13|Pipe_gap_pos[3]                    ;
-; pipe:inst14|Pipe_gap_pos[4]                         ; Merged with pipe:inst13|Pipe_gap_pos[4]                    ;
-; pipe:inst15|Pipe_gap_pos[4]                         ; Merged with pipe:inst13|Pipe_gap_pos[4]                    ;
-; pipe:inst14|Pipe_gap_pos[5]                         ; Merged with pipe:inst13|Pipe_gap_pos[5]                    ;
-; pipe:inst15|Pipe_gap_pos[5]                         ; Merged with pipe:inst13|Pipe_gap_pos[5]                    ;
-; pipe:inst14|Pipe_gap_pos[6]                         ; Merged with pipe:inst13|Pipe_gap_pos[6]                    ;
-; pipe:inst15|Pipe_gap_pos[6]                         ; Merged with pipe:inst13|Pipe_gap_pos[6]                    ;
-; pipe:inst14|Pipe_gap_pos[7]                         ; Merged with pipe:inst13|Pipe_gap_pos[7]                    ;
-; pipe:inst15|Pipe_gap_pos[7]                         ; Merged with pipe:inst13|Pipe_gap_pos[7]                    ;
-; pipe:inst14|Pipe_X_motion[2..10]                    ; Merged with pipe:inst14|Pipe_X_motion[0]                   ;
-; pipe:inst13|Pipe_X_motion[2..10]                    ; Merged with pipe:inst13|Pipe_X_motion[0]                   ;
-; MOUSE:inst1|cursor_row[9]                           ; Stuck at GND due to stuck port data_in                     ;
-; ball:inst2|VGA_SYNC:SYNC|pixel_column[10]           ; Stuck at GND due to stuck port data_in                     ;
-; ball:inst2|VGA_SYNC:SYNC|pixel_row[9,10]            ; Stuck at GND due to stuck port data_in                     ;
-; display_sel:inst21|pix_row[9]                       ; Stuck at GND due to stuck port data_in                     ;
-; Total Number of Removed Registers = 268             ;                                                            ;
-+-----------------------------------------------------+------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                             ;
++-----------------------------------------------------+----------------------------------------------------------+
+; Register name                                       ; Reason for Removal                                       ;
++-----------------------------------------------------+----------------------------------------------------------+
+; pipe:inst35|Pipe_gap_pos[10]                        ; Stuck at GND due to stuck port data_in                   ;
+; pipe:inst35|Pipe_X_motion[1]                        ; Stuck at GND due to stuck port data_in                   ;
+; pipe:inst35|Pipe_gap_pos[8,9]                       ; Stuck at GND due to stuck port data_in                   ;
+; pipe:inst35|pipe_gap[8..10]                         ; Stuck at GND due to stuck port data_in                   ;
+; pipe:inst31|Pipe_gap_pos[10]                        ; Stuck at GND due to stuck port data_in                   ;
+; pipe:inst31|Pipe_X_motion[1]                        ; Stuck at GND due to stuck port data_in                   ;
+; pipe:inst31|Pipe_gap_pos[8,9]                       ; Stuck at GND due to stuck port data_in                   ;
+; pipe:inst31|pipe_gap[8..10]                         ; Stuck at GND due to stuck port data_in                   ;
+; pipe:inst29|Pipe_gap_pos[10]                        ; Stuck at GND due to stuck port data_in                   ;
+; pipe:inst29|Pipe_X_motion[1]                        ; Stuck at GND due to stuck port data_in                   ;
+; pipe:inst29|Pipe_gap_pos[8,9]                       ; Stuck at GND due to stuck port data_in                   ;
+; pipe:inst29|pipe_gap[8..10]                         ; Stuck at GND due to stuck port data_in                   ;
+; pipe:inst15|Pipe_gap_pos[8..10]                     ; Stuck at GND due to stuck port data_in                   ;
+; pipe:inst15|pipe_gap[8..10]                         ; Stuck at GND due to stuck port data_in                   ;
+; pipe:inst14|Pipe_gap_pos[8..10]                     ; Stuck at GND due to stuck port data_in                   ;
+; pipe:inst14|pipe_gap[8..10]                         ; Stuck at GND due to stuck port data_in                   ;
+; pipe:inst13|Pipe_gap_pos[8..10]                     ; Stuck at GND due to stuck port data_in                   ;
+; pipe:inst13|pipe_gap[8..10]                         ; Stuck at GND due to stuck port data_in                   ;
+; MOUSE:inst1|CHAROUT[4..7]                           ; Stuck at VCC due to stuck port data_in                   ;
+; MOUSE:inst1|CHAROUT[3]                              ; Stuck at GND due to stuck port data_in                   ;
+; MOUSE:inst1|CHAROUT[2]                              ; Stuck at VCC due to stuck port data_in                   ;
+; MOUSE:inst1|CHAROUT[0,1]                            ; Stuck at GND due to stuck port data_in                   ;
+; MOUSE:inst1|SHIFTOUT[10]                            ; Stuck at VCC due to stuck port data_in                   ;
+; ball_menu:inst17|VGA_SYNC:SYNC|horiz_sync_out       ; Merged with ball:inst2|VGA_SYNC:SYNC|horiz_sync_out      ;
+; ball_over:inst19|VGA_SYNC:SYNC|horiz_sync_out       ; Merged with ball:inst2|VGA_SYNC:SYNC|horiz_sync_out      ;
+; ball_training:inst18|VGA_SYNC:SYNC|horiz_sync_out   ; Merged with ball:inst2|VGA_SYNC:SYNC|horiz_sync_out      ;
+; ball_over:inst19|VGA_SYNC:SYNC|vert_sync_out        ; Merged with ball_menu:inst17|VGA_SYNC:SYNC|vert_sync_out ;
+; ball_menu:inst17|VGA_SYNC:SYNC|pixel_row[0]         ; Merged with ball:inst2|VGA_SYNC:SYNC|pixel_row[0]        ;
+; ball_over:inst19|VGA_SYNC:SYNC|pixel_row[0]         ; Merged with ball:inst2|VGA_SYNC:SYNC|pixel_row[0]        ;
+; ball_training:inst18|VGA_SYNC:SYNC|pixel_row[0]     ; Merged with ball:inst2|VGA_SYNC:SYNC|pixel_row[0]        ;
+; ball_menu:inst17|VGA_SYNC:SYNC|pixel_row[1]         ; Merged with ball:inst2|VGA_SYNC:SYNC|pixel_row[1]        ;
+; ball_over:inst19|VGA_SYNC:SYNC|pixel_row[1]         ; Merged with ball:inst2|VGA_SYNC:SYNC|pixel_row[1]        ;
+; ball_training:inst18|VGA_SYNC:SYNC|pixel_row[1]     ; Merged with ball:inst2|VGA_SYNC:SYNC|pixel_row[1]        ;
+; ball_menu:inst17|VGA_SYNC:SYNC|pixel_row[2]         ; Merged with ball:inst2|VGA_SYNC:SYNC|pixel_row[2]        ;
+; ball_over:inst19|VGA_SYNC:SYNC|pixel_row[2]         ; Merged with ball:inst2|VGA_SYNC:SYNC|pixel_row[2]        ;
+; ball_training:inst18|VGA_SYNC:SYNC|pixel_row[2]     ; Merged with ball:inst2|VGA_SYNC:SYNC|pixel_row[2]        ;
+; ball_menu:inst17|VGA_SYNC:SYNC|pixel_row[3]         ; Merged with ball:inst2|VGA_SYNC:SYNC|pixel_row[3]        ;
+; ball_over:inst19|VGA_SYNC:SYNC|pixel_row[3]         ; Merged with ball:inst2|VGA_SYNC:SYNC|pixel_row[3]        ;
+; ball_training:inst18|VGA_SYNC:SYNC|pixel_row[3]     ; Merged with ball:inst2|VGA_SYNC:SYNC|pixel_row[3]        ;
+; ball_menu:inst17|VGA_SYNC:SYNC|pixel_row[4]         ; Merged with ball:inst2|VGA_SYNC:SYNC|pixel_row[4]        ;
+; ball_over:inst19|VGA_SYNC:SYNC|pixel_row[4]         ; Merged with ball:inst2|VGA_SYNC:SYNC|pixel_row[4]        ;
+; ball_training:inst18|VGA_SYNC:SYNC|pixel_row[4]     ; Merged with ball:inst2|VGA_SYNC:SYNC|pixel_row[4]        ;
+; ball_menu:inst17|VGA_SYNC:SYNC|pixel_row[5]         ; Merged with ball:inst2|VGA_SYNC:SYNC|pixel_row[5]        ;
+; ball_over:inst19|VGA_SYNC:SYNC|pixel_row[5]         ; Merged with ball:inst2|VGA_SYNC:SYNC|pixel_row[5]        ;
+; ball_training:inst18|VGA_SYNC:SYNC|pixel_row[5]     ; Merged with ball:inst2|VGA_SYNC:SYNC|pixel_row[5]        ;
+; ball_menu:inst17|VGA_SYNC:SYNC|pixel_row[6]         ; Merged with ball:inst2|VGA_SYNC:SYNC|pixel_row[6]        ;
+; ball_over:inst19|VGA_SYNC:SYNC|pixel_row[6]         ; Merged with ball:inst2|VGA_SYNC:SYNC|pixel_row[6]        ;
+; ball_training:inst18|VGA_SYNC:SYNC|pixel_row[6]     ; Merged with ball:inst2|VGA_SYNC:SYNC|pixel_row[6]        ;
+; ball_menu:inst17|VGA_SYNC:SYNC|pixel_row[7]         ; Merged with ball:inst2|VGA_SYNC:SYNC|pixel_row[7]        ;
+; ball_over:inst19|VGA_SYNC:SYNC|pixel_row[7]         ; Merged with ball:inst2|VGA_SYNC:SYNC|pixel_row[7]        ;
+; ball_training:inst18|VGA_SYNC:SYNC|pixel_row[7]     ; Merged with ball:inst2|VGA_SYNC:SYNC|pixel_row[7]        ;
+; ball_menu:inst17|VGA_SYNC:SYNC|pixel_row[8]         ; Merged with ball:inst2|VGA_SYNC:SYNC|pixel_row[8]        ;
+; ball_over:inst19|VGA_SYNC:SYNC|pixel_row[8]         ; Merged with ball:inst2|VGA_SYNC:SYNC|pixel_row[8]        ;
+; ball_training:inst18|VGA_SYNC:SYNC|pixel_row[8]     ; Merged with ball:inst2|VGA_SYNC:SYNC|pixel_row[8]        ;
+; ball_menu:inst17|VGA_SYNC:SYNC|pixel_row[9]         ; Merged with ball:inst2|VGA_SYNC:SYNC|pixel_row[9]        ;
+; ball_over:inst19|VGA_SYNC:SYNC|pixel_row[9]         ; Merged with ball:inst2|VGA_SYNC:SYNC|pixel_row[9]        ;
+; ball_training:inst18|VGA_SYNC:SYNC|pixel_row[9]     ; Merged with ball:inst2|VGA_SYNC:SYNC|pixel_row[9]        ;
+; ball_menu:inst17|VGA_SYNC:SYNC|pixel_row[10]        ; Merged with ball:inst2|VGA_SYNC:SYNC|pixel_row[10]       ;
+; ball_over:inst19|VGA_SYNC:SYNC|pixel_row[10]        ; Merged with ball:inst2|VGA_SYNC:SYNC|pixel_row[10]       ;
+; ball_training:inst18|VGA_SYNC:SYNC|pixel_row[10]    ; Merged with ball:inst2|VGA_SYNC:SYNC|pixel_row[10]       ;
+; ball_menu:inst17|VGA_SYNC:SYNC|video_on_v           ; Merged with ball:inst2|VGA_SYNC:SYNC|video_on_v          ;
+; ball_over:inst19|VGA_SYNC:SYNC|video_on_v           ; Merged with ball:inst2|VGA_SYNC:SYNC|video_on_v          ;
+; ball_training:inst18|VGA_SYNC:SYNC|video_on_v       ; Merged with ball:inst2|VGA_SYNC:SYNC|video_on_v          ;
+; ball_menu:inst17|VGA_SYNC:SYNC|pixel_column[0]      ; Merged with ball:inst2|VGA_SYNC:SYNC|pixel_column[0]     ;
+; ball_over:inst19|VGA_SYNC:SYNC|pixel_column[0]      ; Merged with ball:inst2|VGA_SYNC:SYNC|pixel_column[0]     ;
+; ball_training:inst18|VGA_SYNC:SYNC|pixel_column[0]  ; Merged with ball:inst2|VGA_SYNC:SYNC|pixel_column[0]     ;
+; ball_menu:inst17|VGA_SYNC:SYNC|pixel_column[1]      ; Merged with ball:inst2|VGA_SYNC:SYNC|pixel_column[1]     ;
+; ball_over:inst19|VGA_SYNC:SYNC|pixel_column[1]      ; Merged with ball:inst2|VGA_SYNC:SYNC|pixel_column[1]     ;
+; ball_training:inst18|VGA_SYNC:SYNC|pixel_column[1]  ; Merged with ball:inst2|VGA_SYNC:SYNC|pixel_column[1]     ;
+; ball_menu:inst17|VGA_SYNC:SYNC|pixel_column[2]      ; Merged with ball:inst2|VGA_SYNC:SYNC|pixel_column[2]     ;
+; ball_over:inst19|VGA_SYNC:SYNC|pixel_column[2]      ; Merged with ball:inst2|VGA_SYNC:SYNC|pixel_column[2]     ;
+; ball_training:inst18|VGA_SYNC:SYNC|pixel_column[2]  ; Merged with ball:inst2|VGA_SYNC:SYNC|pixel_column[2]     ;
+; ball_menu:inst17|VGA_SYNC:SYNC|pixel_column[3]      ; Merged with ball:inst2|VGA_SYNC:SYNC|pixel_column[3]     ;
+; ball_over:inst19|VGA_SYNC:SYNC|pixel_column[3]      ; Merged with ball:inst2|VGA_SYNC:SYNC|pixel_column[3]     ;
+; ball_training:inst18|VGA_SYNC:SYNC|pixel_column[3]  ; Merged with ball:inst2|VGA_SYNC:SYNC|pixel_column[3]     ;
+; ball_menu:inst17|VGA_SYNC:SYNC|pixel_column[4]      ; Merged with ball:inst2|VGA_SYNC:SYNC|pixel_column[4]     ;
+; ball_over:inst19|VGA_SYNC:SYNC|pixel_column[4]      ; Merged with ball:inst2|VGA_SYNC:SYNC|pixel_column[4]     ;
+; ball_training:inst18|VGA_SYNC:SYNC|pixel_column[4]  ; Merged with ball:inst2|VGA_SYNC:SYNC|pixel_column[4]     ;
+; ball_menu:inst17|VGA_SYNC:SYNC|pixel_column[5]      ; Merged with ball:inst2|VGA_SYNC:SYNC|pixel_column[5]     ;
+; ball_over:inst19|VGA_SYNC:SYNC|pixel_column[5]      ; Merged with ball:inst2|VGA_SYNC:SYNC|pixel_column[5]     ;
+; ball_training:inst18|VGA_SYNC:SYNC|pixel_column[5]  ; Merged with ball:inst2|VGA_SYNC:SYNC|pixel_column[5]     ;
+; ball_menu:inst17|VGA_SYNC:SYNC|pixel_column[6]      ; Merged with ball:inst2|VGA_SYNC:SYNC|pixel_column[6]     ;
+; ball_over:inst19|VGA_SYNC:SYNC|pixel_column[6]      ; Merged with ball:inst2|VGA_SYNC:SYNC|pixel_column[6]     ;
+; ball_training:inst18|VGA_SYNC:SYNC|pixel_column[6]  ; Merged with ball:inst2|VGA_SYNC:SYNC|pixel_column[6]     ;
+; ball_menu:inst17|VGA_SYNC:SYNC|pixel_column[7]      ; Merged with ball:inst2|VGA_SYNC:SYNC|pixel_column[7]     ;
+; ball_over:inst19|VGA_SYNC:SYNC|pixel_column[7]      ; Merged with ball:inst2|VGA_SYNC:SYNC|pixel_column[7]     ;
+; ball_training:inst18|VGA_SYNC:SYNC|pixel_column[7]  ; Merged with ball:inst2|VGA_SYNC:SYNC|pixel_column[7]     ;
+; ball_menu:inst17|VGA_SYNC:SYNC|pixel_column[8]      ; Merged with ball:inst2|VGA_SYNC:SYNC|pixel_column[8]     ;
+; ball_over:inst19|VGA_SYNC:SYNC|pixel_column[8]      ; Merged with ball:inst2|VGA_SYNC:SYNC|pixel_column[8]     ;
+; ball_training:inst18|VGA_SYNC:SYNC|pixel_column[8]  ; Merged with ball:inst2|VGA_SYNC:SYNC|pixel_column[8]     ;
+; ball_menu:inst17|VGA_SYNC:SYNC|pixel_column[9]      ; Merged with ball:inst2|VGA_SYNC:SYNC|pixel_column[9]     ;
+; ball_over:inst19|VGA_SYNC:SYNC|pixel_column[9]      ; Merged with ball:inst2|VGA_SYNC:SYNC|pixel_column[9]     ;
+; ball_training:inst18|VGA_SYNC:SYNC|pixel_column[9]  ; Merged with ball:inst2|VGA_SYNC:SYNC|pixel_column[9]     ;
+; ball_menu:inst17|VGA_SYNC:SYNC|pixel_column[10]     ; Merged with ball:inst2|VGA_SYNC:SYNC|pixel_column[10]    ;
+; ball_over:inst19|VGA_SYNC:SYNC|pixel_column[10]     ; Merged with ball:inst2|VGA_SYNC:SYNC|pixel_column[10]    ;
+; ball_training:inst18|VGA_SYNC:SYNC|pixel_column[10] ; Merged with ball:inst2|VGA_SYNC:SYNC|pixel_column[10]    ;
+; ball_menu:inst17|VGA_SYNC:SYNC|video_on_h           ; Merged with ball:inst2|VGA_SYNC:SYNC|video_on_h          ;
+; ball_over:inst19|VGA_SYNC:SYNC|video_on_h           ; Merged with ball:inst2|VGA_SYNC:SYNC|video_on_h          ;
+; ball_training:inst18|VGA_SYNC:SYNC|video_on_h       ; Merged with ball:inst2|VGA_SYNC:SYNC|video_on_h          ;
+; ball_menu:inst17|VGA_SYNC:SYNC|vert_sync            ; Merged with ball:inst2|VGA_SYNC:SYNC|vert_sync           ;
+; ball_over:inst19|VGA_SYNC:SYNC|vert_sync            ; Merged with ball:inst2|VGA_SYNC:SYNC|vert_sync           ;
+; ball_training:inst18|VGA_SYNC:SYNC|vert_sync        ; Merged with ball:inst2|VGA_SYNC:SYNC|vert_sync           ;
+; ball_menu:inst17|VGA_SYNC:SYNC|v_count[0]           ; Merged with ball:inst2|VGA_SYNC:SYNC|v_count[0]          ;
+; ball_over:inst19|VGA_SYNC:SYNC|v_count[0]           ; Merged with ball:inst2|VGA_SYNC:SYNC|v_count[0]          ;
+; ball_training:inst18|VGA_SYNC:SYNC|v_count[0]       ; Merged with ball:inst2|VGA_SYNC:SYNC|v_count[0]          ;
+; ball_menu:inst17|VGA_SYNC:SYNC|v_count[1]           ; Merged with ball:inst2|VGA_SYNC:SYNC|v_count[1]          ;
+; ball_over:inst19|VGA_SYNC:SYNC|v_count[1]           ; Merged with ball:inst2|VGA_SYNC:SYNC|v_count[1]          ;
+; ball_training:inst18|VGA_SYNC:SYNC|v_count[1]       ; Merged with ball:inst2|VGA_SYNC:SYNC|v_count[1]          ;
+; ball_menu:inst17|VGA_SYNC:SYNC|v_count[2]           ; Merged with ball:inst2|VGA_SYNC:SYNC|v_count[2]          ;
+; ball_over:inst19|VGA_SYNC:SYNC|v_count[2]           ; Merged with ball:inst2|VGA_SYNC:SYNC|v_count[2]          ;
+; ball_training:inst18|VGA_SYNC:SYNC|v_count[2]       ; Merged with ball:inst2|VGA_SYNC:SYNC|v_count[2]          ;
+; ball_menu:inst17|VGA_SYNC:SYNC|v_count[3]           ; Merged with ball:inst2|VGA_SYNC:SYNC|v_count[3]          ;
+; ball_over:inst19|VGA_SYNC:SYNC|v_count[3]           ; Merged with ball:inst2|VGA_SYNC:SYNC|v_count[3]          ;
+; ball_training:inst18|VGA_SYNC:SYNC|v_count[3]       ; Merged with ball:inst2|VGA_SYNC:SYNC|v_count[3]          ;
+; ball_menu:inst17|VGA_SYNC:SYNC|v_count[4]           ; Merged with ball:inst2|VGA_SYNC:SYNC|v_count[4]          ;
+; ball_over:inst19|VGA_SYNC:SYNC|v_count[4]           ; Merged with ball:inst2|VGA_SYNC:SYNC|v_count[4]          ;
+; ball_training:inst18|VGA_SYNC:SYNC|v_count[4]       ; Merged with ball:inst2|VGA_SYNC:SYNC|v_count[4]          ;
+; ball_menu:inst17|VGA_SYNC:SYNC|v_count[5]           ; Merged with ball:inst2|VGA_SYNC:SYNC|v_count[5]          ;
+; ball_over:inst19|VGA_SYNC:SYNC|v_count[5]           ; Merged with ball:inst2|VGA_SYNC:SYNC|v_count[5]          ;
+; ball_training:inst18|VGA_SYNC:SYNC|v_count[5]       ; Merged with ball:inst2|VGA_SYNC:SYNC|v_count[5]          ;
+; ball_menu:inst17|VGA_SYNC:SYNC|v_count[6]           ; Merged with ball:inst2|VGA_SYNC:SYNC|v_count[6]          ;
+; ball_over:inst19|VGA_SYNC:SYNC|v_count[6]           ; Merged with ball:inst2|VGA_SYNC:SYNC|v_count[6]          ;
+; ball_training:inst18|VGA_SYNC:SYNC|v_count[6]       ; Merged with ball:inst2|VGA_SYNC:SYNC|v_count[6]          ;
+; ball_menu:inst17|VGA_SYNC:SYNC|v_count[7]           ; Merged with ball:inst2|VGA_SYNC:SYNC|v_count[7]          ;
+; ball_over:inst19|VGA_SYNC:SYNC|v_count[7]           ; Merged with ball:inst2|VGA_SYNC:SYNC|v_count[7]          ;
+; ball_training:inst18|VGA_SYNC:SYNC|v_count[7]       ; Merged with ball:inst2|VGA_SYNC:SYNC|v_count[7]          ;
+; ball_menu:inst17|VGA_SYNC:SYNC|v_count[8]           ; Merged with ball:inst2|VGA_SYNC:SYNC|v_count[8]          ;
+; ball_over:inst19|VGA_SYNC:SYNC|v_count[8]           ; Merged with ball:inst2|VGA_SYNC:SYNC|v_count[8]          ;
+; ball_training:inst18|VGA_SYNC:SYNC|v_count[8]       ; Merged with ball:inst2|VGA_SYNC:SYNC|v_count[8]          ;
+; ball_menu:inst17|VGA_SYNC:SYNC|v_count[9]           ; Merged with ball:inst2|VGA_SYNC:SYNC|v_count[9]          ;
+; ball_over:inst19|VGA_SYNC:SYNC|v_count[9]           ; Merged with ball:inst2|VGA_SYNC:SYNC|v_count[9]          ;
+; ball_training:inst18|VGA_SYNC:SYNC|v_count[9]       ; Merged with ball:inst2|VGA_SYNC:SYNC|v_count[9]          ;
+; ball_menu:inst17|VGA_SYNC:SYNC|v_count[10]          ; Merged with ball:inst2|VGA_SYNC:SYNC|v_count[10]         ;
+; ball_over:inst19|VGA_SYNC:SYNC|v_count[10]          ; Merged with ball:inst2|VGA_SYNC:SYNC|v_count[10]         ;
+; ball_training:inst18|VGA_SYNC:SYNC|v_count[10]      ; Merged with ball:inst2|VGA_SYNC:SYNC|v_count[10]         ;
+; ball_menu:inst17|VGA_SYNC:SYNC|horiz_sync           ; Merged with ball:inst2|VGA_SYNC:SYNC|horiz_sync          ;
+; ball_over:inst19|VGA_SYNC:SYNC|horiz_sync           ; Merged with ball:inst2|VGA_SYNC:SYNC|horiz_sync          ;
+; ball_training:inst18|VGA_SYNC:SYNC|horiz_sync       ; Merged with ball:inst2|VGA_SYNC:SYNC|horiz_sync          ;
+; ball_menu:inst17|VGA_SYNC:SYNC|h_count[0]           ; Merged with ball:inst2|VGA_SYNC:SYNC|h_count[0]          ;
+; ball_over:inst19|VGA_SYNC:SYNC|h_count[0]           ; Merged with ball:inst2|VGA_SYNC:SYNC|h_count[0]          ;
+; ball_training:inst18|VGA_SYNC:SYNC|h_count[0]       ; Merged with ball:inst2|VGA_SYNC:SYNC|h_count[0]          ;
+; ball_menu:inst17|VGA_SYNC:SYNC|h_count[1]           ; Merged with ball:inst2|VGA_SYNC:SYNC|h_count[1]          ;
+; ball_over:inst19|VGA_SYNC:SYNC|h_count[1]           ; Merged with ball:inst2|VGA_SYNC:SYNC|h_count[1]          ;
+; ball_training:inst18|VGA_SYNC:SYNC|h_count[1]       ; Merged with ball:inst2|VGA_SYNC:SYNC|h_count[1]          ;
+; ball_menu:inst17|VGA_SYNC:SYNC|h_count[2]           ; Merged with ball:inst2|VGA_SYNC:SYNC|h_count[2]          ;
+; ball_over:inst19|VGA_SYNC:SYNC|h_count[2]           ; Merged with ball:inst2|VGA_SYNC:SYNC|h_count[2]          ;
+; ball_training:inst18|VGA_SYNC:SYNC|h_count[2]       ; Merged with ball:inst2|VGA_SYNC:SYNC|h_count[2]          ;
+; ball_menu:inst17|VGA_SYNC:SYNC|h_count[3]           ; Merged with ball:inst2|VGA_SYNC:SYNC|h_count[3]          ;
+; ball_over:inst19|VGA_SYNC:SYNC|h_count[3]           ; Merged with ball:inst2|VGA_SYNC:SYNC|h_count[3]          ;
+; ball_training:inst18|VGA_SYNC:SYNC|h_count[3]       ; Merged with ball:inst2|VGA_SYNC:SYNC|h_count[3]          ;
+; ball_menu:inst17|VGA_SYNC:SYNC|h_count[4]           ; Merged with ball:inst2|VGA_SYNC:SYNC|h_count[4]          ;
+; ball_over:inst19|VGA_SYNC:SYNC|h_count[4]           ; Merged with ball:inst2|VGA_SYNC:SYNC|h_count[4]          ;
+; ball_training:inst18|VGA_SYNC:SYNC|h_count[4]       ; Merged with ball:inst2|VGA_SYNC:SYNC|h_count[4]          ;
+; ball_menu:inst17|VGA_SYNC:SYNC|h_count[5]           ; Merged with ball:inst2|VGA_SYNC:SYNC|h_count[5]          ;
+; ball_over:inst19|VGA_SYNC:SYNC|h_count[5]           ; Merged with ball:inst2|VGA_SYNC:SYNC|h_count[5]          ;
+; ball_training:inst18|VGA_SYNC:SYNC|h_count[5]       ; Merged with ball:inst2|VGA_SYNC:SYNC|h_count[5]          ;
+; ball_menu:inst17|VGA_SYNC:SYNC|h_count[6]           ; Merged with ball:inst2|VGA_SYNC:SYNC|h_count[6]          ;
+; ball_over:inst19|VGA_SYNC:SYNC|h_count[6]           ; Merged with ball:inst2|VGA_SYNC:SYNC|h_count[6]          ;
+; ball_training:inst18|VGA_SYNC:SYNC|h_count[6]       ; Merged with ball:inst2|VGA_SYNC:SYNC|h_count[6]          ;
+; ball_menu:inst17|VGA_SYNC:SYNC|h_count[7]           ; Merged with ball:inst2|VGA_SYNC:SYNC|h_count[7]          ;
+; ball_over:inst19|VGA_SYNC:SYNC|h_count[7]           ; Merged with ball:inst2|VGA_SYNC:SYNC|h_count[7]          ;
+; ball_training:inst18|VGA_SYNC:SYNC|h_count[7]       ; Merged with ball:inst2|VGA_SYNC:SYNC|h_count[7]          ;
+; ball_menu:inst17|VGA_SYNC:SYNC|h_count[8]           ; Merged with ball:inst2|VGA_SYNC:SYNC|h_count[8]          ;
+; ball_over:inst19|VGA_SYNC:SYNC|h_count[8]           ; Merged with ball:inst2|VGA_SYNC:SYNC|h_count[8]          ;
+; ball_training:inst18|VGA_SYNC:SYNC|h_count[8]       ; Merged with ball:inst2|VGA_SYNC:SYNC|h_count[8]          ;
+; ball_menu:inst17|VGA_SYNC:SYNC|h_count[9]           ; Merged with ball:inst2|VGA_SYNC:SYNC|h_count[9]          ;
+; ball_over:inst19|VGA_SYNC:SYNC|h_count[9]           ; Merged with ball:inst2|VGA_SYNC:SYNC|h_count[9]          ;
+; ball_training:inst18|VGA_SYNC:SYNC|h_count[9]       ; Merged with ball:inst2|VGA_SYNC:SYNC|h_count[9]          ;
+; ball_menu:inst17|VGA_SYNC:SYNC|h_count[10]          ; Merged with ball:inst2|VGA_SYNC:SYNC|h_count[10]         ;
+; ball_over:inst19|VGA_SYNC:SYNC|h_count[10]          ; Merged with ball:inst2|VGA_SYNC:SYNC|h_count[10]         ;
+; ball_training:inst18|VGA_SYNC:SYNC|h_count[10]      ; Merged with ball:inst2|VGA_SYNC:SYNC|h_count[10]         ;
+; lfsr:inst20|cout[10]                                ; Merged with lfsr:inst16|cout[10]                         ;
+; lfsr:inst23|cout[10]                                ; Merged with lfsr:inst16|cout[10]                         ;
+; lfsr:inst37|cout[10]                                ; Merged with lfsr:inst16|cout[10]                         ;
+; lfsr:inst38|cout[10]                                ; Merged with lfsr:inst16|cout[10]                         ;
+; lfsr:inst39|cout[10]                                ; Merged with lfsr:inst16|cout[10]                         ;
+; lfsr:inst20|cout[9]                                 ; Merged with lfsr:inst16|cout[9]                          ;
+; lfsr:inst23|cout[9]                                 ; Merged with lfsr:inst16|cout[9]                          ;
+; lfsr:inst37|cout[9]                                 ; Merged with lfsr:inst16|cout[9]                          ;
+; lfsr:inst38|cout[9]                                 ; Merged with lfsr:inst16|cout[9]                          ;
+; lfsr:inst39|cout[9]                                 ; Merged with lfsr:inst16|cout[9]                          ;
+; lfsr:inst20|cout[8]                                 ; Merged with lfsr:inst16|cout[8]                          ;
+; lfsr:inst23|cout[8]                                 ; Merged with lfsr:inst16|cout[8]                          ;
+; lfsr:inst37|cout[8]                                 ; Merged with lfsr:inst16|cout[8]                          ;
+; lfsr:inst38|cout[8]                                 ; Merged with lfsr:inst16|cout[8]                          ;
+; lfsr:inst39|cout[8]                                 ; Merged with lfsr:inst16|cout[8]                          ;
+; lfsr:inst20|cout[7]                                 ; Merged with lfsr:inst16|cout[7]                          ;
+; lfsr:inst23|cout[7]                                 ; Merged with lfsr:inst16|cout[7]                          ;
+; lfsr:inst37|cout[7]                                 ; Merged with lfsr:inst16|cout[7]                          ;
+; lfsr:inst38|cout[7]                                 ; Merged with lfsr:inst16|cout[7]                          ;
+; lfsr:inst39|cout[7]                                 ; Merged with lfsr:inst16|cout[7]                          ;
+; lfsr:inst20|cout[6]                                 ; Merged with lfsr:inst16|cout[6]                          ;
+; lfsr:inst23|cout[6]                                 ; Merged with lfsr:inst16|cout[6]                          ;
+; lfsr:inst37|cout[6]                                 ; Merged with lfsr:inst16|cout[6]                          ;
+; lfsr:inst38|cout[6]                                 ; Merged with lfsr:inst16|cout[6]                          ;
+; lfsr:inst39|cout[6]                                 ; Merged with lfsr:inst16|cout[6]                          ;
+; lfsr:inst20|cout[5]                                 ; Merged with lfsr:inst16|cout[5]                          ;
+; lfsr:inst23|cout[5]                                 ; Merged with lfsr:inst16|cout[5]                          ;
+; lfsr:inst37|cout[5]                                 ; Merged with lfsr:inst16|cout[5]                          ;
+; lfsr:inst38|cout[5]                                 ; Merged with lfsr:inst16|cout[5]                          ;
+; lfsr:inst39|cout[5]                                 ; Merged with lfsr:inst16|cout[5]                          ;
+; lfsr:inst20|cout[4]                                 ; Merged with lfsr:inst16|cout[4]                          ;
+; lfsr:inst23|cout[4]                                 ; Merged with lfsr:inst16|cout[4]                          ;
+; lfsr:inst37|cout[4]                                 ; Merged with lfsr:inst16|cout[4]                          ;
+; lfsr:inst38|cout[4]                                 ; Merged with lfsr:inst16|cout[4]                          ;
+; lfsr:inst39|cout[4]                                 ; Merged with lfsr:inst16|cout[4]                          ;
+; lfsr:inst20|cout[3]                                 ; Merged with lfsr:inst16|cout[3]                          ;
+; lfsr:inst23|cout[3]                                 ; Merged with lfsr:inst16|cout[3]                          ;
+; lfsr:inst37|cout[3]                                 ; Merged with lfsr:inst16|cout[3]                          ;
+; lfsr:inst38|cout[3]                                 ; Merged with lfsr:inst16|cout[3]                          ;
+; lfsr:inst39|cout[3]                                 ; Merged with lfsr:inst16|cout[3]                          ;
+; lfsr:inst20|cout[2]                                 ; Merged with lfsr:inst16|cout[2]                          ;
+; lfsr:inst23|cout[2]                                 ; Merged with lfsr:inst16|cout[2]                          ;
+; lfsr:inst37|cout[2]                                 ; Merged with lfsr:inst16|cout[2]                          ;
+; lfsr:inst38|cout[2]                                 ; Merged with lfsr:inst16|cout[2]                          ;
+; lfsr:inst39|cout[2]                                 ; Merged with lfsr:inst16|cout[2]                          ;
+; lfsr:inst20|cout[1]                                 ; Merged with lfsr:inst16|cout[1]                          ;
+; lfsr:inst23|cout[1]                                 ; Merged with lfsr:inst16|cout[1]                          ;
+; lfsr:inst37|cout[1]                                 ; Merged with lfsr:inst16|cout[1]                          ;
+; lfsr:inst38|cout[1]                                 ; Merged with lfsr:inst16|cout[1]                          ;
+; lfsr:inst39|cout[1]                                 ; Merged with lfsr:inst16|cout[1]                          ;
+; lfsr:inst20|cout[0]                                 ; Merged with lfsr:inst16|cout[0]                          ;
+; lfsr:inst23|cout[0]                                 ; Merged with lfsr:inst16|cout[0]                          ;
+; lfsr:inst37|cout[0]                                 ; Merged with lfsr:inst16|cout[0]                          ;
+; lfsr:inst38|cout[0]                                 ; Merged with lfsr:inst16|cout[0]                          ;
+; lfsr:inst39|cout[0]                                 ; Merged with lfsr:inst16|cout[0]                          ;
+; pipe:inst35|Pipe_X_motion[2..10]                    ; Merged with pipe:inst35|Pipe_X_motion[0]                 ;
+; pipe:inst14|Pipe_gap_pos[7]                         ; Merged with pipe:inst13|Pipe_gap_pos[7]                  ;
+; pipe:inst15|Pipe_gap_pos[7]                         ; Merged with pipe:inst13|Pipe_gap_pos[7]                  ;
+; pipe:inst29|Pipe_gap_pos[7]                         ; Merged with pipe:inst13|Pipe_gap_pos[7]                  ;
+; pipe:inst31|Pipe_gap_pos[7]                         ; Merged with pipe:inst13|Pipe_gap_pos[7]                  ;
+; pipe:inst35|Pipe_gap_pos[7]                         ; Merged with pipe:inst13|Pipe_gap_pos[7]                  ;
+; pipe:inst14|Pipe_gap_pos[6]                         ; Merged with pipe:inst13|Pipe_gap_pos[6]                  ;
+; pipe:inst15|Pipe_gap_pos[6]                         ; Merged with pipe:inst13|Pipe_gap_pos[6]                  ;
+; pipe:inst29|Pipe_gap_pos[6]                         ; Merged with pipe:inst13|Pipe_gap_pos[6]                  ;
+; pipe:inst31|Pipe_gap_pos[6]                         ; Merged with pipe:inst13|Pipe_gap_pos[6]                  ;
+; pipe:inst35|Pipe_gap_pos[6]                         ; Merged with pipe:inst13|Pipe_gap_pos[6]                  ;
+; pipe:inst14|Pipe_gap_pos[5]                         ; Merged with pipe:inst13|Pipe_gap_pos[5]                  ;
+; pipe:inst15|Pipe_gap_pos[5]                         ; Merged with pipe:inst13|Pipe_gap_pos[5]                  ;
+; pipe:inst29|Pipe_gap_pos[5]                         ; Merged with pipe:inst13|Pipe_gap_pos[5]                  ;
+; pipe:inst31|Pipe_gap_pos[5]                         ; Merged with pipe:inst13|Pipe_gap_pos[5]                  ;
+; pipe:inst35|Pipe_gap_pos[5]                         ; Merged with pipe:inst13|Pipe_gap_pos[5]                  ;
+; pipe:inst14|Pipe_gap_pos[4]                         ; Merged with pipe:inst13|Pipe_gap_pos[4]                  ;
+; pipe:inst15|Pipe_gap_pos[4]                         ; Merged with pipe:inst13|Pipe_gap_pos[4]                  ;
+; pipe:inst29|Pipe_gap_pos[4]                         ; Merged with pipe:inst13|Pipe_gap_pos[4]                  ;
+; pipe:inst31|Pipe_gap_pos[4]                         ; Merged with pipe:inst13|Pipe_gap_pos[4]                  ;
+; pipe:inst35|Pipe_gap_pos[4]                         ; Merged with pipe:inst13|Pipe_gap_pos[4]                  ;
+; pipe:inst14|Pipe_gap_pos[3]                         ; Merged with pipe:inst13|Pipe_gap_pos[3]                  ;
+; pipe:inst15|Pipe_gap_pos[3]                         ; Merged with pipe:inst13|Pipe_gap_pos[3]                  ;
+; pipe:inst29|Pipe_gap_pos[3]                         ; Merged with pipe:inst13|Pipe_gap_pos[3]                  ;
+; pipe:inst31|Pipe_gap_pos[3]                         ; Merged with pipe:inst13|Pipe_gap_pos[3]                  ;
+; pipe:inst35|Pipe_gap_pos[3]                         ; Merged with pipe:inst13|Pipe_gap_pos[3]                  ;
+; pipe:inst14|Pipe_gap_pos[2]                         ; Merged with pipe:inst13|Pipe_gap_pos[2]                  ;
+; pipe:inst15|Pipe_gap_pos[2]                         ; Merged with pipe:inst13|Pipe_gap_pos[2]                  ;
+; pipe:inst29|Pipe_gap_pos[2]                         ; Merged with pipe:inst13|Pipe_gap_pos[2]                  ;
+; pipe:inst31|Pipe_gap_pos[2]                         ; Merged with pipe:inst13|Pipe_gap_pos[2]                  ;
+; pipe:inst35|Pipe_gap_pos[2]                         ; Merged with pipe:inst13|Pipe_gap_pos[2]                  ;
+; pipe:inst14|Pipe_gap_pos[1]                         ; Merged with pipe:inst13|Pipe_gap_pos[1]                  ;
+; pipe:inst15|Pipe_gap_pos[1]                         ; Merged with pipe:inst13|Pipe_gap_pos[1]                  ;
+; pipe:inst29|Pipe_gap_pos[1]                         ; Merged with pipe:inst13|Pipe_gap_pos[1]                  ;
+; pipe:inst31|Pipe_gap_pos[1]                         ; Merged with pipe:inst13|Pipe_gap_pos[1]                  ;
+; pipe:inst35|Pipe_gap_pos[1]                         ; Merged with pipe:inst13|Pipe_gap_pos[1]                  ;
+; pipe:inst14|Pipe_gap_pos[0]                         ; Merged with pipe:inst13|Pipe_gap_pos[0]                  ;
+; pipe:inst15|Pipe_gap_pos[0]                         ; Merged with pipe:inst13|Pipe_gap_pos[0]                  ;
+; pipe:inst29|Pipe_gap_pos[0]                         ; Merged with pipe:inst13|Pipe_gap_pos[0]                  ;
+; pipe:inst31|Pipe_gap_pos[0]                         ; Merged with pipe:inst13|Pipe_gap_pos[0]                  ;
+; pipe:inst35|Pipe_gap_pos[0]                         ; Merged with pipe:inst13|Pipe_gap_pos[0]                  ;
+; pipe:inst31|Pipe_X_motion[2..10]                    ; Merged with pipe:inst31|Pipe_X_motion[0]                 ;
+; pipe:inst29|Pipe_X_motion[2..10]                    ; Merged with pipe:inst29|Pipe_X_motion[0]                 ;
+; pipe:inst15|Pipe_X_motion[3..9]                     ; Merged with pipe:inst15|Pipe_X_motion[10]                ;
+; pipe:inst14|Pipe_X_motion[3..9]                     ; Merged with pipe:inst14|Pipe_X_motion[10]                ;
+; pipe:inst13|Pipe_X_motion[3..9]                     ; Merged with pipe:inst13|Pipe_X_motion[10]                ;
+; MOUSE:inst1|cursor_row[9]                           ; Stuck at GND due to stuck port data_in                   ;
+; ball:inst2|VGA_SYNC:SYNC|pixel_column[10]           ; Stuck at GND due to stuck port data_in                   ;
+; ball:inst2|VGA_SYNC:SYNC|pixel_row[9,10]            ; Stuck at GND due to stuck port data_in                   ;
+; display_sel:inst21|pix_row[9]                       ; Stuck at GND due to stuck port data_in                   ;
+; Total Number of Removed Registers = 344             ;                                                          ;
++-----------------------------------------------------+----------------------------------------------------------+
 
 
 +------------------------------------------------------------------------------------------------------------+
@@ -619,6 +672,42 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +---------------------------------------+---------------------------+----------------------------------------+
 ; Register name                         ; Reason for Removal        ; Registers Removed due to This Register ;
 +---------------------------------------+---------------------------+----------------------------------------+
+; pipe:inst35|Pipe_gap_pos[10]          ; Stuck at GND              ; pipe:inst35|pipe_gap[10]               ;
+;                                       ; due to stuck port data_in ;                                        ;
+; pipe:inst35|Pipe_gap_pos[9]           ; Stuck at GND              ; pipe:inst35|pipe_gap[9]                ;
+;                                       ; due to stuck port data_in ;                                        ;
+; pipe:inst35|Pipe_gap_pos[8]           ; Stuck at GND              ; pipe:inst35|pipe_gap[8]                ;
+;                                       ; due to stuck port data_in ;                                        ;
+; pipe:inst31|Pipe_gap_pos[10]          ; Stuck at GND              ; pipe:inst31|pipe_gap[10]               ;
+;                                       ; due to stuck port data_in ;                                        ;
+; pipe:inst31|Pipe_gap_pos[9]           ; Stuck at GND              ; pipe:inst31|pipe_gap[9]                ;
+;                                       ; due to stuck port data_in ;                                        ;
+; pipe:inst31|Pipe_gap_pos[8]           ; Stuck at GND              ; pipe:inst31|pipe_gap[8]                ;
+;                                       ; due to stuck port data_in ;                                        ;
+; pipe:inst29|Pipe_gap_pos[10]          ; Stuck at GND              ; pipe:inst29|pipe_gap[10]               ;
+;                                       ; due to stuck port data_in ;                                        ;
+; pipe:inst29|Pipe_gap_pos[9]           ; Stuck at GND              ; pipe:inst29|pipe_gap[9]                ;
+;                                       ; due to stuck port data_in ;                                        ;
+; pipe:inst29|Pipe_gap_pos[8]           ; Stuck at GND              ; pipe:inst29|pipe_gap[8]                ;
+;                                       ; due to stuck port data_in ;                                        ;
+; pipe:inst15|Pipe_gap_pos[10]          ; Stuck at GND              ; pipe:inst15|pipe_gap[10]               ;
+;                                       ; due to stuck port data_in ;                                        ;
+; pipe:inst15|Pipe_gap_pos[9]           ; Stuck at GND              ; pipe:inst15|pipe_gap[9]                ;
+;                                       ; due to stuck port data_in ;                                        ;
+; pipe:inst15|Pipe_gap_pos[8]           ; Stuck at GND              ; pipe:inst15|pipe_gap[8]                ;
+;                                       ; due to stuck port data_in ;                                        ;
+; pipe:inst14|Pipe_gap_pos[10]          ; Stuck at GND              ; pipe:inst14|pipe_gap[10]               ;
+;                                       ; due to stuck port data_in ;                                        ;
+; pipe:inst14|Pipe_gap_pos[9]           ; Stuck at GND              ; pipe:inst14|pipe_gap[9]                ;
+;                                       ; due to stuck port data_in ;                                        ;
+; pipe:inst14|Pipe_gap_pos[8]           ; Stuck at GND              ; pipe:inst14|pipe_gap[8]                ;
+;                                       ; due to stuck port data_in ;                                        ;
+; pipe:inst13|Pipe_gap_pos[10]          ; Stuck at GND              ; pipe:inst13|pipe_gap[10]               ;
+;                                       ; due to stuck port data_in ;                                        ;
+; pipe:inst13|Pipe_gap_pos[9]           ; Stuck at GND              ; pipe:inst13|pipe_gap[9]                ;
+;                                       ; due to stuck port data_in ;                                        ;
+; pipe:inst13|Pipe_gap_pos[8]           ; Stuck at GND              ; pipe:inst13|pipe_gap[8]                ;
+;                                       ; due to stuck port data_in ;                                        ;
 ; ball:inst2|VGA_SYNC:SYNC|pixel_row[9] ; Stuck at GND              ; display_sel:inst21|pix_row[9]          ;
 ;                                       ; due to stuck port data_in ;                                        ;
 +---------------------------------------+---------------------------+----------------------------------------+
@@ -629,81 +718,107 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 494   ;
-; Number of registers using Synchronous Clear  ; 132   ;
-; Number of registers using Synchronous Load   ; 36    ;
-; Number of registers using Asynchronous Clear ; 81    ;
+; Total registers                              ; 677   ;
+; Number of registers using Synchronous Clear  ; 130   ;
+; Number of registers using Synchronous Load   ; 20    ;
+; Number of registers using Asynchronous Clear ; 227   ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 198   ;
+; Number of registers using Clock Enable       ; 246   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+---------------------------------------------------+
-; Inverted Register Statistics                      ;
-+-----------------------------------------+---------+
-; Inverted Register                       ; Fan out ;
-+-----------------------------------------+---------+
-; pipe:inst13|Pipe_X_pos[9]               ; 8       ;
-; pipe:inst13|Pipe_X_pos[7]               ; 6       ;
-; pipe:inst14|Pipe_X_pos[9]               ; 4       ;
-; pipe:inst14|Pipe_X_pos[7]               ; 4       ;
-; pipe:inst15|Pipe_X_pos[9]               ; 4       ;
-; pipe:inst15|Pipe_X_pos[7]               ; 4       ;
-; ball:inst2|Ball_Y_pos[7]                ; 6       ;
-; ball:inst2|Ball_Y_pos[6]                ; 6       ;
-; ball:inst2|Ball_Y_pos[5]                ; 5       ;
-; ball:inst2|Ball_Y_pos[4]                ; 5       ;
-; MOUSE:inst1|send_char                   ; 3       ;
-; lfsr:inst16|cout[7]                     ; 3       ;
-; lfsr:inst16|cout[5]                     ; 3       ;
-; lfsr:inst16|cout[3]                     ; 3       ;
-; lfsr:inst16|cout[1]                     ; 3       ;
-; lfsr:inst16|cout[0]                     ; 3       ;
-; lfsr:inst16|cout[9]                     ; 3       ;
-; MOUSE:inst1|SHIFTOUT[3]                 ; 1       ;
-; MOUSE:inst1|SHIFTOUT[5]                 ; 1       ;
-; MOUSE:inst1|SHIFTOUT[6]                 ; 1       ;
-; MOUSE:inst1|SHIFTOUT[7]                 ; 1       ;
-; MOUSE:inst1|SHIFTOUT[8]                 ; 1       ;
-; Total number of inverted registers = 22 ;         ;
-+-----------------------------------------+---------+
++--------------------------------------------------------+
+; Inverted Register Statistics                           ;
++----------------------------------------------+---------+
+; Inverted Register                            ; Fan out ;
++----------------------------------------------+---------+
+; pipe:inst35|Pipe_X_pos[9]                    ; 4       ;
+; pipe:inst35|Pipe_X_pos[7]                    ; 4       ;
+; pipe:inst29|Pipe_X_pos[9]                    ; 8       ;
+; pipe:inst29|Pipe_X_pos[7]                    ; 6       ;
+; pipe:inst31|Pipe_X_pos[9]                    ; 4       ;
+; pipe:inst31|Pipe_X_pos[7]                    ; 4       ;
+; pipe:inst15|Pipe_X_pos[9]                    ; 5       ;
+; pipe:inst15|Pipe_X_pos[7]                    ; 5       ;
+; pipe:inst13|Pipe_X_pos[9]                    ; 9       ;
+; pipe:inst13|Pipe_X_pos[7]                    ; 7       ;
+; pipe:inst14|Pipe_X_pos[9]                    ; 5       ;
+; pipe:inst14|Pipe_X_pos[7]                    ; 5       ;
+; ball:inst2|pipe_reset3                       ; 25      ;
+; ball:inst2|pipe_reset2                       ; 25      ;
+; ball:inst2|pipe_reset1                       ; 25      ;
+; ball:inst2|chakra_count[3]~_emulated         ; 1       ;
+; MOUSE:inst1|send_char                        ; 3       ;
+; ball_training:inst18|Ball_Y_pos[7]~_emulated ; 1       ;
+; ball_training:inst18|Ball_Y_pos[6]~_emulated ; 1       ;
+; ball_training:inst18|Ball_Y_pos[5]~_emulated ; 1       ;
+; ball_training:inst18|Ball_Y_pos[4]~_emulated ; 1       ;
+; ball_training:inst18|pipe_reset1             ; 22      ;
+; ball_training:inst18|pipe_reset2             ; 22      ;
+; ball_training:inst18|pipe_reset3             ; 22      ;
+; ball:inst2|Ball_Y_pos[7]~_emulated           ; 1       ;
+; ball:inst2|Ball_Y_pos[6]~_emulated           ; 1       ;
+; ball:inst2|Ball_Y_pos[5]~_emulated           ; 1       ;
+; ball:inst2|Ball_Y_pos[4]~_emulated           ; 1       ;
+; lfsr:inst16|cout[7]                          ; 3       ;
+; lfsr:inst16|cout[5]                          ; 3       ;
+; lfsr:inst16|cout[3]                          ; 3       ;
+; lfsr:inst16|cout[1]                          ; 3       ;
+; lfsr:inst16|cout[0]                          ; 3       ;
+; lfsr:inst16|cout[9]                          ; 3       ;
+; MOUSE:inst1|SHIFTOUT[3]                      ; 1       ;
+; MOUSE:inst1|SHIFTOUT[5]                      ; 1       ;
+; MOUSE:inst1|SHIFTOUT[6]                      ; 1       ;
+; MOUSE:inst1|SHIFTOUT[7]                      ; 1       ;
+; MOUSE:inst1|SHIFTOUT[8]                      ; 1       ;
+; Total number of inverted registers = 39      ;         ;
++----------------------------------------------+---------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                                                                           ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                                                                 ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------------------------------------------------------------------------------+
-; 3:1                ; 6 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; Yes        ; |flabbybird|display_sel:inst21|red[2]                                                                                                      ;
-; 4:1                ; 6 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; Yes        ; |flabbybird|display_sel:inst21|blue[0]                                                                                                     ;
-; 3:1                ; 18 bits   ; 36 LEs        ; 18 LEs               ; 18 LEs                 ; Yes        ; |flabbybird|debouncer:inst8|seconds[0]                                                                                                     ;
-; 3:1                ; 18 bits   ; 36 LEs        ; 18 LEs               ; 18 LEs                 ; Yes        ; |flabbybird|debouncer:inst9|seconds[10]                                                                                                    ;
-; 3:1                ; 18 bits   ; 36 LEs        ; 18 LEs               ; 18 LEs                 ; Yes        ; |flabbybird|debouncer:inst3|seconds[11]                                                                                                    ;
-; 3:1                ; 18 bits   ; 36 LEs        ; 18 LEs               ; 18 LEs                 ; Yes        ; |flabbybird|debouncer:inst5|seconds[12]                                                                                                    ;
-; 3:1                ; 20 bits   ; 40 LEs        ; 20 LEs               ; 20 LEs                 ; Yes        ; |flabbybird|MOUSE:inst1|new_cursor_row[5]                                                                                                  ;
-; 3:1                ; 18 bits   ; 36 LEs        ; 18 LEs               ; 18 LEs                 ; Yes        ; |flabbybird|debouncer:inst30|seconds[4]                                                                                                    ;
-; 3:1                ; 11 bits   ; 22 LEs        ; 11 LEs               ; 11 LEs                 ; Yes        ; |flabbybird|ball:inst2|VGA_SYNC:SYNC|v_count[3]                                                                                            ;
-; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |flabbybird|debouncer:inst8|cnt[7]                                                                                                         ;
-; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |flabbybird|debouncer:inst9|cnt[7]                                                                                                         ;
-; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |flabbybird|debouncer:inst3|cnt[7]                                                                                                         ;
-; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |flabbybird|debouncer:inst5|cnt[2]                                                                                                         ;
-; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |flabbybird|debouncer:inst30|cnt[3]                                                                                                        ;
-; 5:1                ; 10 bits   ; 30 LEs        ; 20 LEs               ; 10 LEs                 ; Yes        ; |flabbybird|MOUSE:inst1|cursor_row[2]                                                                                                      ;
-; 5:1                ; 10 bits   ; 30 LEs        ; 20 LEs               ; 10 LEs                 ; Yes        ; |flabbybird|MOUSE:inst1|cursor_column[7]                                                                                                   ;
-; 5:1                ; 10 bits   ; 30 LEs        ; 20 LEs               ; 10 LEs                 ; Yes        ; |flabbybird|ball:inst2|Ball_Y_motion[4]                                                                                                    ;
-; 3:1                ; 12 bits   ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; No         ; |flabbybird|background_rom:inst24|background:BG|altsyncram:altsyncram_component|altsyncram_22b1:auto_generated|mux_7nb:mux2|result_node[6] ;
-; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; No         ; |flabbybird|ball_training:inst18|char_sel                                                                                                  ;
-; 4:1                ; 12 bits   ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; No         ; |flabbybird|ball:inst2|Green_Data[1]                                                                                                       ;
-; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |flabbybird|ball_training:inst18|char_sel                                                                                                  ;
-; 5:1                ; 2 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |flabbybird|ball:inst2|char_sel[5]                                                                                                         ;
-; 6:1                ; 6 bits    ; 24 LEs        ; 6 LEs                ; 18 LEs                 ; No         ; |flabbybird|ball_training:inst18|row_sel                                                                                                   ;
-; 8:1                ; 2 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; No         ; |flabbybird|ball_menu:inst17|char_disp                                                                                                     ;
-; 9:1                ; 6 bits    ; 36 LEs        ; 6 LEs                ; 30 LEs                 ; No         ; |flabbybird|ball:inst2|col_sel[0]                                                                                                          ;
-; 9:1                ; 4 bits    ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; No         ; |flabbybird|ball:inst2|char_sel[1]                                                                                                         ;
-; 9:1                ; 2 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |flabbybird|ball_menu:inst17|char_sel[1]                                                                                                   ;
-; 13:1               ; 6 bits    ; 48 LEs        ; 6 LEs                ; 42 LEs                 ; No         ; |flabbybird|ball_menu:inst17|col_sel[2]                                                                                                    ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------------------------------------------------------------------------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                                                                            ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                                                                  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------------------------------------------------------------------------+
+; 4:1                ; 12 bits   ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; Yes        ; |flabbybird|display_sel:inst21|blue[0]                                                                                                      ;
+; 3:1                ; 18 bits   ; 36 LEs        ; 18 LEs               ; 18 LEs                 ; Yes        ; |flabbybird|debouncer:inst8|seconds[8]                                                                                                      ;
+; 3:1                ; 18 bits   ; 36 LEs        ; 18 LEs               ; 18 LEs                 ; Yes        ; |flabbybird|debouncer:inst9|seconds[11]                                                                                                     ;
+; 3:1                ; 18 bits   ; 36 LEs        ; 18 LEs               ; 18 LEs                 ; Yes        ; |flabbybird|debouncer:inst3|seconds[10]                                                                                                     ;
+; 3:1                ; 18 bits   ; 36 LEs        ; 18 LEs               ; 18 LEs                 ; Yes        ; |flabbybird|debouncer:inst5|seconds[2]                                                                                                      ;
+; 3:1                ; 20 bits   ; 40 LEs        ; 20 LEs               ; 20 LEs                 ; Yes        ; |flabbybird|MOUSE:inst1|new_cursor_column[2]                                                                                                ;
+; 3:1                ; 18 bits   ; 36 LEs        ; 18 LEs               ; 18 LEs                 ; Yes        ; |flabbybird|debouncer:inst30|seconds[2]                                                                                                     ;
+; 3:1                ; 11 bits   ; 22 LEs        ; 11 LEs               ; 11 LEs                 ; Yes        ; |flabbybird|ball:inst2|VGA_SYNC:SYNC|v_count[6]                                                                                             ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |flabbybird|debouncer:inst8|cnt[4]                                                                                                          ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |flabbybird|debouncer:inst9|cnt[7]                                                                                                          ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |flabbybird|debouncer:inst3|cnt[2]                                                                                                          ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |flabbybird|debouncer:inst5|cnt[6]                                                                                                          ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |flabbybird|debouncer:inst30|cnt[6]                                                                                                         ;
+; 5:1                ; 10 bits   ; 30 LEs        ; 20 LEs               ; 10 LEs                 ; Yes        ; |flabbybird|MOUSE:inst1|cursor_row[0]                                                                                                       ;
+; 5:1                ; 10 bits   ; 30 LEs        ; 20 LEs               ; 10 LEs                 ; Yes        ; |flabbybird|MOUSE:inst1|cursor_column[1]                                                                                                    ;
+; 6:1                ; 10 bits   ; 40 LEs        ; 30 LEs               ; 10 LEs                 ; Yes        ; |flabbybird|ball_training:inst18|Ball_Y_motion[7]                                                                                           ;
+; 6:1                ; 10 bits   ; 40 LEs        ; 30 LEs               ; 10 LEs                 ; Yes        ; |flabbybird|ball:inst2|Ball_Y_motion[5]                                                                                                     ;
+; 6:1                ; 31 bits   ; 124 LEs       ; 62 LEs               ; 62 LEs                 ; Yes        ; |flabbybird|ball:inst2|chakra_count[7]                                                                                                      ;
+; 6:1                ; 4 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |flabbybird|ball:inst2|sc0[0]                                                                                                               ;
+; 7:1                ; 4 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |flabbybird|ball:inst2|sc1[1]                                                                                                               ;
+; 7:1                ; 2 bits    ; 8 LEs         ; 2 LEs                ; 6 LEs                  ; Yes        ; |flabbybird|ball:inst2|level_int[0]                                                                                                         ;
+; 8:1                ; 4 bits    ; 20 LEs        ; 4 LEs                ; 16 LEs                 ; Yes        ; |flabbybird|ball:inst2|sc2[0]                                                                                                               ;
+; 3:1                ; 12 bits   ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; No         ; |flabbybird|background_rom:inst24|background:BG|altsyncram:altsyncram_component|altsyncram_22b1:auto_generated|mux_7nb:mux2|result_node[10] ;
+; 4:1                ; 12 bits   ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; No         ; |flabbybird|ball_training:inst18|Blue_Data[3]                                                                                               ;
+; 5:1                ; 12 bits   ; 36 LEs        ; 36 LEs               ; 0 LEs                  ; No         ; |flabbybird|ball:inst2|Red_Data[1]                                                                                                          ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |flabbybird|ball_training:inst18|char_sel[4]                                                                                                ;
+; 10:1               ; 2 bits    ; 12 LEs        ; 2 LEs                ; 10 LEs                 ; No         ; |flabbybird|ball_training:inst18|col_sel[1]                                                                                                 ;
+; 10:1               ; 4 bits    ; 24 LEs        ; 8 LEs                ; 16 LEs                 ; No         ; |flabbybird|ball_training:inst18|row_sel[2]                                                                                                 ;
+; 10:1               ; 4 bits    ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; No         ; |flabbybird|ball_training:inst18|char_sel[3]                                                                                                ;
+; 15:1               ; 2 bits    ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; No         ; |flabbybird|ball_over:inst19|char_sel[4]                                                                                                    ;
+; 16:1               ; 2 bits    ; 20 LEs        ; 2 LEs                ; 18 LEs                 ; No         ; |flabbybird|ball:inst2|col_sel[1]                                                                                                           ;
+; 16:1               ; 4 bits    ; 40 LEs        ; 8 LEs                ; 32 LEs                 ; No         ; |flabbybird|ball:inst2|row_sel[1]                                                                                                           ;
+; 17:1               ; 6 bits    ; 66 LEs        ; 12 LEs               ; 54 LEs                 ; No         ; |flabbybird|ball_over:inst19|row_sel[2]                                                                                                     ;
+; 20:1               ; 4 bits    ; 52 LEs        ; 52 LEs               ; 0 LEs                  ; No         ; |flabbybird|ball_over:inst19|char_sel[0]                                                                                                    ;
+; 43:1               ; 2 bits    ; 56 LEs        ; 56 LEs               ; 0 LEs                  ; No         ; |flabbybird|ball_menu:inst17|char_sel[2]                                                                                                    ;
+; 44:1               ; 3 bits    ; 87 LEs        ; 87 LEs               ; 0 LEs                  ; No         ; |flabbybird|ball_menu:inst17|char_sel[3]                                                                                                    ;
+; 46:1               ; 6 bits    ; 180 LEs       ; 12 LEs               ; 168 LEs                ; No         ; |flabbybird|ball_menu:inst17|col_sel[2]                                                                                                     ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------------------------------------------------------------------------+
 
 
 +----------------------------------------------------------------------------------------------------------------------+
@@ -1555,32 +1670,12 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------------------------------------------+---------------------------------------------------------------------+
 
 
-+----------------------------------------------------------------+
-; Port Connectivity Checks: "ball_training:inst18|char_rom:CHAR" ;
-+----------------------+-------+----------+----------------------+
-; Port                 ; Type  ; Severity ; Details              ;
-+----------------------+-------+----------+----------------------+
-; character_address[5] ; Input ; Info     ; Stuck at GND         ;
-+----------------------+-------+----------+----------------------+
-
-
-+----------------------------------------------------------------+
-; Port Connectivity Checks: "ball_training:inst18|VGA_SYNC:SYNC" ;
-+-------------+-------+----------+-------------------------------+
-; Port        ; Type  ; Severity ; Details                       ;
-+-------------+-------+----------+-------------------------------+
-; red         ; Input ; Info     ; Stuck at VCC                  ;
-; green[2..0] ; Input ; Info     ; Stuck at GND                  ;
-; blue[2..0]  ; Input ; Info     ; Stuck at GND                  ;
-+-------------+-------+----------+-------------------------------+
-
-
 +-------------------------------+
 ; Elapsed Time Per Partition    ;
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:01     ;
+; Top            ; 00:00:04     ;
 +----------------+--------------+
 
 
@@ -1589,10 +1684,10 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------------------------------+
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
-    Info: Version 13.0.0 Build 156 04/24/2013 SJ Full Version
-    Info: Processing started: Wed May 29 23:04:50 2019
+    Info: Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
+    Info: Processing started: Thu May 30 07:50:45 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off flabbybird -c flabbybird
-Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
+Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 3 design units, including 1 entities, in source file ball_training.vhd
     Info (12022): Found design unit 1: de0core3
     Info (12022): Found design unit 2: ball_training-behavior
@@ -1678,11 +1773,6 @@ Warning (275080): Converted elements in bus name "red2" using legacy naming rule
     Warning (275081): Converted element name(s) from "red2[3..0]" to "red23..0"
 Warning (275080): Converted elements in bus name "red3" using legacy naming rules. Make any assignments on the new names, not on the original names.
     Warning (275081): Converted element name(s) from "red3[3..0]" to "red33..0"
-Warning (275085): Found inconsistent dimensions for element "pr1"
-Warning (275085): Found inconsistent dimensions for element "pr1"
-Warning (275080): Converted elements in bus name "pr1" using legacy naming rules. Make any assignments on the new names, not on the original names.
-    Warning (275081): Converted element name(s) from "pr1[10..0]" to "pr110..0"
-    Warning (275081): Converted element name(s) from "pr1[10..0]" to "pr110..0"
 Info (12128): Elaborating entity "display_sel" for hierarchy "display_sel:inst21"
 Info (12128): Elaborating entity "PLL" for hierarchy "PLL:inst4"
 Info (12128): Elaborating entity "altpll" for hierarchy "PLL:inst4|altpll:altpll_component"
@@ -1805,119 +1895,204 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/mux_
     Info (12023): Found entity 1: mux_7nb
 Info (12128): Elaborating entity "mux_7nb" for hierarchy "background_rom:inst24|background:BG|altsyncram:altsyncram_component|altsyncram_22b1:auto_generated|mux_7nb:mux2"
 Info (12128): Elaborating entity "ball" for hierarchy "ball:inst2"
-Warning (10492): VHDL Process Statement warning at ball.vhd(141): signal "Size" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at ball.vhd(143): signal "Size" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at ball.vhd(144): signal "Size" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at ball.vhd(145): signal "Size" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at ball.vhd(155): signal "Pipe_Size" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at ball.vhd(155): signal "pipe_gap1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at ball.vhd(155): signal "Gap_Size" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10036): Verilog HDL or VHDL warning at ball.vhd(77): object "score_count" assigned a value but never read
 Warning (10492): VHDL Process Statement warning at ball.vhd(157): signal "Pipe_Size" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at ball.vhd(157): signal "pipe_gap2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at ball.vhd(157): signal "pipe_gap1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
 Warning (10492): VHDL Process Statement warning at ball.vhd(157): signal "Gap_Size" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
 Warning (10492): VHDL Process Statement warning at ball.vhd(159): signal "Pipe_Size" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at ball.vhd(159): signal "pipe_gap3" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at ball.vhd(159): signal "pipe_gap2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
 Warning (10492): VHDL Process Statement warning at ball.vhd(159): signal "Gap_Size" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at ball.vhd(197): signal "score2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at ball.vhd(202): signal "score1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at ball.vhd(207): signal "score0" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at ball.vhd(225): signal "pause" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10631): VHDL Process Statement warning at ball.vhd(251): inferring latch(es) for signal or variable "hit", which holds its previous value in one or more paths through the process
-Info (10041): Inferred latch for "hit" at ball.vhd(251)
+Warning (10492): VHDL Process Statement warning at ball.vhd(161): signal "Pipe_Size" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at ball.vhd(161): signal "pipe_gap3" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at ball.vhd(161): signal "Gap_Size" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at ball.vhd(174): signal "Size" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at ball.vhd(176): signal "Size" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at ball.vhd(177): signal "Size" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at ball.vhd(178): signal "Size" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at ball.vhd(181): signal "Size" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at ball.vhd(182): signal "Size" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at ball.vhd(213): signal "score2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at ball.vhd(218): signal "score1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at ball.vhd(223): signal "score0" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10631): VHDL Process Statement warning at ball.vhd(171): inferring latch(es) for signal or variable "Ball_on", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at ball.vhd(394): inferring latch(es) for signal or variable "hit", which holds its previous value in one or more paths through the process
+Info (10041): Inferred latch for "hit" at ball.vhd(394)
+Info (10041): Inferred latch for "Ball_on" at ball.vhd(171)
 Info (12128): Elaborating entity "pipe" for hierarchy "pipe:inst13"
-Warning (10492): VHDL Process Statement warning at pipe.vhd(40): signal "Pipe_X_pos" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at pipe.vhd(41): signal "Pipe_on" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at pipe.vhd(57): signal "Pipe_gap_pos" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10631): VHDL Process Statement warning at pipe.vhd(45): inferring latch(es) for signal or variable "pipe_gap", which holds its previous value in one or more paths through the process
-Info (10041): Inferred latch for "pipe_gap[0]" at pipe.vhd(45)
-Info (10041): Inferred latch for "pipe_gap[1]" at pipe.vhd(45)
-Info (10041): Inferred latch for "pipe_gap[2]" at pipe.vhd(45)
-Info (10041): Inferred latch for "pipe_gap[3]" at pipe.vhd(45)
-Info (10041): Inferred latch for "pipe_gap[4]" at pipe.vhd(45)
-Info (10041): Inferred latch for "pipe_gap[5]" at pipe.vhd(45)
-Info (10041): Inferred latch for "pipe_gap[6]" at pipe.vhd(45)
-Info (10041): Inferred latch for "pipe_gap[7]" at pipe.vhd(45)
-Info (10041): Inferred latch for "pipe_gap[8]" at pipe.vhd(45)
-Info (10041): Inferred latch for "pipe_gap[9]" at pipe.vhd(45)
-Info (10041): Inferred latch for "pipe_gap[10]" at pipe.vhd(45)
+Warning (10492): VHDL Process Statement warning at pipe.vhd(47): signal "Pipe_X_pos" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at pipe.vhd(48): signal "Pipe_on" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
 Info (12128): Elaborating entity "lfsr" for hierarchy "lfsr:inst16"
-Info (12128): Elaborating entity "ball_training" for hierarchy "ball_training:inst18"
-Warning (10631): VHDL Process Statement warning at ball_training.vhd(89): inferring latch(es) for signal or variable "Ball_on", which holds its previous value in one or more paths through the process
-Warning (10631): VHDL Process Statement warning at ball_training.vhd(89): inferring latch(es) for signal or variable "char_sel", which holds its previous value in one or more paths through the process
-Warning (10631): VHDL Process Statement warning at ball_training.vhd(89): inferring latch(es) for signal or variable "row_sel", which holds its previous value in one or more paths through the process
-Warning (10631): VHDL Process Statement warning at ball_training.vhd(89): inferring latch(es) for signal or variable "col_sel", which holds its previous value in one or more paths through the process
-Info (10041): Inferred latch for "col_sel[0]" at ball_training.vhd(89)
-Info (10041): Inferred latch for "col_sel[1]" at ball_training.vhd(89)
-Info (10041): Inferred latch for "col_sel[2]" at ball_training.vhd(89)
-Info (10041): Inferred latch for "row_sel[0]" at ball_training.vhd(89)
-Info (10041): Inferred latch for "row_sel[1]" at ball_training.vhd(89)
-Info (10041): Inferred latch for "row_sel[2]" at ball_training.vhd(89)
-Info (10041): Inferred latch for "char_sel[0]" at ball_training.vhd(89)
-Info (10041): Inferred latch for "char_sel[1]" at ball_training.vhd(89)
-Info (10041): Inferred latch for "char_sel[2]" at ball_training.vhd(89)
-Info (10041): Inferred latch for "char_sel[3]" at ball_training.vhd(89)
-Info (10041): Inferred latch for "char_sel[4]" at ball_training.vhd(89)
-Info (10041): Inferred latch for "char_sel[5]" at ball_training.vhd(89)
-Info (10041): Inferred latch for "Ball_on" at ball_training.vhd(89)
-Info (12128): Elaborating entity "ball_over" for hierarchy "ball_over:inst19"
 Info (12128): Elaborating entity "fsm_game" for hierarchy "fsm_game:inst22"
-Warning (10492): VHDL Process Statement warning at fsm_game.vhd(61): signal "PB0" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Info (12128): Elaborating entity "ball_training" for hierarchy "ball_training:inst18"
+Warning (10492): VHDL Process Statement warning at ball_training.vhd(140): signal "Pipe_Size" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at ball_training.vhd(140): signal "pipe_gap1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at ball_training.vhd(140): signal "Gap_Size" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at ball_training.vhd(142): signal "Pipe_Size" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at ball_training.vhd(142): signal "pipe_gap2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at ball_training.vhd(142): signal "Gap_Size" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at ball_training.vhd(144): signal "Pipe_Size" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at ball_training.vhd(144): signal "pipe_gap3" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at ball_training.vhd(144): signal "Gap_Size" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at ball_training.vhd(157): signal "Size" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at ball_training.vhd(159): signal "Size" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at ball_training.vhd(160): signal "Size" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at ball_training.vhd(161): signal "Size" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at ball_training.vhd(164): signal "Size" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at ball_training.vhd(165): signal "Size" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at ball_training.vhd(196): signal "score2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at ball_training.vhd(201): signal "score1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at ball_training.vhd(206): signal "score0" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10631): VHDL Process Statement warning at ball_training.vhd(154): inferring latch(es) for signal or variable "Ball_on", which holds its previous value in one or more paths through the process
+Warning (10492): VHDL Process Statement warning at ball_training.vhd(225): signal "pause" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at ball_training.vhd(225): signal "resetsignal" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at ball_training.vhd(245): signal "resetsignal" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at ball_training.vhd(259): signal "pipe_display1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at ball_training.vhd(259): signal "pipe_display2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at ball_training.vhd(259): signal "pipe_display3" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at ball_training.vhd(259): signal "char_disp" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at ball_training.vhd(259): signal "char_out" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10631): VHDL Process Statement warning at ball_training.vhd(256): inferring latch(es) for signal or variable "hit", which holds its previous value in one or more paths through the process
+Info (10041): Inferred latch for "hit" at ball_training.vhd(256)
+Info (10041): Inferred latch for "Ball_on" at ball_training.vhd(154)
+Info (12128): Elaborating entity "ball_over" for hierarchy "ball_over:inst19"
+Warning (10492): VHDL Process Statement warning at ball_over.vhd(162): signal "gamemode" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at ball_over.vhd(163): signal "score2t" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at ball_over.vhd(164): signal "score2n" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at ball_over.vhd(165): signal "score2n" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at ball_over.vhd(171): signal "gamemode" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at ball_over.vhd(172): signal "score1t" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at ball_over.vhd(173): signal "score1n" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at ball_over.vhd(174): signal "score1n" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at ball_over.vhd(180): signal "gamemode" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at ball_over.vhd(181): signal "score0t" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at ball_over.vhd(182): signal "score0n" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at ball_over.vhd(183): signal "score0n" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
 Info (12128): Elaborating entity "seven_seg_decoder" for hierarchy "seven_seg_decoder:inst6"
-Warning (14284): Synthesized away the following node(s):
-    Warning (14285): Synthesized away the following RAM node(s):
-        Warning (14320): Synthesized away node "ball_over:inst19|char_rom:CHAR|altsyncram:altsyncram_component|altsyncram_kt91:auto_generated|q_a[0]"
-        Warning (14320): Synthesized away node "ball_over:inst19|char_rom:CHAR|altsyncram:altsyncram_component|altsyncram_kt91:auto_generated|q_a[1]"
-        Warning (14320): Synthesized away node "ball_over:inst19|char_rom:CHAR|altsyncram:altsyncram_component|altsyncram_kt91:auto_generated|q_a[2]"
-        Warning (14320): Synthesized away node "ball_over:inst19|char_rom:CHAR|altsyncram:altsyncram_component|altsyncram_kt91:auto_generated|q_a[3]"
-        Warning (14320): Synthesized away node "ball_over:inst19|char_rom:CHAR|altsyncram:altsyncram_component|altsyncram_kt91:auto_generated|q_a[4]"
-        Warning (14320): Synthesized away node "ball_over:inst19|char_rom:CHAR|altsyncram:altsyncram_component|altsyncram_kt91:auto_generated|q_a[5]"
-        Warning (14320): Synthesized away node "ball_over:inst19|char_rom:CHAR|altsyncram:altsyncram_component|altsyncram_kt91:auto_generated|q_a[6]"
-        Warning (14320): Synthesized away node "ball_over:inst19|char_rom:CHAR|altsyncram:altsyncram_component|altsyncram_kt91:auto_generated|q_a[7]"
+Warning (13012): Latch ball:inst2|Ball_on has unsafe behavior
+    Warning (13013): Ports ENA and PRE on the latch are fed by the same signal ball:inst2|VGA_SYNC:SYNC|pixel_column[9]
 Warning (13012): Latch ball_training:inst18|Ball_on has unsafe behavior
     Warning (13013): Ports ENA and PRE on the latch are fed by the same signal ball:inst2|VGA_SYNC:SYNC|pixel_column[9]
-Warning (13012): Latch ball_training:inst18|col_sel[1] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal ball:inst2|VGA_SYNC:SYNC|pixel_column[9]
-Warning (13012): Latch ball_training:inst18|col_sel[0] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal ball:inst2|VGA_SYNC:SYNC|pixel_column[9]
-Warning (13012): Latch ball_training:inst18|col_sel[2] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal ball:inst2|VGA_SYNC:SYNC|pixel_column[9]
-Warning (13012): Latch ball_training:inst18|row_sel[0] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal ball:inst2|VGA_SYNC:SYNC|pixel_column[9]
-Warning (13012): Latch ball_training:inst18|row_sel[1] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal ball:inst2|VGA_SYNC:SYNC|pixel_column[9]
-Warning (13012): Latch ball_training:inst18|row_sel[2] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal ball:inst2|VGA_SYNC:SYNC|pixel_column[9]
-Warning (13012): Latch ball_training:inst18|char_sel[0] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal ball:inst2|VGA_SYNC:SYNC|pixel_column[9]
-Warning (13012): Latch ball_training:inst18|char_sel[1] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal ball:inst2|VGA_SYNC:SYNC|pixel_column[9]
-Warning (13012): Latch ball_training:inst18|char_sel[2] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal ball:inst2|VGA_SYNC:SYNC|pixel_column[9]
-Warning (13012): Latch ball_training:inst18|char_sel[3] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal ball:inst2|VGA_SYNC:SYNC|pixel_column[9]
-Warning (13012): Latch ball_training:inst18|char_sel[4] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal ball:inst2|VGA_SYNC:SYNC|pixel_column[9]
 Info (13000): Registers with preset signals will power-up high
 Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
+Warning (13004): Presettable and clearable registers converted to equivalent circuits with latches. Registers power-up to an undefined state, and DEVCLRn places the registers in an undefined state.
+    Warning (13310): Register "ball:inst2|chakra_count[31]" is converted into an equivalent circuit using register "ball:inst2|chakra_count[31]~_emulated" and latch "ball:inst2|chakra_count[31]~1"
+    Warning (13310): Register "ball:inst2|chakra_count[30]" is converted into an equivalent circuit using register "ball:inst2|chakra_count[30]~_emulated" and latch "ball:inst2|chakra_count[30]~6"
+    Warning (13310): Register "ball:inst2|chakra_count[29]" is converted into an equivalent circuit using register "ball:inst2|chakra_count[29]~_emulated" and latch "ball:inst2|chakra_count[29]~11"
+    Warning (13310): Register "ball:inst2|chakra_count[28]" is converted into an equivalent circuit using register "ball:inst2|chakra_count[28]~_emulated" and latch "ball:inst2|chakra_count[28]~16"
+    Warning (13310): Register "ball:inst2|chakra_count[27]" is converted into an equivalent circuit using register "ball:inst2|chakra_count[27]~_emulated" and latch "ball:inst2|chakra_count[27]~21"
+    Warning (13310): Register "ball:inst2|chakra_count[26]" is converted into an equivalent circuit using register "ball:inst2|chakra_count[26]~_emulated" and latch "ball:inst2|chakra_count[26]~26"
+    Warning (13310): Register "ball:inst2|chakra_count[25]" is converted into an equivalent circuit using register "ball:inst2|chakra_count[25]~_emulated" and latch "ball:inst2|chakra_count[25]~31"
+    Warning (13310): Register "ball:inst2|chakra_count[24]" is converted into an equivalent circuit using register "ball:inst2|chakra_count[24]~_emulated" and latch "ball:inst2|chakra_count[24]~36"
+    Warning (13310): Register "ball:inst2|chakra_count[23]" is converted into an equivalent circuit using register "ball:inst2|chakra_count[23]~_emulated" and latch "ball:inst2|chakra_count[23]~41"
+    Warning (13310): Register "ball:inst2|chakra_count[22]" is converted into an equivalent circuit using register "ball:inst2|chakra_count[22]~_emulated" and latch "ball:inst2|chakra_count[22]~46"
+    Warning (13310): Register "ball:inst2|chakra_count[21]" is converted into an equivalent circuit using register "ball:inst2|chakra_count[21]~_emulated" and latch "ball:inst2|chakra_count[21]~51"
+    Warning (13310): Register "ball:inst2|chakra_count[20]" is converted into an equivalent circuit using register "ball:inst2|chakra_count[20]~_emulated" and latch "ball:inst2|chakra_count[20]~56"
+    Warning (13310): Register "ball:inst2|chakra_count[19]" is converted into an equivalent circuit using register "ball:inst2|chakra_count[19]~_emulated" and latch "ball:inst2|chakra_count[19]~61"
+    Warning (13310): Register "ball:inst2|chakra_count[18]" is converted into an equivalent circuit using register "ball:inst2|chakra_count[18]~_emulated" and latch "ball:inst2|chakra_count[18]~66"
+    Warning (13310): Register "ball:inst2|chakra_count[17]" is converted into an equivalent circuit using register "ball:inst2|chakra_count[17]~_emulated" and latch "ball:inst2|chakra_count[17]~71"
+    Warning (13310): Register "ball:inst2|chakra_count[16]" is converted into an equivalent circuit using register "ball:inst2|chakra_count[16]~_emulated" and latch "ball:inst2|chakra_count[16]~76"
+    Warning (13310): Register "ball:inst2|chakra_count[15]" is converted into an equivalent circuit using register "ball:inst2|chakra_count[15]~_emulated" and latch "ball:inst2|chakra_count[15]~81"
+    Warning (13310): Register "ball:inst2|chakra_count[14]" is converted into an equivalent circuit using register "ball:inst2|chakra_count[14]~_emulated" and latch "ball:inst2|chakra_count[14]~86"
+    Warning (13310): Register "ball:inst2|chakra_count[13]" is converted into an equivalent circuit using register "ball:inst2|chakra_count[13]~_emulated" and latch "ball:inst2|chakra_count[13]~91"
+    Warning (13310): Register "ball:inst2|chakra_count[12]" is converted into an equivalent circuit using register "ball:inst2|chakra_count[12]~_emulated" and latch "ball:inst2|chakra_count[12]~96"
+    Warning (13310): Register "ball:inst2|chakra_count[11]" is converted into an equivalent circuit using register "ball:inst2|chakra_count[11]~_emulated" and latch "ball:inst2|chakra_count[11]~101"
+    Warning (13310): Register "ball:inst2|chakra_count[10]" is converted into an equivalent circuit using register "ball:inst2|chakra_count[10]~_emulated" and latch "ball:inst2|chakra_count[10]~106"
+    Warning (13310): Register "ball:inst2|chakra_count[9]" is converted into an equivalent circuit using register "ball:inst2|chakra_count[9]~_emulated" and latch "ball:inst2|chakra_count[9]~111"
+    Warning (13310): Register "ball:inst2|chakra_count[8]" is converted into an equivalent circuit using register "ball:inst2|chakra_count[8]~_emulated" and latch "ball:inst2|chakra_count[8]~116"
+    Warning (13310): Register "ball:inst2|chakra_count[7]" is converted into an equivalent circuit using register "ball:inst2|chakra_count[7]~_emulated" and latch "ball:inst2|chakra_count[7]~121"
+    Warning (13310): Register "ball:inst2|chakra_count[6]" is converted into an equivalent circuit using register "ball:inst2|chakra_count[6]~_emulated" and latch "ball:inst2|chakra_count[6]~126"
+    Warning (13310): Register "ball:inst2|chakra_count[5]" is converted into an equivalent circuit using register "ball:inst2|chakra_count[5]~_emulated" and latch "ball:inst2|chakra_count[5]~131"
+    Warning (13310): Register "ball:inst2|chakra_count[4]" is converted into an equivalent circuit using register "ball:inst2|chakra_count[4]~_emulated" and latch "ball:inst2|chakra_count[4]~136"
+    Warning (13310): Register "ball:inst2|chakra_count[3]" is converted into an equivalent circuit using register "ball:inst2|chakra_count[3]~_emulated" and latch "ball:inst2|chakra_count[3]~141"
+    Warning (13310): Register "ball:inst2|chakra_count[2]" is converted into an equivalent circuit using register "ball:inst2|chakra_count[2]~_emulated" and latch "ball:inst2|chakra_count[2]~146"
+    Warning (13310): Register "ball:inst2|chakra_count[1]" is converted into an equivalent circuit using register "ball:inst2|chakra_count[1]~_emulated" and latch "ball:inst2|chakra_count[1]~151"
+    Warning (13310): Register "ball:inst2|chakra_count[0]" is converted into an equivalent circuit using register "ball:inst2|chakra_count[0]~_emulated" and latch "ball:inst2|chakra_count[0]~156"
+    Warning (13310): Register "ball_training:inst18|Ball_Y_pos[10]" is converted into an equivalent circuit using register "ball_training:inst18|Ball_Y_pos[10]~_emulated" and latch "ball_training:inst18|Ball_Y_pos[10]~1"
+    Warning (13310): Register "ball_training:inst18|Ball_Y_pos[8]" is converted into an equivalent circuit using register "ball_training:inst18|Ball_Y_pos[8]~_emulated" and latch "ball_training:inst18|Ball_Y_pos[8]~6"
+    Warning (13310): Register "ball_training:inst18|Ball_Y_pos[7]" is converted into an equivalent circuit using register "ball_training:inst18|Ball_Y_pos[7]~_emulated" and latch "ball_training:inst18|Ball_Y_pos[7]~11"
+    Warning (13310): Register "ball_training:inst18|Ball_Y_pos[6]" is converted into an equivalent circuit using register "ball_training:inst18|Ball_Y_pos[6]~_emulated" and latch "ball_training:inst18|Ball_Y_pos[6]~16"
+    Warning (13310): Register "ball_training:inst18|Ball_Y_pos[5]" is converted into an equivalent circuit using register "ball_training:inst18|Ball_Y_pos[5]~_emulated" and latch "ball_training:inst18|Ball_Y_pos[5]~21"
+    Warning (13310): Register "ball_training:inst18|Ball_Y_pos[3]" is converted into an equivalent circuit using register "ball_training:inst18|Ball_Y_pos[3]~_emulated" and latch "ball_training:inst18|Ball_Y_pos[3]~26"
+    Warning (13310): Register "ball_training:inst18|Ball_Y_pos[4]" is converted into an equivalent circuit using register "ball_training:inst18|Ball_Y_pos[4]~_emulated" and latch "ball_training:inst18|Ball_Y_pos[4]~31"
+    Warning (13310): Register "ball_training:inst18|Ball_Y_pos[2]" is converted into an equivalent circuit using register "ball_training:inst18|Ball_Y_pos[2]~_emulated" and latch "ball_training:inst18|Ball_Y_pos[2]~36"
+    Warning (13310): Register "ball_training:inst18|Ball_Y_pos[1]" is converted into an equivalent circuit using register "ball_training:inst18|Ball_Y_pos[1]~_emulated" and latch "ball_training:inst18|Ball_Y_pos[1]~41"
+    Warning (13310): Register "ball_training:inst18|Ball_Y_pos[0]" is converted into an equivalent circuit using register "ball_training:inst18|Ball_Y_pos[0]~_emulated" and latch "ball_training:inst18|Ball_Y_pos[0]~46"
+    Warning (13310): Register "ball_training:inst18|Ball_Y_pos[9]" is converted into an equivalent circuit using register "ball_training:inst18|Ball_Y_pos[9]~_emulated" and latch "ball_training:inst18|Ball_Y_pos[9]~51"
+    Warning (13310): Register "ball:inst2|Ball_Y_pos[10]" is converted into an equivalent circuit using register "ball:inst2|Ball_Y_pos[10]~_emulated" and latch "ball:inst2|Ball_Y_pos[10]~1"
+    Warning (13310): Register "ball:inst2|Ball_Y_pos[8]" is converted into an equivalent circuit using register "ball:inst2|Ball_Y_pos[8]~_emulated" and latch "ball:inst2|Ball_Y_pos[8]~6"
+    Warning (13310): Register "ball:inst2|Ball_Y_pos[7]" is converted into an equivalent circuit using register "ball:inst2|Ball_Y_pos[7]~_emulated" and latch "ball:inst2|Ball_Y_pos[7]~11"
+    Warning (13310): Register "ball:inst2|Ball_Y_pos[6]" is converted into an equivalent circuit using register "ball:inst2|Ball_Y_pos[6]~_emulated" and latch "ball:inst2|Ball_Y_pos[6]~16"
+    Warning (13310): Register "ball:inst2|Ball_Y_pos[5]" is converted into an equivalent circuit using register "ball:inst2|Ball_Y_pos[5]~_emulated" and latch "ball:inst2|Ball_Y_pos[5]~21"
+    Warning (13310): Register "ball:inst2|Ball_Y_pos[3]" is converted into an equivalent circuit using register "ball:inst2|Ball_Y_pos[3]~_emulated" and latch "ball:inst2|Ball_Y_pos[3]~26"
+    Warning (13310): Register "ball:inst2|Ball_Y_pos[4]" is converted into an equivalent circuit using register "ball:inst2|Ball_Y_pos[4]~_emulated" and latch "ball:inst2|Ball_Y_pos[4]~31"
+    Warning (13310): Register "ball:inst2|Ball_Y_pos[2]" is converted into an equivalent circuit using register "ball:inst2|Ball_Y_pos[2]~_emulated" and latch "ball:inst2|Ball_Y_pos[2]~36"
+    Warning (13310): Register "ball:inst2|Ball_Y_pos[1]" is converted into an equivalent circuit using register "ball:inst2|Ball_Y_pos[1]~_emulated" and latch "ball:inst2|Ball_Y_pos[1]~41"
+    Warning (13310): Register "ball:inst2|Ball_Y_pos[0]" is converted into an equivalent circuit using register "ball:inst2|Ball_Y_pos[0]~_emulated" and latch "ball:inst2|Ball_Y_pos[0]~46"
+    Warning (13310): Register "ball:inst2|Ball_Y_pos[9]" is converted into an equivalent circuit using register "ball:inst2|Ball_Y_pos[9]~_emulated" and latch "ball:inst2|Ball_Y_pos[9]~51"
+    Warning (13310): Register "ball_training:inst18|Ball_Y_motion[10]" is converted into an equivalent circuit using register "ball_training:inst18|Ball_Y_motion[10]~_emulated" and latch "ball_training:inst18|Ball_Y_motion[10]~1"
+    Warning (13310): Register "ball_training:inst18|Ball_Y_motion[9]" is converted into an equivalent circuit using register "ball_training:inst18|Ball_Y_motion[9]~_emulated" and latch "ball_training:inst18|Ball_Y_motion[9]~5"
+    Warning (13310): Register "ball_training:inst18|Ball_Y_motion[8]" is converted into an equivalent circuit using register "ball_training:inst18|Ball_Y_motion[8]~_emulated" and latch "ball_training:inst18|Ball_Y_motion[8]~9"
+    Warning (13310): Register "ball_training:inst18|Ball_Y_motion[7]" is converted into an equivalent circuit using register "ball_training:inst18|Ball_Y_motion[7]~_emulated" and latch "ball_training:inst18|Ball_Y_motion[7]~13"
+    Warning (13310): Register "ball_training:inst18|Ball_Y_motion[6]" is converted into an equivalent circuit using register "ball_training:inst18|Ball_Y_motion[6]~_emulated" and latch "ball_training:inst18|Ball_Y_motion[6]~17"
+    Warning (13310): Register "ball_training:inst18|Ball_Y_motion[5]" is converted into an equivalent circuit using register "ball_training:inst18|Ball_Y_motion[5]~_emulated" and latch "ball_training:inst18|Ball_Y_motion[5]~21"
+    Warning (13310): Register "ball_training:inst18|Ball_Y_motion[4]" is converted into an equivalent circuit using register "ball_training:inst18|Ball_Y_motion[4]~_emulated" and latch "ball_training:inst18|Ball_Y_motion[4]~25"
+    Warning (13310): Register "ball_training:inst18|Ball_Y_motion[3]" is converted into an equivalent circuit using register "ball_training:inst18|Ball_Y_motion[3]~_emulated" and latch "ball_training:inst18|Ball_Y_motion[3]~29"
+    Warning (13310): Register "ball_training:inst18|Ball_Y_motion[2]" is converted into an equivalent circuit using register "ball_training:inst18|Ball_Y_motion[2]~_emulated" and latch "ball_training:inst18|Ball_Y_motion[2]~33"
+    Warning (13310): Register "ball_training:inst18|Ball_Y_motion[1]" is converted into an equivalent circuit using register "ball_training:inst18|Ball_Y_motion[1]~_emulated" and latch "ball_training:inst18|Ball_Y_motion[1]~37"
+    Warning (13310): Register "ball_training:inst18|Ball_Y_motion[0]" is converted into an equivalent circuit using register "ball_training:inst18|Ball_Y_motion[0]~_emulated" and latch "ball_training:inst18|Ball_Y_motion[0]~41"
+    Warning (13310): Register "ball_training:inst18|sc2[0]" is converted into an equivalent circuit using register "ball_training:inst18|sc2[0]~_emulated" and latch "ball_training:inst18|sc2[0]~1"
+    Warning (13310): Register "ball_training:inst18|sc1[0]" is converted into an equivalent circuit using register "ball_training:inst18|sc1[0]~_emulated" and latch "ball_training:inst18|sc1[0]~1"
+    Warning (13310): Register "ball_training:inst18|sc0[0]" is converted into an equivalent circuit using register "ball_training:inst18|sc0[0]~_emulated" and latch "ball_training:inst18|sc0[0]~1"
+    Warning (13310): Register "ball_training:inst18|sc2[1]" is converted into an equivalent circuit using register "ball_training:inst18|sc2[1]~_emulated" and latch "ball_training:inst18|sc2[1]~6"
+    Warning (13310): Register "ball_training:inst18|sc1[1]" is converted into an equivalent circuit using register "ball_training:inst18|sc1[1]~_emulated" and latch "ball_training:inst18|sc1[1]~6"
+    Warning (13310): Register "ball_training:inst18|sc0[1]" is converted into an equivalent circuit using register "ball_training:inst18|sc0[1]~_emulated" and latch "ball_training:inst18|sc0[1]~6"
+    Warning (13310): Register "ball_training:inst18|sc2[2]" is converted into an equivalent circuit using register "ball_training:inst18|sc2[2]~_emulated" and latch "ball_training:inst18|sc2[2]~11"
+    Warning (13310): Register "ball_training:inst18|sc1[2]" is converted into an equivalent circuit using register "ball_training:inst18|sc1[2]~_emulated" and latch "ball_training:inst18|sc1[2]~11"
+    Warning (13310): Register "ball_training:inst18|sc0[2]" is converted into an equivalent circuit using register "ball_training:inst18|sc0[2]~_emulated" and latch "ball_training:inst18|sc0[2]~11"
+    Warning (13310): Register "ball_training:inst18|sc2[3]" is converted into an equivalent circuit using register "ball_training:inst18|sc2[3]~_emulated" and latch "ball_training:inst18|sc2[3]~16"
+    Warning (13310): Register "ball_training:inst18|sc1[3]" is converted into an equivalent circuit using register "ball_training:inst18|sc1[3]~_emulated" and latch "ball_training:inst18|sc1[3]~16"
+    Warning (13310): Register "ball_training:inst18|sc0[3]" is converted into an equivalent circuit using register "ball_training:inst18|sc0[3]~_emulated" and latch "ball_training:inst18|sc0[3]~16"
+    Warning (13310): Register "ball:inst2|Ball_Y_motion[10]" is converted into an equivalent circuit using register "ball:inst2|Ball_Y_motion[10]~_emulated" and latch "ball:inst2|Ball_Y_motion[10]~1"
+    Warning (13310): Register "ball:inst2|Ball_Y_motion[9]" is converted into an equivalent circuit using register "ball:inst2|Ball_Y_motion[9]~_emulated" and latch "ball:inst2|Ball_Y_motion[9]~5"
+    Warning (13310): Register "ball:inst2|Ball_Y_motion[8]" is converted into an equivalent circuit using register "ball:inst2|Ball_Y_motion[8]~_emulated" and latch "ball:inst2|Ball_Y_motion[8]~9"
+    Warning (13310): Register "ball:inst2|Ball_Y_motion[7]" is converted into an equivalent circuit using register "ball:inst2|Ball_Y_motion[7]~_emulated" and latch "ball:inst2|Ball_Y_motion[7]~13"
+    Warning (13310): Register "ball:inst2|Ball_Y_motion[6]" is converted into an equivalent circuit using register "ball:inst2|Ball_Y_motion[6]~_emulated" and latch "ball:inst2|Ball_Y_motion[6]~17"
+    Warning (13310): Register "ball:inst2|Ball_Y_motion[5]" is converted into an equivalent circuit using register "ball:inst2|Ball_Y_motion[5]~_emulated" and latch "ball:inst2|Ball_Y_motion[5]~21"
+    Warning (13310): Register "ball:inst2|Ball_Y_motion[4]" is converted into an equivalent circuit using register "ball:inst2|Ball_Y_motion[4]~_emulated" and latch "ball:inst2|Ball_Y_motion[4]~25"
+    Warning (13310): Register "ball:inst2|Ball_Y_motion[3]" is converted into an equivalent circuit using register "ball:inst2|Ball_Y_motion[3]~_emulated" and latch "ball:inst2|Ball_Y_motion[3]~29"
+    Warning (13310): Register "ball:inst2|Ball_Y_motion[2]" is converted into an equivalent circuit using register "ball:inst2|Ball_Y_motion[2]~_emulated" and latch "ball:inst2|Ball_Y_motion[2]~33"
+    Warning (13310): Register "ball:inst2|Ball_Y_motion[1]" is converted into an equivalent circuit using register "ball:inst2|Ball_Y_motion[1]~_emulated" and latch "ball:inst2|Ball_Y_motion[1]~37"
+    Warning (13310): Register "ball:inst2|Ball_Y_motion[0]" is converted into an equivalent circuit using register "ball:inst2|Ball_Y_motion[0]~_emulated" and latch "ball:inst2|Ball_Y_motion[0]~41"
+    Warning (13310): Register "ball:inst2|sc2[0]" is converted into an equivalent circuit using register "ball:inst2|sc2[0]~_emulated" and latch "ball:inst2|sc2[0]~1"
+    Warning (13310): Register "ball:inst2|sc0[0]" is converted into an equivalent circuit using register "ball:inst2|sc0[0]~_emulated" and latch "ball:inst2|sc0[0]~1"
+    Warning (13310): Register "ball:inst2|sc1[0]" is converted into an equivalent circuit using register "ball:inst2|sc1[0]~_emulated" and latch "ball:inst2|sc1[0]~1"
+    Warning (13310): Register "ball:inst2|sc2[1]" is converted into an equivalent circuit using register "ball:inst2|sc2[1]~_emulated" and latch "ball:inst2|sc2[1]~6"
+    Warning (13310): Register "ball:inst2|sc1[1]" is converted into an equivalent circuit using register "ball:inst2|sc1[1]~_emulated" and latch "ball:inst2|sc1[1]~6"
+    Warning (13310): Register "ball:inst2|sc0[1]" is converted into an equivalent circuit using register "ball:inst2|sc0[1]~_emulated" and latch "ball:inst2|sc0[1]~6"
+    Warning (13310): Register "ball:inst2|sc2[2]" is converted into an equivalent circuit using register "ball:inst2|sc2[2]~_emulated" and latch "ball:inst2|sc2[2]~11"
+    Warning (13310): Register "ball:inst2|sc0[2]" is converted into an equivalent circuit using register "ball:inst2|sc0[2]~_emulated" and latch "ball:inst2|sc0[2]~11"
+    Warning (13310): Register "ball:inst2|sc1[2]" is converted into an equivalent circuit using register "ball:inst2|sc1[2]~_emulated" and latch "ball:inst2|sc1[2]~11"
+    Warning (13310): Register "ball:inst2|sc2[3]" is converted into an equivalent circuit using register "ball:inst2|sc2[3]~_emulated" and latch "ball:inst2|sc2[3]~16"
+    Warning (13310): Register "ball:inst2|sc1[3]" is converted into an equivalent circuit using register "ball:inst2|sc1[3]~_emulated" and latch "ball:inst2|sc1[3]~16"
+    Warning (13310): Register "ball:inst2|sc0[3]" is converted into an equivalent circuit using register "ball:inst2|sc0[3]~_emulated" and latch "ball:inst2|sc0[3]~16"
+    Warning (13310): Register "ball:inst2|level_int[1]" is converted into an equivalent circuit using register "ball:inst2|level_int[1]~_emulated" and latch "ball:inst2|level_int[1]~1"
+    Warning (13310): Register "ball:inst2|level_int[0]" is converted into an equivalent circuit using register "ball:inst2|level_int[0]~_emulated" and latch "ball:inst2|level_int[0]~6"
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "ledg[8]" is stuck at GND
     Warning (13410): Pin "ledg[7]" is stuck at GND
 Info (286030): Timing-Driven Synthesis is running
-Info (17049): 24 registers lost all their fanouts during netlist optimizations.
-Info (17036): Removed 1 MSB VCC or GND address nodes from RAM block "ball_training:inst18|char_rom:CHAR|altsyncram:altsyncram_component|altsyncram_kt91:auto_generated|ALTSYNCRAM"
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 1 node(s), including 0 DDIO, 1 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 1216 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 2360 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 6 input pins
     Info (21059): Implemented 39 output pins
     Info (21060): Implemented 2 bidirectional pins
-    Info (21061): Implemented 1108 logic cells
-    Info (21064): Implemented 60 RAM segments
+    Info (21061): Implemented 2244 logic cells
+    Info (21064): Implemented 68 RAM segments
     Info (21065): Implemented 1 PLLs
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 104 warnings
-    Info: Peak virtual memory: 614 megabytes
-    Info: Processing ended: Wed May 29 23:04:54 2019
-    Info: Elapsed time: 00:00:04
-    Info: Total CPU time (on all processors): 00:00:04
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 208 warnings
+    Info: Peak virtual memory: 4686 megabytes
+    Info: Processing ended: Thu May 30 07:50:52 2019
+    Info: Elapsed time: 00:00:07
+    Info: Total CPU time (on all processors): 00:00:07
 
 
