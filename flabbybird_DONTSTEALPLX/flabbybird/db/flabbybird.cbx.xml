@@ -3,7 +3,7 @@
 	<PROJECT NAME="flabbybird">
 		<CBX_INST_ENTRY INSTANCE_NAME="|flabbybird|ball_over:inst19|char_rom:CHAR|altsyncram:altsyncram_component" CBX_FILE_NAME="altsyncram_kt91.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|flabbybird|PLL:inst4|altpll:altpll_component" CBX_FILE_NAME="PLL_altpll.v"/>
-		<CBX_INST_ENTRY INSTANCE_NAME="|flabbybird|background:inst24|altsyncram:altsyncram_component" CBX_FILE_NAME="altsyncram_apb1.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|flabbybird|background_rom:inst24|background:BG|altsyncram:altsyncram_component" CBX_FILE_NAME="altsyncram_22b1.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|flabbybird|ball:inst2|char_rom:CHAR|altsyncram:altsyncram_component" CBX_FILE_NAME="altsyncram_kt91.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|flabbybird|ball_menu:inst17|char_rom:CHAR|altsyncram:altsyncram_component" CBX_FILE_NAME="altsyncram_kt91.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|flabbybird|ball_training:inst18|char_rom:CHAR|altsyncram:altsyncram_component" CBX_FILE_NAME="altsyncram_kt91.tdf"/>

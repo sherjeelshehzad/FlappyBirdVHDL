@@ -8,6 +8,7 @@ entity fsm_game is
 	port(
 		clk, reset, PB1, SW0: in std_logic;
 		hit : in std_logic;
+		PB0 : in std_logic;
 		output_select: out std_logic_vector(1 downto 0);
 		debug_fsm: out std_logic_vector(3 downto 0)
 		);
@@ -57,10 +58,10 @@ begin
 				end if;
 				
 			when s_over => 
-				if (PB1 = '1') then
+				if (PB0 = '1') then
 					next_state <= s_menu;
 				else
-					next_state <= s_menu;
+					next_state <= s_over;
 				end if;
 		end case;
 	end process;

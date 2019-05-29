@@ -7,7 +7,7 @@ entity pipe is
 	port(vert_sync : in std_logic;
 		move_en: in std_logic;
 		reset: in std_logic;
-		pipe_size: in std_logic_vector(9 DOWNTO 0);
+		pipe_size: in std_logic_vector(10 DOWNTO 0);
 		lfsr_in: in std_logic_vector(10 downto 0);
 		pipe_x: out std_logic_vector(10 DOWNTO 0);
 		pipe_gap: out std_logic_vector(10 DOWNTO 0);
@@ -30,21 +30,10 @@ Move_Pipe: process(reset,vert_sync)
 			pipe_on <= '0';
 		elsif (vert_sync'event and vert_sync = '1') then
 			if (move_en = '1') then
-				if (pipe_x_pos >= CONV_STD_LOGIC_VECTOR(640,11)) then
-					pipe_x_motion <= -CONV_STD_LOGIC_VECTOR(3,11);
-					pipe_on <= '1';
-				elsif (((pipe_x_pos) < CONV_STD_LOGIC_VECTOR(640,11) - pipe_size)) then
-					pipe_x_motion <= -CONV_STD_LOGIC_VECTOR(3,11);
-					pipe_on <= '1';
-				elsif (pipe_x_pos <= CONV_STD_LOGIC_VECTOR(0,11)) then
-					pipe_x_pos <= CONV_STD_LOGIC_VECTOR(640,11);
-					--pipe_x_motion <= CONV_STD_LOGIC_VECTOR(0,11);
-					pipe_on <= '0';
-				end if;
+				pipe_x_motion <= -CONV_STD_LOGIC_VECTOR(3,11);
+				pipe_on <= '1';
 			else
-				pipe_x_pos <= CONV_STD_LOGIC_VECTOR(640,11);
 				pipe_x_motion <= CONV_STD_LOGIC_VECTOR(0,11);
-				pipe_on <= '0';
 			end if;
 			pipe_x_pos <= pipe_x_pos + pipe_x_motion;
 		end if;

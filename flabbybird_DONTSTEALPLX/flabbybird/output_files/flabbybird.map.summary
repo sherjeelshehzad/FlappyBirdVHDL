@@ -1,14 +1,14 @@
-Analysis & Synthesis Status : Successful - Tue May 28 22:07:29 2019
+Analysis & Synthesis Status : Successful - Wed May 29 23:04:54 2019
 Quartus II 64-Bit Version : 13.0.0 Build 156 04/24/2013 SJ Full Version
 Revision Name : flabbybird
 Top-level Entity Name : flabbybird
 Family : Cyclone III
-Total logic elements : 1,015
-    Total combinational functions : 944
-    Dedicated logic registers : 418
-Total registers : 418
-Total pins : 46
+Total logic elements : 1,100
+    Total combinational functions : 1,024
+    Dedicated logic registers : 494
+Total registers : 494
+Total pins : 47
 Total virtual pins : 0
-Total memory bits : 8,192
+Total memory bits : 240,640
 Embedded Multiplier 9-bit elements : 0
 Total PLLs : 1
